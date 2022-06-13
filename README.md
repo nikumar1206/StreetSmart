@@ -1,24 +1,14 @@
-# README
+# SmartStreet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Link to App](google.com)
 
-Things you may want to cover:
+## Project Description
 
-* Ruby version
+### Languages
 
-* System dependencies
+### Frameworks
 
-* Configuration
+### Libraries and Gems Implemented
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Design Docs
