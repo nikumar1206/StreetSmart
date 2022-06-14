@@ -1,5 +1,40 @@
 {
-  "name": "street_easy_clone",
-  "private": true,
-  "dependencies": {}
+  "name": "streetsmart",
+  "version": "1.0.0",
+  "description": "[Link to App](www.google.com)",
+  "main": "webpack.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --mode=development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikumar1206/StreetEasyClone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikumar1206/StreetEasyClone/issues"
+  },
+  "homepage": "https://github.com/nikumar1206/StreetEasyClone#readme",
+  "dependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "babel-loader": "^8.2.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  }
 }
