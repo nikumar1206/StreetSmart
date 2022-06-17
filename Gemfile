@@ -15,7 +15,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Extra installed
 gem "figaro"
-# gem "kaminari"
+gem "kaminari"
 
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -31,7 +31,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
-  gem 'byebug'
 end
 
 
