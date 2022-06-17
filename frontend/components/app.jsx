@@ -1,9 +1,23 @@
 import React from "react";
+import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
+import { AuthRoute } from "../util/route_util";
+import BenchIndexContainer from "./bench_index_container";
 
-// NB: this file is complete - you do not to write/edit anything!
-const App = () => (
+import GreetingsContainer from "./greeting_container";
+import SignUpFormContainer from "./SignupFormContainer";
+import LoginFormContainer from "./LoginFormContainer";
+
+export const App = () => (
   <div>
-    <h1>React is working?</h1>
+    <header>
+      <h1>Welcome to Bench BnB</h1>
+    </header>
+    <GreetingsContainer />
+    <Switch>
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <Route exact path="/" component={BenchIndexContainer} />
+    </Switch>
   </div>
 );
 
