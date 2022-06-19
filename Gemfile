@@ -16,7 +16,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Extra installed
 gem "figaro"
 gem "kaminari"
-
+gem "annotate"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
