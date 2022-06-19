@@ -1,52 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 
-class SessionForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // first_name: "",
-      // last_name: "",
-      email: "",
-      password: "",
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+function SessionForm(props) {
+  const [values, setValues] = useState({
+    email: "",
+    password: "",
+  });
 
-  handleChange(field) {
-    return (e) =>
-      this.setState({
-        [field]: e.target.value,
-      });
-  }
+  const handleChange = (field) => {
+    setValues((values) => ({ ...values, [field]: event.target.value }));
+  };
 
-  handleSubmit(e) {
-    // console.log(this.state);
-    // console.log(this.props);
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
-    console.log(user);
-  }
+    const user = { ...values };
+    props.processForm(user);
+  };
 
-  render() {
-    return (
-      <div className="session-form">
-        <form>
-          <label>
-            Email:
-            <input type="text" onChange={this.handleChange("email")} />
-          </label>
-          <br />
-          <label>
-            Password:
-            <input type="password" onChange={this.handleChange("password")} />
-          </label>
-          <button type="submit" onClick={this.handleSubmit}>
-            Submit!
-          </button>
-        </form>
-      </div>
-    );
-  }
+  return (
+    <div className="session-form">
+      <form>
+        <label>
+          Email:
+          <input
+            type="text"
+            value={values.email}
+            onChange={() => handleChange("email")}
+          />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input
+            type="password"
+            value={values.password}
+            onChange={() => handleChange("password")}
+          />
+        </label>
+        <button type="submit" onClick={handleSubmit}>
+          Submit!
+        </button>
+      </form>
+    </div>
+  );
 }
+
 export default SessionForm;
