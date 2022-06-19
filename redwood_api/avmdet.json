@@ -1,0 +1,593 @@
+{
+    "version": 436,
+    "errorMessage": "Success",
+    "resultCode": 0,
+    "payload": {
+      "listingTimezone": "US/Eastern",
+      "numBeds": 4,
+      "numBaths": 2,
+      "sqFt": {
+        "displayLevel": 1,
+        "value": 656
+      },
+      "lastSoldPrice": 30000,
+      "lastSoldDate": 1617260400000,
+      "isServiced": true,
+      "isActivish": false,
+      "isHidden": false,
+      "isVisibilityRestricted": false,
+      "soldDate": 1617260400000,
+      "soldDateTimeZone": "US/Eastern",
+      "latLong": {
+        "latitude": 42.4075529,
+        "longitude": -82.9165703
+      },
+      "priceInfo": {
+        "amount": 30000,
+        "label": "Last Sold Price",
+        "displayLevel": 1
+      },
+      "searchStatusId": 4,
+      "streetAddress": {
+        "streetNumber": "4544",
+        "directionalPrefix": "",
+        "streetName": "Radnor",
+        "streetType": "",
+        "directionalSuffix": "",
+        "unitType": "",
+        "unitValue": "",
+        "addressDisplayLevel": {
+          "displayLevel": 1,
+          "displayText": "",
+          "dataSourceId": 144
+        },
+        "assembledAddress": "4544 Radnor",
+        "includeStreetNumber": true,
+        "includeUnitNumber": true,
+        "includeStreetName": true
+      },
+      "dataSources": [],
+      "historicalGraphEnabled": true,
+      "sectionPreviewText": "$73,942 (+$43K since last sold)",
+      "random": {
+        "seed": 208826233558375,
+        "nextNextGaussian": 0,
+        "haveNextNextGaussian": false
+      },
+      "queryId": "c4ec633a-3171-34bb-f08d-df9bbded2578",
+      "compIdOriginalIndexMap": {
+        "61127277": 1,
+        "61153417": 3,
+        "61191789": 4,
+        "62376537": 6,
+        "98662083": 2,
+        "98662237": 5
+      },
+      "displayLevel": 1,
+      "propertyId": 60973374,
+      "predictedValue": 73941.56,
+      "comparables": [
+        {
+          "url": "/MI/Grosse-Pointe-Farms/478-Cloverly-Rd-48236/home/61127277",
+          "status": {
+            "displayValue": "Closed",
+            "definition": "This home is sold and off the market.",
+            "longerDefinitionToken": "sold"
+          },
+          "priceInfo": {
+            "amount": 290000,
+            "label": "Sold Price",
+            "displayLevel": 1
+          },
+          "propertyId": 61127277,
+          "listingId": 142958518,
+          "entireAddressString": "478 Cloverly, Grosse Pointe Farms, MI 48236",
+          "streetAddress": {
+            "streetNumber": "478",
+            "directionalPrefix": "",
+            "streetName": "Cloverly",
+            "streetType": "",
+            "directionalSuffix": "",
+            "unitType": "",
+            "unitValue": "",
+            "addressDisplayLevel": {
+              "displayLevel": 1,
+              "displayText": "",
+              "dataSourceId": 143
+            },
+            "assembledAddress": "478 Cloverly",
+            "includeStreetNumber": true,
+            "includeUnitNumber": true,
+            "includeStreetName": true
+          },
+          "city": "Grosse Pointe Farms",
+          "state": "MI",
+          "zip": "48236",
+          "countryCode": "US",
+          "beds": 4,
+          "baths": 1.5,
+          "numFullBaths": 1,
+          "numPartialBaths": 1,
+          "sqFt": {
+            "displayLevel": 1,
+            "value": 1860
+          },
+          "soldDate": 1647500400000,
+          "hasOpen": false,
+          "hasAgc": false,
+          "isRedfin": false,
+          "searchStatus": 4,
+          "propertyType": 6,
+          "listingType": 1,
+          "latLong": {
+            "latitude": 42.4106242,
+            "longitude": -82.9123144
+          },
+          "primaryPhotoDisplayLevel": 1,
+          "secondaryPhotoDisplayLevel": 5,
+          "mlsLogoData": {
+            "id": 143,
+            "name": "realsource",
+            "description": "MiRealSource - Michigan Multiple Listing Service",
+            "disclaimer": "<p><img src=\"${IMAGE_SERVER}/images/logos/mirealsource_large.png\"/> Information is provided for consumers' personal, non-commercial use, and may not be used for any purpose other than the identification of potential properties for purchase.\n\tProvided through IDX via MiRealSource. Courtesy of MiRealSource Shareholder. Copyright MiRealSource.\n\tThe information published and disseminated by MiRealSource is communicated verbatim, without change by MiRealSource, as filed with MiRealSource by its members. The accuracy of all information, regardless of source, is not guaranteed or warranted. All information should be independently verified.\n\tCopyright ${CURRENT_YEAR} MiRealSource. All rights reserved. The information provided hereby constitutes proprietary information of MiRealSource, Inc. and its shareholders, affiliates and licensees and may not be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopy, recording, scanning or any information storage and retrieval system, without written permission from MiRealSource, Inc.\n\tProvided through IDX via MiRealSource, as the \"Source MLS\", courtesy of the Originating MLS shown on the property listing, as the Originating MLS.\n\tThe information published and disseminated by the Originating MLS is communicated verbatim, without change by the Originating MLS, as filed with it by its members. The accuracy of all information, regardless of source, is not guaranteed or warranted. All information should be independently verified.\n\tCopyright ${CURRENT_YEAR} MiRealSource. All rights reserved. The information provided hereby constitutes proprietary information of MiRealSource, Inc. and its shareholders, affiliates and licensees and may not be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopy, recording, scanning or any information storage and retrieval system, without written permission from MiRealSource, Inc.</p>",
+            "logoImageFilename": "mirealsource_small.png",
+            "largeLogo": "mirealsource_large.png",
+            "canShowInFooter": false,
+            "homecardTextAttribution": false
+          },
+          "availablePhotos": "0-32:0",
+          "dataSourceId": 143,
+          "mlsId": "50062704",
+          "broker": "",
+          "showListingAndSellingBrokers": false,
+          "shouldShowMlsId": false,
+          "sashes": [
+            {
+              "sashType": 1,
+              "sashTypeId": 1,
+              "sashTypeName": "Sold",
+              "sashTypeColor": "#5D8ACB",
+              "isRedfin": false,
+              "openHouseText": "",
+              "lastSaleDate": "MAR 17, 2022",
+              "lastSalePrice": ""
+            }
+          ]
+        },
+        {
+          "url": "/MI/Grosse-Pointe-Farms/445-Moran-Rd-48236/home/98662083",
+          "status": {
+            "displayValue": "Sold",
+            "definition": "This listing sold and is now off the market.",
+            "longerDefinitionToken": "sold"
+          },
+          "priceInfo": {
+            "amount": 260000,
+            "label": "Sold Price",
+            "displayLevel": 1
+          },
+          "propertyId": 98662083,
+          "listingId": 146600943,
+          "entireAddressString": "445 Moran Rd, Grosse Pointe Farms, MI 48236",
+          "streetAddress": {
+            "streetNumber": "445",
+            "directionalPrefix": "",
+            "streetName": "Moran",
+            "streetType": "Rd",
+            "directionalSuffix": "",
+            "unitType": "",
+            "unitValue": "",
+            "addressDisplayLevel": {
+              "displayLevel": 1,
+              "displayText": "",
+              "dataSourceId": 144
+            },
+            "assembledAddress": "445 Moran Rd",
+            "includeStreetNumber": true,
+            "includeUnitNumber": true,
+            "includeStreetName": true
+          },
+          "city": "Grosse Pointe Farms",
+          "state": "MI",
+          "zip": "48236",
+          "countryCode": "US",
+          "beds": 3,
+          "baths": 1.5,
+          "numFullBaths": 1,
+          "numPartialBaths": 1,
+          "sqFt": {
+            "displayLevel": 1,
+            "value": 1510
+          },
+          "soldDate": 1652425200000,
+          "hasOpen": false,
+          "hasAgc": false,
+          "isRedfin": false,
+          "searchStatus": 4,
+          "propertyType": 6,
+          "listingType": 1,
+          "latLong": {
+            "latitude": 42.4070573,
+            "longitude": -82.9125771
+          },
+          "primaryPhotoDisplayLevel": 1,
+          "secondaryPhotoDisplayLevel": 5,
+          "mlsLogoData": {
+            "id": 144,
+            "name": "realcomp",
+            "description": "Realcomp MLS",
+            "disclaimer": "<img src=\"${IMAGE_SERVER}/images/logos/realcomp-large.png\" /> The accuracy of all information, regardless of source, is not guaranteed or warranted. All information should be independently verified. Any use of search facilities of data on the site, other than by a consumer looking to purchase real estate, is prohibited. IDX provided courtesy of Realcomp II Ltd., via Redfin Corporation and REALCOMP, Copyright ${CURRENT_YEAR} Realcomp II Ltd. Shareholders. REALTOR (R) licensed in the state of Michigan.",
+            "logoImageFilename": "realcomp.png",
+            "largeLogo": "realcomp-large.png",
+            "canShowInFooter": false,
+            "homecardTextAttribution": false
+          },
+          "availablePhotos": "0:0",
+          "dataSourceId": 144,
+          "mlsId": "2220021161",
+          "broker": "",
+          "showListingAndSellingBrokers": false,
+          "shouldShowMlsId": false,
+          "sashes": [
+            {
+              "sashType": 1,
+              "sashTypeId": 1,
+              "sashTypeName": "Sold",
+              "sashTypeColor": "#5D8ACB",
+              "isRedfin": false,
+              "openHouseText": "",
+              "lastSaleDate": "MAY 13, 2022",
+              "lastSalePrice": ""
+            }
+          ]
+        },
+        {
+          "url": "/MI/Grosse-Pointe-Farms/469-Moran-Rd-48236/home/61153417",
+          "status": {
+            "displayValue": "Sold",
+            "definition": "This listing sold and is now off the market.",
+            "longerDefinitionToken": "sold"
+          },
+          "priceInfo": {
+            "amount": 326000,
+            "label": "Sold Price",
+            "displayLevel": 1
+          },
+          "propertyId": 61153417,
+          "listingId": 145660584,
+          "entireAddressString": "469 Moran Rd, Grosse Pointe Farms, MI 48236",
+          "streetAddress": {
+            "streetNumber": "469",
+            "directionalPrefix": "",
+            "streetName": "Moran",
+            "streetType": "Rd",
+            "directionalSuffix": "",
+            "unitType": "",
+            "unitValue": "",
+            "addressDisplayLevel": {
+              "displayLevel": 1,
+              "displayText": "",
+              "dataSourceId": 144
+            },
+            "assembledAddress": "469 Moran Rd",
+            "includeStreetNumber": true,
+            "includeUnitNumber": true,
+            "includeStreetName": true
+          },
+          "city": "Grosse Pointe Farms",
+          "state": "MI",
+          "zip": "48236",
+          "countryCode": "US",
+          "beds": 3,
+          "baths": 1.5,
+          "numFullBaths": 1,
+          "numPartialBaths": 1,
+          "sqFt": {
+            "displayLevel": 1,
+            "value": 1595
+          },
+          "soldDate": 1649833200000,
+          "hasOpen": false,
+          "hasAgc": false,
+          "isRedfin": false,
+          "searchStatus": 4,
+          "propertyType": 6,
+          "listingType": 1,
+          "latLong": {
+            "latitude": 42.4082428,
+            "longitude": -82.9133663
+          },
+          "primaryPhotoDisplayLevel": 1,
+          "secondaryPhotoDisplayLevel": 5,
+          "mlsLogoData": {
+            "id": 144,
+            "name": "realcomp",
+            "description": "Realcomp MLS",
+            "disclaimer": "<img src=\"${IMAGE_SERVER}/images/logos/realcomp-large.png\" /> The accuracy of all information, regardless of source, is not guaranteed or warranted. All information should be independently verified. Any use of search facilities of data on the site, other than by a consumer looking to purchase real estate, is prohibited. IDX provided courtesy of Realcomp II Ltd., via Redfin Corporation and REALCOMP, Copyright ${CURRENT_YEAR} Realcomp II Ltd. Shareholders. REALTOR (R) licensed in the state of Michigan.",
+            "logoImageFilename": "realcomp.png",
+            "largeLogo": "realcomp-large.png",
+            "canShowInFooter": false,
+            "homecardTextAttribution": false
+          },
+          "availablePhotos": "0-27:1",
+          "dataSourceId": 144,
+          "mlsId": "2220013595",
+          "broker": "",
+          "showListingAndSellingBrokers": false,
+          "shouldShowMlsId": false,
+          "sashes": [
+            {
+              "sashType": 1,
+              "sashTypeId": 1,
+              "sashTypeName": "Sold",
+              "sashTypeColor": "#5D8ACB",
+              "isRedfin": false,
+              "openHouseText": "",
+              "lastSaleDate": "APR 13, 2022",
+              "lastSalePrice": ""
+            }
+          ]
+        },
+        {
+          "url": "/MI/Grosse-Pointe-Farms/461-Manor-St-48236/home/61191789",
+          "status": {
+            "displayValue": "Sold",
+            "definition": "This listing sold and is now off the market.",
+            "longerDefinitionToken": "sold"
+          },
+          "priceInfo": {
+            "amount": 290000,
+            "label": "Last Sold Price",
+            "displayLevel": 1
+          },
+          "propertyId": 61191789,
+          "listingId": 140589510,
+          "entireAddressString": "461 Manor St, Grosse Pointe Farms, MI 48236",
+          "streetAddress": {
+            "streetNumber": "461",
+            "directionalPrefix": "",
+            "streetName": "Manor",
+            "streetType": "St",
+            "directionalSuffix": "",
+            "unitType": "",
+            "unitValue": "",
+            "addressDisplayLevel": {
+              "displayLevel": 1,
+              "displayText": "",
+              "dataSourceId": 144
+            },
+            "assembledAddress": "461 Manor St",
+            "includeStreetNumber": true,
+            "includeUnitNumber": true,
+            "includeStreetName": true
+          },
+          "city": "Grosse Pointe Farms",
+          "state": "MI",
+          "zip": "48236",
+          "countryCode": "US",
+          "beds": 3,
+          "baths": 1.5,
+          "numFullBaths": 1,
+          "numPartialBaths": 1,
+          "sqFt": {
+            "displayLevel": 1,
+            "value": 1379
+          },
+          "soldDate": 1638518400000,
+          "hasOpen": false,
+          "hasAgc": false,
+          "isRedfin": false,
+          "searchStatus": 4,
+          "propertyType": 6,
+          "listingType": 1,
+          "latLong": {
+            "latitude": 42.4092127,
+            "longitude": -82.9123565
+          },
+          "primaryPhotoDisplayLevel": 1,
+          "secondaryPhotoDisplayLevel": 5,
+          "mlsLogoData": {
+            "id": 144,
+            "name": "realcomp",
+            "description": "Realcomp MLS",
+            "disclaimer": "<img src=\"${IMAGE_SERVER}/images/logos/realcomp-large.png\" /> The accuracy of all information, regardless of source, is not guaranteed or warranted. All information should be independently verified. Any use of search facilities of data on the site, other than by a consumer looking to purchase real estate, is prohibited. IDX provided courtesy of Realcomp II Ltd., via Redfin Corporation and REALCOMP, Copyright ${CURRENT_YEAR} Realcomp II Ltd. Shareholders. REALTOR (R) licensed in the state of Michigan.",
+            "logoImageFilename": "realcomp.png",
+            "largeLogo": "realcomp-large.png",
+            "canShowInFooter": false,
+            "homecardTextAttribution": false
+          },
+          "availablePhotos": "0-15:0",
+          "dataSourceId": 144,
+          "mlsId": "2210090918",
+          "broker": "",
+          "showListingAndSellingBrokers": false,
+          "shouldShowMlsId": false,
+          "sashes": [
+            {
+              "sashType": 1,
+              "sashTypeId": 1,
+              "sashTypeName": "Sold",
+              "sashTypeColor": "#5D8ACB",
+              "isRedfin": false,
+              "openHouseText": "",
+              "lastSaleDate": "DEC 3, 2021",
+              "lastSalePrice": ""
+            }
+          ]
+        },
+        {
+          "url": "/MI/Grosse-Pointe-Farms/464-Moran-Rd-48236/home/98662237",
+          "status": {
+            "displayValue": "Closed",
+            "definition": "This home is sold and off the market.",
+            "longerDefinitionToken": "sold"
+          },
+          "priceInfo": {
+            "amount": 265000,
+            "label": "Sold Price",
+            "displayLevel": 1
+          },
+          "propertyId": 98662237,
+          "listingId": 140835988,
+          "entireAddressString": "464 Moran, Grosse Pointe Farms, MI 48236",
+          "streetAddress": {
+            "streetNumber": "464",
+            "directionalPrefix": "",
+            "streetName": "Moran",
+            "streetType": "",
+            "directionalSuffix": "",
+            "unitType": "",
+            "unitValue": "",
+            "addressDisplayLevel": {
+              "displayLevel": 1,
+              "displayText": "",
+              "dataSourceId": 143
+            },
+            "assembledAddress": "464 Moran",
+            "includeStreetNumber": true,
+            "includeUnitNumber": true,
+            "includeStreetName": true
+          },
+          "city": "Grosse Pointe Farms",
+          "state": "MI",
+          "zip": "48236",
+          "countryCode": "US",
+          "beds": 3,
+          "baths": 2,
+          "numFullBaths": 2,
+          "sqFt": {
+            "displayLevel": 1,
+            "value": 1329
+          },
+          "soldDate": 1646208000000,
+          "hasOpen": false,
+          "hasAgc": false,
+          "isRedfin": false,
+          "searchStatus": 4,
+          "propertyType": 6,
+          "listingType": 1,
+          "latLong": {
+            "latitude": 42.4082424,
+            "longitude": -82.9127348
+          },
+          "primaryPhotoDisplayLevel": 1,
+          "secondaryPhotoDisplayLevel": 5,
+          "mlsLogoData": {
+            "id": 143,
+            "name": "realsource",
+            "description": "MiRealSource - Michigan Multiple Listing Service",
+            "disclaimer": "<p><img src=\"${IMAGE_SERVER}/images/logos/mirealsource_large.png\"/> Information is provided for consumers' personal, non-commercial use, and may not be used for any purpose other than the identification of potential properties for purchase.\n\tProvided through IDX via MiRealSource. Courtesy of MiRealSource Shareholder. Copyright MiRealSource.\n\tThe information published and disseminated by MiRealSource is communicated verbatim, without change by MiRealSource, as filed with MiRealSource by its members. The accuracy of all information, regardless of source, is not guaranteed or warranted. All information should be independently verified.\n\tCopyright ${CURRENT_YEAR} MiRealSource. All rights reserved. The information provided hereby constitutes proprietary information of MiRealSource, Inc. and its shareholders, affiliates and licensees and may not be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopy, recording, scanning or any information storage and retrieval system, without written permission from MiRealSource, Inc.\n\tProvided through IDX via MiRealSource, as the \"Source MLS\", courtesy of the Originating MLS shown on the property listing, as the Originating MLS.\n\tThe information published and disseminated by the Originating MLS is communicated verbatim, without change by the Originating MLS, as filed with it by its members. The accuracy of all information, regardless of source, is not guaranteed or warranted. All information should be independently verified.\n\tCopyright ${CURRENT_YEAR} MiRealSource. All rights reserved. The information provided hereby constitutes proprietary information of MiRealSource, Inc. and its shareholders, affiliates and licensees and may not be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopy, recording, scanning or any information storage and retrieval system, without written permission from MiRealSource, Inc.</p>",
+            "logoImageFilename": "mirealsource_small.png",
+            "largeLogo": "mirealsource_large.png",
+            "canShowInFooter": false,
+            "homecardTextAttribution": false
+          },
+          "availablePhotos": "0:H,1:F,2:G,3:F,4-7:H,8:G,9:F,10:H,11:G,12:E,13:F,14:H,15:G,16-20:H,21-22:F,23:E,24:D,25:A,26-27:C,28:A",
+          "dataSourceId": 143,
+          "mlsId": "50059997",
+          "broker": "",
+          "showListingAndSellingBrokers": false,
+          "shouldShowMlsId": false,
+          "sashes": [
+            {
+              "sashType": 1,
+              "sashTypeId": 1,
+              "sashTypeName": "Sold",
+              "sashTypeColor": "#5D8ACB",
+              "isRedfin": false,
+              "openHouseText": "",
+              "lastSaleDate": "MAR 2, 2022",
+              "lastSalePrice": ""
+            }
+          ]
+        },
+        {
+          "url": "/MI/Grosse-Pointe-Farms/427-McKinley-Ave-48236/home/62376537",
+          "status": {
+            "displayValue": "Closed",
+            "definition": "This home is sold and off the market.",
+            "longerDefinitionToken": "sold"
+          },
+          "priceInfo": {
+            "amount": 365000,
+            "label": "Sold Price",
+            "displayLevel": 1
+          },
+          "propertyId": 62376537,
+          "listingId": 144860004,
+          "entireAddressString": "427 Mckinley, Grosse Pointe Farms, MI 48236",
+          "streetAddress": {
+            "streetNumber": "427",
+            "directionalPrefix": "",
+            "streetName": "Mckinley",
+            "streetType": "",
+            "directionalSuffix": "",
+            "unitType": "",
+            "unitValue": "",
+            "addressDisplayLevel": {
+              "displayLevel": 1,
+              "displayText": "",
+              "dataSourceId": 143
+            },
+            "assembledAddress": "427 Mckinley",
+            "includeStreetNumber": true,
+            "includeUnitNumber": true,
+            "includeStreetName": true
+          },
+          "city": "Grosse Pointe Farms",
+          "state": "MI",
+          "zip": "48236",
+          "countryCode": "US",
+          "beds": 3,
+          "baths": 1.5,
+          "numFullBaths": 1,
+          "numPartialBaths": 1,
+          "sqFt": {
+            "displayLevel": 1,
+            "value": 1956
+          },
+          "soldDate": 1648450800000,
+          "hasOpen": false,
+          "hasAgc": false,
+          "isRedfin": false,
+          "searchStatus": 4,
+          "propertyType": 6,
+          "listingType": 1,
+          "latLong": {
+            "latitude": 42.4053731,
+            "longitude": -82.9126927
+          },
+          "primaryPhotoDisplayLevel": 1,
+          "secondaryPhotoDisplayLevel": 5,
+          "mlsLogoData": {
+            "id": 143,
+            "name": "realsource",
+            "description": "MiRealSource - Michigan Multiple Listing Service",
+            "disclaimer": "<p><img src=\"${IMAGE_SERVER}/images/logos/mirealsource_large.png\"/> Information is provided for consumers' personal, non-commercial use, and may not be used for any purpose other than the identification of potential properties for purchase.\n\tProvided through IDX via MiRealSource. Courtesy of MiRealSource Shareholder. Copyright MiRealSource.\n\tThe information published and disseminated by MiRealSource is communicated verbatim, without change by MiRealSource, as filed with MiRealSource by its members. The accuracy of all information, regardless of source, is not guaranteed or warranted. All information should be independently verified.\n\tCopyright ${CURRENT_YEAR} MiRealSource. All rights reserved. The information provided hereby constitutes proprietary information of MiRealSource, Inc. and its shareholders, affiliates and licensees and may not be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopy, recording, scanning or any information storage and retrieval system, without written permission from MiRealSource, Inc.\n\tProvided through IDX via MiRealSource, as the \"Source MLS\", courtesy of the Originating MLS shown on the property listing, as the Originating MLS.\n\tThe information published and disseminated by the Originating MLS is communicated verbatim, without change by the Originating MLS, as filed with it by its members. The accuracy of all information, regardless of source, is not guaranteed or warranted. All information should be independently verified.\n\tCopyright ${CURRENT_YEAR} MiRealSource. All rights reserved. The information provided hereby constitutes proprietary information of MiRealSource, Inc. and its shareholders, affiliates and licensees and may not be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopy, recording, scanning or any information storage and retrieval system, without written permission from MiRealSource, Inc.</p>",
+            "logoImageFilename": "mirealsource_small.png",
+            "largeLogo": "mirealsource_large.png",
+            "canShowInFooter": false,
+            "homecardTextAttribution": false
+          },
+          "availablePhotos": "0:0,2-7:0,10-11:0,13-14:0,17-19:0,21-27:0",
+          "dataSourceId": 143,
+          "mlsId": "50066106",
+          "broker": "",
+          "showListingAndSellingBrokers": false,
+          "shouldShowMlsId": false,
+          "sashes": [
+            {
+              "sashType": 1,
+              "sashTypeId": 1,
+              "sashTypeName": "Sold",
+              "sashTypeColor": "#5D8ACB",
+              "isRedfin": false,
+              "openHouseText": "",
+              "lastSaleDate": "MAR 28, 2022",
+              "lastSalePrice": ""
+            }
+          ]
+        }
+      ]
+    }
+  }

@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+@import url(reset.css);
+
+.greetings-message {
+    font-size: 42px;
+    line-height: 50px;
+    font-weight: 100;
+    padding: 75px 0px 50px;
+    text-align: center;
+}
+
+body {
+    font-family: "Source Sans Pro", Helvetica, Arial, Geneva, sans-serif;
+}
+
+.header {
+    height: 50px;
+    line-height: 50px;
+    background: #032765;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+}

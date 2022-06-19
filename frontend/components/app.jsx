@@ -8,9 +8,6 @@ import LoginFormContainer from "./LoginFormContainer";
 
 export const App = () => (
   <div>
-    <header>
-      <h1>StreetSmart Baby</h1>
-    </header>
     <GreetingsContainer />
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
