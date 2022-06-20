@@ -23,16 +23,36 @@
     text-align: center;
 }
 
-body {
-    font-family: "Source Sans Pro", Helvetica, Arial, Geneva, sans-serif;
+html, body {
+    font-family: "Calibri Light";
 }
 
-.header {
+.user-nav {
     height: 50px;
     line-height: 50px;
     background: #032765;
+}
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 auto;
+
 }
+div.header > ul {
+    font-size: 14px;
+    padding-right: 10px;
+    display: flex;
+}
+li {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+}
+
+a:link, a:visited,  a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+

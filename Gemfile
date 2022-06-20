@@ -18,6 +18,7 @@ gem "figaro"
 gem "kaminari"
 gem "faker"
 gem "annotate"
+gem "aws-sdk-s3"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
