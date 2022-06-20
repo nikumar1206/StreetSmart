@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import configureStore from "./store/store";
-import { Root } from "./components/root";
+import Root from "./components/root";
 import { openModal, closeModal } from "./actions/modal_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
