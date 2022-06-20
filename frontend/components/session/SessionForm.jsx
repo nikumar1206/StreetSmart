@@ -13,13 +13,15 @@ function SessionForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = { ...values };
-    props.processForm(user);
-    // console.log(props.errors.length);
-    // if (props.errors.length === 0) {
-    //   props.closeModal();
-    // }
+    props.processForm(user).then(() => props.closeModal());
   };
-
+  const handleDemoSubmit = (e) => {
+    console.log(props);
+    e.preventDefault;
+    const demoUser = { email: "demo_user@demo.com", password: "password" };
+    setValues(demoUser);
+    props.login(demoUser).then(() => props.closeModal());
+  };
   const closeModal = (e) => {
     e.preventDefault();
     props.closeModal();
@@ -27,11 +29,13 @@ function SessionForm(props) {
 
   return (
     <div className="session-form-container">
+      {console.log(props)}
       <span className="modal-close" onClick={closeModal}>
         &times;
       </span>
       <div className="signing-message">
-        <h1>Sign In</h1>
+        <h1>{props.formType}</h1>
+        <p>Take full advantage of StreetSmart's features</p>
       </div>
       <div className="error-message-container">
         {props.errors.map((error, idx) => (
@@ -42,37 +46,51 @@ function SessionForm(props) {
       </div>
       <form className="form-box">
         <label htmlFor="email">
-          <div>EMAIL</div>
+          <div>email</div>
         </label>
         <input
+          className="session-form-inputs"
           id="email"
           type="text"
           value={values.email}
-          placeholder="email"
           onChange={() => update("email")}
+          autoFocus
         />
         <label htmlFor="password">
           <div>Password</div>
         </label>
         <input
+          className="session-form-inputs"
           id="password"
           type="password"
           value={values.password}
-          placeholder="Password"
           onChange={() => update("password")}
         />
       </form>
-      <button className="form-submit-button" onClick={handleSubmit}>
-        {props.formType}
+      <button
+        type="submit"
+        className="form-submit-button"
+        onClick={handleSubmit}
+      >
+        Submit
       </button>
-      <span>OR</span>
-      <button className="demo-user-button">Continue as Demo User</button>
-      {/* <div className="filler-text-container">
+      <div className="session-form-divider">
+        <p className="sf-divider-text">or</p>
+      </div>
+
+      {/* <span className="session-form-divider">or</span> */}
+      <button
+        type="submit"
+        className="demo-user-button"
+        onClick={handleDemoSubmit}
+      >
+        Continue as Demo User
+      </button>
+
+      <div className="disclaimer-text-container">
         <p>This clone is for educational purposes only.</p>
         <p>Please do not put any sensitive information.</p>
-      </div> */}
-      {/* <div className="line-divide"></div>
-      {props.otherForm} */}
+      </div>
     </div>
   );
 }

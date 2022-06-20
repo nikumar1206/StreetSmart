@@ -7,15 +7,12 @@ import { openModal, closeModal } from "../../actions/modal_actions";
 
 export const mapStateToProps = (state) => ({
   errors: state.errors.session,
-  formType: "login",
+  formType: "Log In",
 });
 
 export const mapDispatchToProps = (dispatch) => ({
   processForm: (user) => dispatch(login(user)),
   closeModal: () => dispatch(closeModal()),
-  otherForm: (
-    <button onClick={() => dispatch(openModal("signup"))}>Signup</button>
-  ),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
