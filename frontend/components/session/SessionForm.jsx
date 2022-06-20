@@ -14,7 +14,7 @@ function SessionForm(props) {
     e.preventDefault();
     const user = { ...values };
     props.processForm(user);
-    console.log(props.errors.length);
+    // console.log(props.errors.length);
     // if (props.errors.length === 0) {
     //   props.closeModal();
     // }
