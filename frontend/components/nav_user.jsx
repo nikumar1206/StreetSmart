@@ -10,8 +10,10 @@ const navUser = ({ currentUser, logout }) => {
         </div>
         <ul>
           <li>
-            {" "}
-            <Link to="/signup">Sign In/Register</Link>
+            <Link to="/signup">Register</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </div>
