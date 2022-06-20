@@ -8,7 +8,7 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             render "api/users/show"
         else
-            render json: "Incorrect credentials", status: 422
+            render json: ["Incorrect credentials"], status: 422
         end
     end
 
@@ -16,9 +16,9 @@ class Api::SessionsController < ApplicationController
         p current_user
         if current_user
             logout!
-            render json: {message: "You've been successfully logged out"}
+            render json: ["You've been successfully logged out"]
         else
-            render json: "No user found to logout", status: 404
+            render json: ["No user found to logout"], status: 404
         end
     end
 

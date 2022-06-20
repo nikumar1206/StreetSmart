@@ -32,10 +32,16 @@ export const receiveSessionErrors = (errors) => ({
 
 // thunk action creators
 export const login = (user) => (dispatch) =>
-  SessionAPI.login(user).then((user) => dispatch(receiveCurrentUser(user)));
+  SessionAPI.login(user).then(
+    (user) => dispatch(receiveCurrentUser(user)),
+    (err) => dispatch(receiveSessionErrors(err.responseJSON))
+  );
 
 export const logout = () => (dispatch) =>
-  SessionAPI.logout().then(() => dispatch(logoutCurrentUser()));
+  SessionAPI.logout().then(
+    () => dispatch(logoutCurrentUser()),
+    (err) => dispatch(receiveSessionErrors(err.responseJSON))
+  );
 
 export const signup = (user) => (dispatch) =>
   SessionAPI.signup(user).then((user) => dispatch(receiveCurrentUser(user)));

@@ -7,6 +7,7 @@ import {
 const _nullErrors = [];
 
 export const sessionErrorsReducer = (state = _nullErrors, action) => {
+  // debugger;
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:

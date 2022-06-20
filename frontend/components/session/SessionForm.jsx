@@ -14,6 +14,7 @@ function SessionForm(props) {
     e.preventDefault();
     const user = { ...values };
     props.processForm(user);
+    // props.closeModal();
   };
 
   const closeModal = (e) => {
@@ -66,8 +67,8 @@ function SessionForm(props) {
         <p>This clone is for educational purposes only.</p>
         <p>Please do not put any sensitive information.</p>
       </div> */}
-      {/* <div className="line-divide"></div> */}
-      {props.otherForm}
+      {/* <div className="line-divide"></div>
+      {props.otherForm} */}
     </div>
   );
 }

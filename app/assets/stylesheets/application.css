@@ -34,17 +34,20 @@ html, body {
     line-height: 50px;
     background: #032765;
 }
+
 .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
 }
+
 div.header > ul {
     font-size: 14px;
     padding-right: 10px;
     display: flex;
 }
+
 li {
     padding-left: 10px;
     padding-right: 10px;
