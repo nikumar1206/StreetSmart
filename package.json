@@ -14,7 +14,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --mode=development --watch",
-    "start": "node app.js", 
+    "start": "node root.jsx", 
     "build": "webpack --mode=production",
     "postinstall": "webpack --mode=production"
   },
