@@ -14,7 +14,10 @@ function SessionForm(props) {
     e.preventDefault();
     const user = { ...values };
     props.processForm(user);
-    // props.closeModal();
+    console.log(props.errors.length);
+    // if (props.errors.length === 0) {
+    //   props.closeModal();
+    // }
   };
 
   const closeModal = (e) => {
@@ -27,8 +30,9 @@ function SessionForm(props) {
       <span className="modal-close" onClick={closeModal}>
         &times;
       </span>
-      <h1>Welcome to StreetEasy</h1>
-      {console.log(props)}
+      <div className="signing-message">
+        <h1>Sign In</h1>
+      </div>
       <div className="error-message-container">
         {props.errors.map((error, idx) => (
           <p className="error-message" key={idx}>
@@ -38,7 +42,7 @@ function SessionForm(props) {
       </div>
       <form className="form-box">
         <label htmlFor="email">
-          <div>email</div>
+          <div>EMAIL</div>
         </label>
         <input
           id="email"
