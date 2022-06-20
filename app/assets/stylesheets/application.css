@@ -15,6 +15,7 @@
  */
 @import url(reset.css);
 @import url("https://use.typekit.net/eeo0enz.css");
+@import url(modal.scss);
 
 .greetings-message {
     font-size: 42px;

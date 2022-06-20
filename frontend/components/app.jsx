@@ -5,16 +5,16 @@ import { AuthRoute } from "../util/route_util";
 import SignUpFormContainer from "./session/SignupFormContainer";
 import LoginFormContainer from "./session/LoginFormContainer";
 import Greeting from "./greeting";
-import ModelContainer from "./modal/model_container";
+import ModalContainer from "./modal/modal_container";
 
-export const App = () => (
+const App = () => (
   <div>
-    <ModelContainer />
+    <ModalContainer />
     <Greeting />
-    <Switch>
+    {/* <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-    </Switch>
+    </Switch> */}
   </div>
 );
 
