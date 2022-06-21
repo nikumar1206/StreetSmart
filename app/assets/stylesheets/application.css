@@ -67,7 +67,7 @@ input {
     padding: 1px 2px;
     border-width: 2px;
     border-style: inset;
-    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-color: rgb(118, 118, 118);
     border-image: initial;
 }
 
