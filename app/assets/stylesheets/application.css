@@ -27,6 +27,7 @@
 
 html, body {
     font-family: source-sans-pro, light;
+    font-weight: 100;
     font-size: 1em;
     color: #1A1F2C;
 }
@@ -42,6 +43,12 @@ html, body {
     flex-direction: row;
     justify-content: space-between;
 
+}
+.logo-img {
+    width: 140px;
+    height: 40px;
+    padding-left: 40px;
+    padding-top: 5px;
 }
 
 div.header > ul {
@@ -66,5 +73,4 @@ a:hover {
     background-color: transparent;
     text-decoration: underline;
 }
-
 

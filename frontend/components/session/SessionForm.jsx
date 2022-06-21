@@ -16,7 +16,6 @@ function SessionForm(props) {
     props.processForm(user).then(() => props.closeModal());
   };
   const handleDemoSubmit = (e) => {
-    console.log(props);
     e.preventDefault;
     const demoUser = { email: "demo_user@demo.com", password: "password" };
     setValues(demoUser);
@@ -29,7 +28,6 @@ function SessionForm(props) {
 
   return (
     <div className="session-form-container">
-      {console.log(props)}
       <span className="modal-close" onClick={closeModal}>
         &times;
       </span>

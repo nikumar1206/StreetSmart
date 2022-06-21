@@ -6,7 +6,12 @@ const navUser = ({ currentUser, logout, openModal }) => {
     <div className="user-nav">
       <div className="header">
         <div className="logo">
-          <a href="../../app/images/logo.png"></a>
+          <a href="/">
+            <img
+              className="logo-img"
+              src="https://streetsmart-safeassets.s3.amazonaws.com/images/logo.png"
+            />
+          </a>
         </div>
         <ul>
           <li>
