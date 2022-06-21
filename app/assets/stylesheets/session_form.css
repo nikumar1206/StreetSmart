@@ -81,7 +81,7 @@ form > label {
     position: relative;
     text-align: center;
     text-transform: uppercase;
-    transition: background 200ms ease 0s, border 200ms ease 0s, color 200ms ease 0s;
+    /* transition: background 200ms ease 0s, border 200ms ease 0s, color 200ms ease 0s; */
     white-space: nowrap;
     width: 100%;
     font-size: 11px;

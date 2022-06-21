@@ -1,6 +1,6 @@
 .searchMod {
     background: rgb(255, 255, 255);
-    box-shadow: rgb(0 0 0) 0px 8px 24px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 8px 24px;
     display: flex;
     flex-direction: row;
     height: 106px;
@@ -114,7 +114,6 @@
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(148, 148, 148);
     color: rgb(26, 31, 44);
-    font-family: "Source Sans Pro", Helvetica, Arial, Geneva, sans-serif;
     font-size: 14px;
     line-height: 22px;
     padding: 8px 15px;
