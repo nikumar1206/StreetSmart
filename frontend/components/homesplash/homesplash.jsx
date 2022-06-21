@@ -4,7 +4,6 @@ import MainNavContainer from "../headers/main_nav_container";
 import SearchModContainer from "../searchmod/searchmod_container";
 import { Link } from "react-router-dom";
 function HomeSplash(props) {
-  console.log(props);
   return (
     <div>
       <div className="header-block">

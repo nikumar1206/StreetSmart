@@ -5,7 +5,7 @@ function searchMod(props) {
     <div className="searchMod">
       <form
         className="searchMod-form"
-        onSubmit={() => console.log("submit is clicked")}
+        // onSubmit={() => console.log("submit is clicked")}
       >
         <div className="searchMod-toggle">
           <button role="radio" className="sm-toggle-rent-btn">
