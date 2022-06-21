@@ -154,3 +154,27 @@
     background-color: rgb(24, 118, 219);
     color: rgb(255, 255, 255);
 }
+
+.greeting-submessage {
+    padding: 10px;
+    text-align: center;
+    margin: 0px;
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 550;
+    line-height: 24px;
+    -webkit-font-smoothing: antialiased;
+    color: rgb(26, 31, 44);
+    display: block;
+
+}
+.greeetings-submessage-links {
+    text-decoration: underline 1px;
+    text-underline-offset: 3px;
+    color: rgb(22, 77, 180);
+    font-size: 16px;
+    font-weight: 600;
+}
+.greeetings-submessage-links:hover {
+    background-color: #f1c4ac;
+}

@@ -15,12 +15,20 @@ const navUser = ({ currentUser, logout, openModal }) => {
         </div>
         <ul>
           <li>
-            <Link to="/signup" onClick={() => openModal("signup")}>
+            <Link
+              to="/signup"
+              className="user-nav-account-links"
+              onClick={() => openModal("signup")}
+            >
               Register
             </Link>
           </li>
           <li>
-            <Link to="/login" onClick={() => openModal("login")}>
+            <Link
+              to="/login"
+              className="user-nav-account-links"
+              onClick={() => openModal("login")}
+            >
               Login
             </Link>
           </li>
@@ -41,11 +49,13 @@ const navUser = ({ currentUser, logout, openModal }) => {
           </a>
         </div>
         <ul className="ul-user-nav">
-          <li>
-            <Link to="/">My Activity</Link>
+          <li className="user-nav-account-links">
+            <Link to="/" className="user-nav-account-links">
+              My Activity
+            </Link>
           </li>
-          <li>
-            <Link to="/" onClick={logout}>
+          <li className="user-nav-account-links">
+            <Link to="/" className="user-nav-account-links" onClick={logout}>
               Logout
             </Link>
           </li>

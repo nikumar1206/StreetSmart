@@ -59,6 +59,7 @@
 .mvn-alinks:link {
     color: #1A1F2C;
     font-weight: 550;
+    text-decoration: none;
 }
 
 .mvn-alinks:visited {
@@ -103,5 +104,4 @@
     position: fixed;
     width: 100%;
     z-index: 1000;
-
 }

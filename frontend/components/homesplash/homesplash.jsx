@@ -16,13 +16,21 @@ function HomeSplash(props) {
           The easiest way to rent, buy & now sell in NYC
         </h1>
         <SearchModContainer />
-        <p>
-          Find the right home faster:
-          <Link to="/signup" onClick={() => props.openModal("signup")}>
+        <p className="greeting-submessage">
+          Find the right home faster:{" "}
+          <Link
+            to="/signup"
+            className="greeetings-submessage-links"
+            onClick={() => props.openModal("signup")}
+          >
             register
           </Link>
-          or
-          <Link to="/signup" onClick={() => props.openModal("signup")}>
+          {" or "}
+          <Link
+            to="/signup"
+            className="greeetings-submessage-links"
+            onClick={() => props.openModal("signup")}
+          >
             login
           </Link>
         </p>
