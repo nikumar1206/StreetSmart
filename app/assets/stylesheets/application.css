@@ -17,12 +17,13 @@
 @import url("https://use.typekit.net/eeo0enz.css");
 @import url(modal.scss);
 @import url(nav.css);
+@import url(searchmod.css);
 
 .greetings-message {
     font-size: 42px;
     line-height: 50px;
     font-weight: 100;
-    padding: 75px 0px 50px;
+    padding: 150px 0px 50px;
     text-align: center;
 }
 

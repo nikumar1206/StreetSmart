@@ -29,13 +29,16 @@ function mainNav(props) {
               </a>
             </li>
             <li className="mvn-li">
-              <a href="https://github.com/nikumar1206" className="mvn-alinks">
+              <a
+                href="https://www.github.com/nikumar1206"
+                className="mvn-alinks"
+              >
                 Github
               </a>
             </li>
             <li className="mvn-li">
               <a
-                href="nikumar1206.github.io/personal-website/"
+                href="https://nikumar1206.github.io/personal-website/"
                 className="mvn-alinks"
               >
                 Personal Website
