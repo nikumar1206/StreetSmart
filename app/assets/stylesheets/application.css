@@ -23,7 +23,7 @@
     font-size: 42px;
     line-height: 50px;
     font-weight: 100;
-    padding: 150px 0px 50px;
+    padding: 150px 0 50px;
     text-align: center;
 }
 
@@ -44,26 +44,16 @@ html, body {
 p {
     margin-block-start: 1em;
     margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
 }
 input {
-    writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    color: fieldtext;
-    letter-spacing: normal;
-    word-spacing: normal;
-    line-height: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
+    writing-mode: horizontal-tb;
     display: inline-block;
     text-align: start;
-    appearance: auto;
     -webkit-rtl-ordering: logical;
     cursor: text;
-    background-color: field;
-    margin: 0em;
+    margin: 0;
     padding: 1px 2px;
     border-width: 2px;
     border-style: inset;

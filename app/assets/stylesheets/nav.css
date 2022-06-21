@@ -4,7 +4,7 @@
     height: auto;
     position: relative;
     box-sizing: border-box;
-    display: box;
+    display: block;
     font-size: 14px;
 }
 
@@ -48,7 +48,7 @@
 }
 .mvn-alinks {
     text-transform: uppercase;
-    font-weight: 550;
+    font-weight: 700;
     font-size: 15px;
     display: inline-block;
     background: none;
@@ -58,25 +58,25 @@
 }
 .mvn-alinks:link {
     color: #1A1F2C;
-    font-weight: 550;
+    font-weight: 700;
     text-decoration: none;
 }
 
 .mvn-alinks:visited {
     color: #1A1F2C;
-    font-weight: 550;
+    font-weight: 700;
 }
 .mvn-alinks:hover {
     color: rgba(25,118,219,255);
     text-decoration: none;
-    font-weight: 550;
+    font-weight: 700;
 }
 .mvn-li {
     display: inline-block;
     font-size: 14px;
     height: 50px;
     padding: 0 18px;
-    font-weight: 550;
+    font-weight: 700;
 }
 
 .main-nav-search-img {
@@ -89,7 +89,6 @@
     height: 15px;
     width: 15px;
     display: inline-block;
-    font: normal normal normal 14px;
 }
 
 .main-nav-search-button {
