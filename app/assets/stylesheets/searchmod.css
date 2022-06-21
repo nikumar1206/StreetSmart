@@ -52,7 +52,7 @@
     max-width: 335px;
     padding: 5px 16px;
     width: 100%;
-    /* display: block; */
+    display: block;
 }
 
 .searchMod-location-label {
@@ -81,4 +81,76 @@
     transition-property: background-color, border-color, color;
     transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
     width: 100%;
+}
+
+.searchMod-form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.searchMod-maxPrice {
+    margin: 0;
+    padding: 0px 20px;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    border-right: 1px solid rgb(230, 230, 230);
+}
+.searchMod-maxprice-label {
+    display: block;
+    margin: 0px 0px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+.searchMod-maxprice-input {
+    font-size: 16px;
+    line-height: 24px;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(148, 148, 148);
+    color: rgb(26, 31, 44);
+    font-family: "Source Sans Pro", Helvetica, Arial, Geneva, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 8px 15px;
+    text-transform: none;
+    width: 100%;
+    height: 40px;
+}
+.searchMod-submit-btn {
+    font-size: 0px;
+    height: 66px;
+    line-height: 0;
+    margin: 4px 0px;
+    min-width: 64px;
+    padding: 0px 10px 7px;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 1px solid rgb(24, 118, 219);
+    border-radius: 0px;
+    box-sizing: border-box;
+    display: inline-flex;
+    font-family: "Source Sans Pro", Helvetica, Arial, Geneva, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    -webkit-box-pack: center;
+    justify-content: center;
+   margin-left: 20px;
+   margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition-duration: 0.3s;
+    transition-property: background-color, border-color, color;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    background-color: rgb(24, 118, 219);
+    color: rgb(255, 255, 255);
 }

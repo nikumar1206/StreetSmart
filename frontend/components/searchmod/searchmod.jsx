@@ -3,7 +3,10 @@ import React from "react";
 function searchMod(props) {
   return (
     <div className="searchMod">
-      <form onSubmit={() => console.log("submit is clicked")}>
+      <form
+        className="searchMod-form"
+        onSubmit={() => console.log("submit is clicked")}
+      >
         <div className="searchMod-toggle">
           <button role="radio" className="sm-toggle-rent-btn">
             Rent
@@ -17,10 +20,14 @@ function searchMod(props) {
           <button className="searchMod-location-button">Skrt</button>
         </div>
         <div className="searchMod-maxPrice">
-          <label htmlFor="maxPrice">Max Price</label>
-          <input type="text" name="" id="maxPrice" placeholder="No max" />
+          <span className="searchMod-maxprice-label">Max Price</span>
+          <input
+            type="text"
+            className="searchMod-maxprice-input"
+            placeholder="No max"
+          />
         </div>
-        <button type="submit"></button>
+        <button className="searchMod-submit-btn" type="submit"></button>
       </form>
     </div>
   );
