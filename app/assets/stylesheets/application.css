@@ -16,6 +16,7 @@
 @import url(reset.css);
 @import url("https://use.typekit.net/eeo0enz.css");
 @import url(modal.scss);
+@import url(nav.css);
 
 .greetings-message {
     font-size: 42px;
@@ -26,10 +27,18 @@
 }
 
 html, body {
-    font-family: source-sans-pro, light;
+    font-family: source-sans-pro, regular;
     font-weight: 100;
     font-size: 1em;
     color: #1A1F2C;
+    height: 100%;
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding: 175px 0 0;
+    /* -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%; */
 }
 
 .user-nav {
@@ -68,9 +77,14 @@ a:link, a:visited {
     background-color: transparent;
     text-decoration: none;
 }
+
 a:hover {
     color: white;
     background-color: transparent;
     text-decoration: underline;
 }
 
+.fa-solid fa-magnifying-glass {
+    min-width: 20px;
+    min-height: 20px;
+}

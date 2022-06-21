@@ -49,10 +49,11 @@ function SessionForm(props) {
         <input
           className="session-form-inputs"
           id="email"
-          type="text"
+          type="email"
           value={values.email}
           onChange={() => update("email")}
           autoFocus
+          required
         />
         <label htmlFor="password">
           <div>Password</div>
@@ -63,6 +64,7 @@ function SessionForm(props) {
           type="password"
           value={values.password}
           onChange={() => update("password")}
+          required
         />
       </form>
       <button
