@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
-import { openModal } from "../../actions/modal_actions";
+import { openModal, closeModal } from "../../actions/modal_actions";
 import { logout } from "../../actions/sessions_actions";
-import searchMod from "./searchmod";
+import HomeSplash from "./homesplash";
 
 export const mSTP = (state) => ({
   currentUser: state.entities.users[state.session.id],
@@ -12,6 +12,6 @@ export const mDTP = (dispatch) => ({
   closeModal: () => dispatch(closeModal()),
 });
 
-export const SearchModContainer = connect(null, mDTP)(searchMod);
+export const HomeSplashContainer = connect(mSTP, mDTP)(HomeSplash);
 
-export default SearchModContainer;
+export default HomeSplashContainer;

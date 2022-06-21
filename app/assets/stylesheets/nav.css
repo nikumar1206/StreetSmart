@@ -48,7 +48,7 @@
 }
 .mvn-alinks {
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 550;
     font-size: 15px;
     display: inline-block;
     background: none;
@@ -57,21 +57,25 @@
     font-family: "Source Sans Pro";
 }
 .mvn-alinks:link {
-    color: black;
+    color: #1A1F2C;
+    font-weight: 550;
 }
 
 .mvn-alinks:visited {
-    color: black;
+    color: #1A1F2C;
+    font-weight: 550;
 }
 .mvn-alinks:hover {
     color: rgba(25,118,219,255);
     text-decoration: none;
+    font-weight: 550;
 }
 .mvn-li {
     display: inline-block;
     font-size: 14px;
     height: 50px;
     padding: 0 18px;
+    font-weight: 550;
 }
 
 .main-nav-search-img {

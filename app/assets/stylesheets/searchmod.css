@@ -1,0 +1,84 @@
+.searchMod {
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 16%) 0px 8px 24px;
+    display: flex;
+    flex-direction: row;
+    height: 106px;
+    margin: 6px auto;
+    max-width: 775px;
+    padding: 16px;
+}
+.searchMod-toggle {
+    background: rgb(245, 245, 245);
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    max-width: 106px;
+    position: relative;
+    width: 100%;
+}
+.sm-toggle-rent-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    height: 34px;
+    line-height: 34px;
+    position: relative;
+    text-align: center;
+    z-index: 20;
+    color: rgb(255, 255, 255);
+    transition: all 0.5s ease 0s;
+}
+
+.sm-toggle-buy-btn {
+    background: none;
+    border: none;
+    color: rgb(98, 100, 106);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    height: 34px;
+    line-height: 34px;
+    position: relative;
+    text-align: center;
+    transition: all 0.5s ease 0s;
+    z-index: 20;
+}
+.searchMod-location {
+    border-right: 1px solid rgb(230, 230, 230);
+    max-width: 335px;
+    padding: 5px 16px;
+    width: 100%;
+    /* display: block; */
+}
+
+.searchMod-location-label {
+    display: block;
+    margin: 0px 0px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+.searchMod-location-button {
+    height: 40px;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(148, 148, 148);
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    height: 40px;
+    padding: 0px 8px;
+    text-align: left;
+    transition-duration: 0.3s;
+    transition-property: background-color, border-color, color;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
