@@ -1,6 +1,6 @@
 .searchMod {
     background: rgb(255, 255, 255);
-    box-shadow: rgb(0 0 0 / 16%) 0px 8px 24px;
+    box-shadow: rgb(0 0 0) 0px 8px 24px;
     display: flex;
     flex-direction: row;
     height: 106px;
@@ -8,6 +8,7 @@
     max-width: 775px;
     padding: 16px;
 }
+
 .searchMod-toggle {
     background: rgb(245, 245, 245);
     border: 1px solid rgb(230, 230, 230);
@@ -18,6 +19,7 @@
     position: relative;
     width: 100%;
 }
+
 .sm-toggle-rent-btn {
     background: none;
     border: none;
@@ -47,6 +49,7 @@
     transition: all 0.5s ease 0s;
     z-index: 20;
 }
+
 .searchMod-location {
     border-right: 1px solid rgb(230, 230, 230);
     max-width: 335px;
@@ -88,6 +91,7 @@
     flex-direction: row;
     width: 100%;
 }
+
 .searchMod-maxPrice {
     margin: 0;
     padding: 0px 20px;
@@ -97,6 +101,7 @@
     vertical-align: baseline;
     border-right: 1px solid rgb(230, 230, 230);
 }
+
 .searchMod-maxprice-label {
     display: block;
     margin: 0px 0px 10px;
@@ -106,6 +111,7 @@
     text-transform: uppercase;
     box-sizing: border-box;
 }
+
 .searchMod-maxprice-input {
     line-height: 24px;
     box-sizing: border-box;
@@ -119,6 +125,7 @@
     width: 100%;
     height: 40px;
 }
+
 .searchMod-submit-btn {
     font-size: 0px;
     height: 66px;
@@ -164,6 +171,7 @@
     display: block;
 
 }
+
 .greeetings-submessage-links {
     text-decoration: underline 1px;
     text-underline-offset: 3px;
@@ -171,6 +179,7 @@
     font-size: 16px;
     font-weight: 600;
 }
+
 .greeetings-submessage-links:hover {
     background-color: #f1c4ac;
 }
