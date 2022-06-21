@@ -27,7 +27,8 @@
     text-align: center;
 }
 
-html, body {
+html,
+body {
     font-family: source-sans-pro, regular;
     font-weight: 100;
     font-size: 1em;
@@ -37,16 +38,15 @@ html, body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding: 175px 0 0;
-    /* -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%; */
 }
+
 p {
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0;
     margin-inline-end: 0;
 }
+
 input {
     writing-mode: horizontal-tb;
     display: inline-block;
@@ -73,6 +73,7 @@ input {
     justify-content: space-between;
 
 }
+
 .logo-img {
     width: 140px;
     height: 40px;
@@ -80,7 +81,7 @@ input {
     padding-top: 5px;
 }
 
-div.header > ul {
+div.header>ul {
     font-size: 14px;
     padding-right: 10px;
     display: flex;
@@ -92,7 +93,8 @@ li {
     font-size: 14px;
 }
 
-.user-nav-account-links:link, .user-nav-account-links:visited {
+.user-nav-account-links:link,
+.user-nav-account-links:visited {
     color: white;
     background-color: transparent;
     text-decoration: none;
@@ -108,9 +110,9 @@ li {
     min-width: 20px;
     min-height: 20px;
 }
+
 .home-page {
-    background: url(https://streetsmart-safeassets.s3.amazonaws.com/images/monopolybanner.png) 
-    center bottom / 3360px no-repeat rgb(220, 246, 255);
+    background: url(https://streetsmart-safeassets.s3.amazonaws.com/images/monopolybanner.png) center bottom / 3360px no-repeat rgb(220, 246, 255);
     background-size: contain;
     height: 100vh;
 }
