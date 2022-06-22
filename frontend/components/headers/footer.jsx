@@ -1,6 +1,6 @@
 import React from "react";
 
-function Footer(props) {
+function FooterComponent(props) {
   return (
     <div className="footer">
       <ul className="footer-icon-links"></ul>
@@ -27,4 +27,4 @@ function Footer(props) {
   );
 }
 
-export default Footer;
+export default FooterComponent;

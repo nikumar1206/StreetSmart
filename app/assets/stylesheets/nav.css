@@ -16,6 +16,7 @@
     margin: 0 auto;
     padding: 0 32px;
 
+
 }
 
 .main-nav-items {
@@ -105,10 +106,4 @@
     width: 0;
     height: 0;
     display: flex;
-}
-
-.header-block {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
 }

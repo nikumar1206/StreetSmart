@@ -1,17 +1,11 @@
 import React from "react";
-import UserNavContainer from "../headers/user_nav_container";
-import MainNavContainer from "../headers/main_nav_container";
 import SearchModContainer from "../searchmod/searchmod_container";
 import { Link } from "react-router-dom";
-import Footer from "./footer";
+import Footer from "../headers/footer";
 import DreamHomeComponent from "./dreamhome";
 function HomeSplash(props) {
   return (
     <div>
-      <div className="header-block">
-        <UserNavContainer />
-        <MainNavContainer />
-      </div>
       <div className="home-page">
         <h1 className="greetings-message">
           The easiest way to rent, buy & now sell in NYC

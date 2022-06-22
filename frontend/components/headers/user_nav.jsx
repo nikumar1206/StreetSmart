@@ -16,7 +16,7 @@ const UserNav = ({ currentUser, logout, openModal }) => {
         <ul>
           <li>
             <Link
-              to="/signup"
+              to="/"
               className="user-nav-account-links"
               onClick={() => openModal("signup")}
             >
@@ -25,7 +25,7 @@ const UserNav = ({ currentUser, logout, openModal }) => {
           </li>
           <li>
             <Link
-              to="/login"
+              to="/"
               className="user-nav-account-links"
               onClick={() => openModal("login")}
             >

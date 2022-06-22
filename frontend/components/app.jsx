@@ -2,19 +2,24 @@ import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import { AuthRoute } from "../util/route_util";
 
-import SignUpFormContainer from "./session/SignupFormContainer";
-import LoginFormContainer from "./session/LoginFormContainer";
 import ModalContainer from "./modal/modal_container";
 import HomeSplashContainer from "./homesplash/homesplash_container";
-
+import MainNavContainer from "./headers/main_nav_container";
+import UserNavContainer from "./headers/user_nav_container";
+import FooterComponent from "./headers/footer";
+import ListingsContainer from "./listings/listings_container";
 const App = () => (
-  <div>
+  <div className="app">
     <ModalContainer />
-    <HomeSplashContainer />
-    {/* <Switch>
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-    </Switch> */}
+    <UserNavContainer />
+    <MainNavContainer />
+    <Switch>
+      <Route exact path="/" component={HomeSplashContainer} />
+      <Route exact path="/login" component={HomeSplashContainer} />
+      <Route exact path="/signup" component={HomeSplashContainer} />
+      <Route path="/listings" component={ListingsContainer} />
+    </Switch>
+    <FooterComponent />
   </div>
 );
 
