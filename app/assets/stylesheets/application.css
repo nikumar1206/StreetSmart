@@ -24,10 +24,10 @@
 
 
 .greetings-message {
-    font-size: 42px;
+    font-size: 40px;
     line-height: 50px;
-    font-weight: 100;
-    padding: 150px 0 50px;
+    font-weight: 300;
+    padding: 100px 0 50px;
     text-align: center;
 }
 
@@ -39,7 +39,7 @@
 html,
 body {
     font-family: "Source Sans Pro", sans-serif;
-    font-weight: 100;
+    font-weight: normal;
     font-size: 1em;
     color: #1A1F2C;
     height: 100%;

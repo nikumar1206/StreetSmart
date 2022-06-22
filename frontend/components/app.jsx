@@ -15,8 +15,6 @@ const App = () => (
     <MainNavContainer />
     <Switch>
       <Route exact path="/" component={HomeSplashContainer} />
-      <Route exact path="/login" component={HomeSplashContainer} />
-      <Route exact path="/signup" component={HomeSplashContainer} />
       <Route path="/listings" component={ListingsContainer} />
     </Switch>
     <FooterComponent />

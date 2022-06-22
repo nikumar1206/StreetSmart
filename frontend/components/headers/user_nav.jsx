@@ -19,6 +19,7 @@ const UserNav = ({ currentUser, logout, openModal }) => {
               to="/"
               className="user-nav-account-links"
               onClick={() => openModal("signup")}
+              replace
             >
               Register
             </Link>
@@ -28,6 +29,7 @@ const UserNav = ({ currentUser, logout, openModal }) => {
               to="/"
               className="user-nav-account-links"
               onClick={() => openModal("login")}
+              replace
             >
               Login
             </Link>
@@ -55,7 +57,12 @@ const UserNav = ({ currentUser, logout, openModal }) => {
             </Link>
           </li>
           <li className="user-nav-account-links">
-            <Link to="/" className="user-nav-account-links" onClick={logout}>
+            <Link
+              to="/"
+              className="user-nav-account-links"
+              onClick={logout}
+              replace
+            >
               Logout
             </Link>
           </li>

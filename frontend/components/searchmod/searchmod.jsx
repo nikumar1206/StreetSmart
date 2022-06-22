@@ -3,10 +3,7 @@ import React from "react";
 function searchMod(props) {
   return (
     <div className="searchMod">
-      <form
-        className="searchMod-form"
-        // onSubmit={() => console.log("submit is clicked")}
-      >
+      <form className="searchMod-form">
         <div className="searchMod-toggle">
           <button role="radio" className="sm-toggle-rent-btn">
             Rent
