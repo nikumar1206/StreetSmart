@@ -3,6 +3,8 @@ import UserNavContainer from "../headers/user_nav_container";
 import MainNavContainer from "../headers/main_nav_container";
 import SearchModContainer from "../searchmod/searchmod_container";
 import { Link } from "react-router-dom";
+import Footer from "./footer";
+import DreamHomeComponent from "./dreamhome";
 function HomeSplash(props) {
   return (
     <div>
@@ -43,7 +45,8 @@ function HomeSplash(props) {
           Understand your rights.
         </a>
       </p>
-      <div className="footer">this will be the footer</div>
+      <DreamHomeComponent />
+      <Footer />
     </div>
   );
 }
