@@ -19,6 +19,7 @@
 @import url(modal.scss);
 @import url(nav.css);
 @import url(searchmod.css);
+@import url(footer);
 
 .greetings-message {
     font-size: 42px;

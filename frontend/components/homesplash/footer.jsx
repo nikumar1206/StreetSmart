@@ -19,6 +19,10 @@ function Footer(props) {
           Powered by Javascript, Rails, React
         </span>
       </div>
+      <img
+        className="footer-image"
+        src="https://streetsmart-safeassets.s3.amazonaws.com/images/footer.svg"
+      />
     </div>
   );
 }
