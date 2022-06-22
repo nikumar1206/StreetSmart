@@ -15,6 +15,7 @@
  */
 @import url(reset.css);
 @import url("https://use.typekit.net/eeo0enz.css");
+@import url(splash.css);
 @import url(modal.scss);
 @import url(nav.css);
 @import url(searchmod.css);
@@ -38,6 +39,7 @@ body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding: 175px 0 0;
+    -webkit-text-size-adjust: 100%;
 }
 
 p {

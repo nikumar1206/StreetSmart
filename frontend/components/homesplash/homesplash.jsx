@@ -1,5 +1,5 @@
 import React from "react";
-import NavUserContainer from "../headers/nav_user_container";
+import UserNavContainer from "../headers/user_nav_container";
 import MainNavContainer from "../headers/main_nav_container";
 import SearchModContainer from "../searchmod/searchmod_container";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ function HomeSplash(props) {
   return (
     <div>
       <div className="header-block">
-        <NavUserContainer />
+        <UserNavContainer />
         <MainNavContainer />
       </div>
       <div className="home-page">
@@ -33,8 +33,17 @@ function HomeSplash(props) {
             login
           </Link>
         </p>
-        <div className="footer">this will be the footer</div>
       </div>
+      <p className="fairhousing-disclaimer">
+        Fair Housing in NYC:{" "}
+        <a
+          className="fairhousing-disclaimer-link"
+          href="https://dos.ny.gov/system/files/documents/2021/08/fairhousingnotice.pdf"
+        >
+          Understand your rights.
+        </a>
+      </p>
+      <div className="footer">this will be the footer</div>
     </div>
   );
 }

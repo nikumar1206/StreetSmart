@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { openModal } from "../../actions/modal_actions";
 import { logout } from "../../actions/sessions_actions";
-import navUser from "./nav_user";
+import UserNav from "./user_nav";
 
 export const mSTP = (state) => ({
   currentUser: state.entities.users[state.session.id],
@@ -11,6 +11,6 @@ export const mDTP = (dispatch) => ({
   openModal: (modal) => dispatch(openModal(modal)),
 });
 
-export const NavUserContainer = connect(mSTP, mDTP)(navUser);
+export const UserNavContainer = connect(mSTP, mDTP)(UserNav);
 
-export default NavUserContainer;
+export default UserNavContainer;

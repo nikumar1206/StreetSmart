@@ -48,9 +48,9 @@ function mainNav(props) {
         </div>
         <div className="main-nav-search">
           <form
-          // onSubmit={() =>
-          //   console.log("search button pressed, doesnt work tho")
-          // }
+            onSubmit={() =>
+              console.log("search button pressed, doesnt work tho")
+            }
           >
             <input
               className="main-nav-search-input"

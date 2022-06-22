@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const navUser = ({ currentUser, logout, openModal }) => {
+const UserNav = ({ currentUser, logout, openModal }) => {
   const notLoggedIn = () => (
     <div className="user-nav">
       <div className="header">
@@ -66,4 +66,4 @@ const navUser = ({ currentUser, logout, openModal }) => {
 
   return currentUser ? loggedIn() : notLoggedIn();
 };
-export default navUser;
+export default UserNav;

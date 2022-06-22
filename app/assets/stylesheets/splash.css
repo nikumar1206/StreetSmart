@@ -1,0 +1,32 @@
+.fairhousing-disclaimer {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    background: rgb(3, 39, 101);
+    padding: 12px 24px;
+    text-align: center;
+    margin: 0;
+    -webkit-font-smoothing: 100%;
+
+}
+
+.fairhousing-disclaimer-link {
+    text-decoration: underline 1px;
+    text-underline-offset: 3px;
+    background: 0px center;
+    border: 0px;
+    box-sizing: border-box;
+    display: inline;
+    line-height: unset;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+}
+
+.fairhousing-disclaimer-link:visited {
+    color: white;
+}
