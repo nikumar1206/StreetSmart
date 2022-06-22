@@ -16,7 +16,7 @@
 #  updated_at    :datetime         not null
 #
 class Listing < ApplicationRecord
-    validates :name, :location, :neighborhood, :zip, :realtor_id, :price, :beds, :baths, presence: true
+    validates :name, :location, :neighborhood, :zip, :lister_id, :price, :beds, :baths, presence: true
     belongs_to :user, 
     foreign_key: "lister_id"
     has_one_attached :photo

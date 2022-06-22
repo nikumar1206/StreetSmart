@@ -227,10 +227,10 @@ Listing.destroy_all
         zip: zip, 
         property_type: property_type, 
         lister_id: realtor, 
-        lat: 0.0
-        lng: 0.0
-        beds: BEDS.sample() 
-        BATHS: BATHS.sample()
+        lat: 0.0,
+        lng: 0.0,
+        beds: BEDS.sample() ,
+        baths: BATHS.sample(),
         price: Random.rand(2..20) * 500
         })
 end
