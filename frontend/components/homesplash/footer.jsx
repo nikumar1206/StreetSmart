@@ -12,9 +12,9 @@ function Footer(props) {
         <span className="footer-copyright-pt1">
           StreetSmart &copy; Nikhil Kumar 2022
         </span>
-        <span className="footer-dot">·</span>
+        <span className="footer-dot"> · </span>
         <span className="footer-copyright-pt2">Made in NYC</span>
-        <span className="footer-dot">·</span>
+        <span className="footer-dot"> · </span>
         <span className="footer-copyright-pt3">
           Powered by Javascript, Rails, React
         </span>
