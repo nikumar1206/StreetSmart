@@ -18,6 +18,10 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     validates :password, length: {minimum: 6, allow_blank: true, allow_nil: true} 
 
+
+    has_many :savedlistings, foreign_key: "saver_id"
+    has_many :listings, foreign_key: "lister_id"
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil if user.nil?
