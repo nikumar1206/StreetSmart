@@ -10,13 +10,13 @@
 #  updated_at      :datetime         not null
 #  first_name      :string
 #  last_name       :string
-#
+
 class User < ApplicationRecord
     attr_reader :password
     before_validation :ensure_session_token
     validates :email, :password_digest, :session_token, presence: true
     validates :email, uniqueness: true
-    validates :password, length: {minimum: 6, allow_blank: true, allow_nil: true} 
+    validates :password, length: {minimum: 6, allow_nil: true} 
 
 
     has_many :savedlistings, foreign_key: "saver_id"

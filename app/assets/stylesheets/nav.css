@@ -17,13 +17,16 @@
     padding: 0 32px;
 
 }
+
 .main-nav-items {
     display: flex;
     flex-direction: row;
 }
-.main-nav-items > ul {
+
+.main-nav-items>ul {
     list-style: none;
 }
+
 .main-nav-search {
     float: right;
     margin: 10px 0;
@@ -42,10 +45,12 @@
     /* border-radius: 0px;
     border-style: solid; */
 }
+
 .main-nav-list {
     display: flex;
     flex-direction: row;
 }
+
 .mvn-alinks {
     text-transform: uppercase;
     font-weight: 700;
@@ -56,6 +61,7 @@
     color: #1A1F2C;
     font-family: "Source Sans Pro";
 }
+
 .mvn-alinks:link {
     color: #1A1F2C;
     font-weight: 700;
@@ -66,11 +72,13 @@
     color: #1A1F2C;
     font-weight: 700;
 }
+
 .mvn-alinks:hover {
-    color: rgba(25,118,219,255);
+    color: rgba(25, 118, 219, 255);
     text-decoration: none;
     font-weight: 700;
 }
+
 .mvn-li {
     display: inline-block;
     font-size: 14px;

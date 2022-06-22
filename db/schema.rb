@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_22_160137) do
+ActiveRecord::Schema.define(version: 2022_06_22_204154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2022_06_22_160137) do
     t.datetime "updated_at", null: false
     t.float "lat"
     t.float "lng"
+    t.text "description", default: "", null: false
     t.index ["location"], name: "index_listings_on_location", unique: true
     t.index ["name"], name: "index_listings_on_name", unique: true
   end
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 2022_06_22_160137) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.boolean "realtor", default: false
     t.index ["email"], name: "index_users_on_email"
     t.index ["first_name"], name: "index_users_on_first_name"
     t.index ["last_name"], name: "index_users_on_last_name"

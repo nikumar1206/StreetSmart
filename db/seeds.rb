@@ -195,20 +195,30 @@ nyc_data = {
       ['Mid-Island', '1031']
     ]
   }
-property_types = %w(Townhouse Condo Penthouse Apartment Single-Family\ House Multi-Family\ House)
-boroughs = %w(Manhattan Queens Brooklyn Staten\ Island Bronx)
+PROPERTY_TYPE = %w(Townhouse Condo Penthouse Apartment Single-Family\ House Multi-Family\ House)
+BOROUGHS = %w(Manhattan Queens Brooklyn Staten\ Island Bronx)
+BEDS = [
+  1, 1, 1, 1,
+  2, 2, 2, 2, 2, 2, 2, 2, 2,
+  3, 3, 4, 5
+]
+
+BATHS = [
+  1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1.5, 1.5,
+  2, 2, 2,
+  2.5, 3, 4
+]
 
 Listing.destroy_all
-100.times do
+2.times do
     name = Faker::Address.street_address
-    borough = boroughs.sample()
+    borough = BOROUGHS.sample()
     bor_zip = nyc_data[borough].sample()
     zip = bor_zip[1]
-    property_type = property_types.sample()
+    property_type = PROPERTY_TYPE.sample()
     realtor = 1
     price = Random.rand(5000..5000000)
-    beds = Random.rand(1..10)
-    baths = Random.rand(1..5)
     address = "#{name}, #{borough}, New York, #{zip}"
     Listing.create!({
         name: name, 
@@ -216,9 +226,11 @@ Listing.destroy_all
         neighborhood: bor_zip[0], 
         zip: zip, 
         property_type: property_type, 
-        realtor_id: realtor, 
-        price: Random.rand(5000..5000000), 
-        beds: Random.rand(1..10), 
-        baths: Random.rand(1..5) 
+        lister_id: realtor, 
+        lat: 0.0
+        lng: 0.0
+        beds: BEDS.sample() 
+        BATHS: BATHS.sample()
+        price: Random.rand(2..20) * 500
         })
 end

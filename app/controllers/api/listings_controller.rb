@@ -5,6 +5,7 @@ class Api::ListingsController < ApplicationController
         @listings = Listing.all
         render :index
     end
+
     def show
         @listing = Listing.find(params[:id])
     end
