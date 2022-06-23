@@ -5,9 +5,9 @@ function ResultDetails(props) {
   return (
     <div className="resultdetails">
       <ul>
-        {props.listings.map((listing) => (
-          <ListingItemComponent key={listing.id} listing={listing} />
-        ))}
+        {props.listings.map((listing) => {
+          return <ListingItemComponent key={Math.random()} listing={listing} />;
+        })}
       </ul>
     </div>
   );
