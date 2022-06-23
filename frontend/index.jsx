@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // window.openModal = openModal;
   // window.closeModal = closeModal;
-  // window.getState = store.getState;
+  window.getState = store.getState;
   // window.dispatch = store.dispatch;
 
   return content.render(<Root store={store} />);

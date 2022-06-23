@@ -1,7 +1,6 @@
 import React from "react";
 import SearchModContainer from "../searchmod/searchmod_container";
 import { Link } from "react-router-dom";
-import Footer from "../headers/footer";
 import DreamHomeComponent from "./dreamhome";
 function HomeSplash(props) {
   return (
@@ -40,7 +39,6 @@ function HomeSplash(props) {
         </a>
       </p>
       <DreamHomeComponent />
-      <Footer />
     </div>
   );
 }

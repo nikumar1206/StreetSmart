@@ -14,13 +14,12 @@
  *= require_self
  */
 @import url(reset.css);
-/* @import url("https://use.typekit.net/eeo0enz.css"); */
+@import url(fonts.scss);
 @import url(splash.css);
 @import url(modal.scss);
 @import url(nav.css);
 @import url(searchmod.css);
 @import url(footer.css);
-@import url(fonts.scss);
 
 
 .greetings-message {

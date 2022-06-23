@@ -15,6 +15,9 @@ const Modal = ({ modal, closeModal }) => {
     case "signup":
       component = <SignupFormContainer />;
       break;
+    case "location":
+      // component = <LocationContainer />;
+      break;
     default:
       return null;
   }
