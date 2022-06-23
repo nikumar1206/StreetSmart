@@ -1,6 +1,6 @@
 # SmartStreet
 
-[Link to App](http://www.google.com)
+[Link to App](http://streetsmart1.herokuapp.com/)
 
 ## Project Description
 Welcome to StreetSmart, a StreetEasy clone.
