@@ -9,15 +9,20 @@
 #  zip           :integer          not null
 #  price         :integer          not null
 #  property_type :string
-#  realtor_id    :integer          not null
+#  lister_id     :integer          not null
 #  beds          :integer          not null
 #  baths         :integer          not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  lat           :float
+#  lng           :float
+#  description   :text             default(""), not null
 #
 class Listing < ApplicationRecord
     validates :name, :location, :neighborhood, :zip, :lister_id, :price, :beds, :baths, presence: true
+
     belongs_to :user, 
     foreign_key: "lister_id"
+
     has_one_attached :photo
 end

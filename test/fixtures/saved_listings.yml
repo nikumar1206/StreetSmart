@@ -1,4 +1,13 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: saved_listings
+#
+#  id         :bigint           not null, primary key
+#  saver_id   :integer          not null
+#  listing_id :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 
 one:
   saver_id: 1

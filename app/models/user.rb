@@ -10,6 +10,8 @@
 #  updated_at      :datetime         not null
 #  first_name      :string
 #  last_name       :string
+#  realtor         :boolean          default(FALSE)
+#
 
 class User < ApplicationRecord
     attr_reader :password
