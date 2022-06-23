@@ -54,8 +54,8 @@
     padding: 5px 40px 5px 18px;
     width: 100%;
     font-weight: 100;
-    /* border-radius: 0px;
-    border-style: solid; */
+    border-radius: 0px;
+    border-style: solid;
 }
 
 .main-nav-list {

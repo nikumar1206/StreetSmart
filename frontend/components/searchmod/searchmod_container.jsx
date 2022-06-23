@@ -4,7 +4,7 @@ import { openModal } from "../../actions/modal_actions";
 import { logout } from "../../actions/sessions_actions";
 import searchMod from "./searchmod";
 
-export const mSTP = (state) => ({
+export const mSTP = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.id],
 });
 export const mDTP = (dispatch) => ({

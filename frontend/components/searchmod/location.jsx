@@ -5,8 +5,7 @@ function Location(props) {
       <label className="location-tag-input-label" htmlFor="location-tag-input">
         Neighborhoods and Boroughs
       </label>
-      <input type="text" className="location-tag-input" id="" />
-      input
+      <input type="text" value={"hello"} className="location-tag-input" id="" />
     </div>
   );
 }

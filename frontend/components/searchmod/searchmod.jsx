@@ -1,14 +1,15 @@
 import React, { useRef, useState } from "react";
 import { useEffect } from "react";
+import { withRouter } from "react-router-dom";
 
 function searchMod(props) {
   const [state, setState] = useState({
     rb_toggle: "rent",
-    location: ["NYC"],
+    location: "NYC",
     maxPrice: "1,000,000",
   });
   // console.log(state);
-
+  console.log(props);
   const update = (field) => {
     if (field === "rent" || field === "buy") {
       return (e) => setState(() => ({ ...state, rb_toggle: e.target.value }));
@@ -16,12 +17,18 @@ function searchMod(props) {
       return (e) => setState(() => ({ ...state, [field]: e.target.value }));
     }
   };
+  // const createparams = () => {
+  //   const params = "";
+  //   for (i = 0; i < state.length)
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const filters = { ...state };
     props.fetchListings(filters);
+    props.history.push(`/listings/?search=${JSON.stringify(state)}`);
   };
+
   return (
     <div className="searchMod">
       <form className="searchMod-form">
@@ -45,17 +52,24 @@ function searchMod(props) {
         </div>
         <div className="searchMod-location">
           <span className="searchMod-location-label">Location</span>
-          <button
-            className="searchMod-location-button"
-            onClick={() => props.openModal("location")}
+          <select
+            defaultValue={"NYC"}
+            // value={state.location}
+            className="searchMod-location-select"
+            onChange={update("location")}
           >
-            Skrt
-          </button>
+            <option value="NYC">NYC</option>
+            <option value="Queens">Queens</option>
+            <option value="Manhattan">Manhattan</option>
+            <option value="Brooklyn">Brooklyn</option>
+            <option value="Staten Island">Staten Island</option>
+            <option value="Bronx">Bronx</option>
+          </select>
         </div>
         <div className="searchMod-maxPrice">
-          <span className="searchMod-maxprice-label">Max Price</span>
+          <span className="searchMod-maxprice-label">Max Price ($)</span>
           <input
-            type="text"
+            type="number"
             className="searchMod-maxprice-input"
             placeholder="No max"
             onChange={update("maxPrice")}
@@ -70,4 +84,4 @@ function searchMod(props) {
   );
 }
 
-export default searchMod;
+export default withRouter(searchMod);
