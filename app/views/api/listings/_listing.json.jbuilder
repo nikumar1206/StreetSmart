@@ -1,1 +1,1 @@
-json.extract! bench, :name, :location, :neighborhood, :zip, :realtor_id, :price, :beds, :baths
+json.extract! listing, :name, :location, :neighborhood, :zip, :price, :property_type, :lister_id, :beds, :baths, :lat, :lng

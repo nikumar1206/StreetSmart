@@ -1,0 +1,15 @@
+.location-container {
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px 0px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: unset;
+    bottom: unset;
+    outline: none;
+    overflow: auto;
+    top: 302px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+}

@@ -8,11 +8,11 @@ import MainNavContainer from "./headers/main_nav_container";
 import UserNavContainer from "./headers/user_nav_container";
 import FooterComponent from "./headers/footer";
 import ListingsContainer from "./listings/listings_container";
+import Navs from "./headers/navs";
 const App = () => (
   <div className="app">
     <ModalContainer />
-    <UserNavContainer />
-    <MainNavContainer />
+    <Navs />
     <Switch>
       <Route exact path="/" component={HomeSplashContainer} />
       <Route path="/listings" component={ListingsContainer} />

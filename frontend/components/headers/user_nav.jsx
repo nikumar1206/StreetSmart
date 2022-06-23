@@ -3,38 +3,40 @@ import { Link } from "react-router-dom";
 
 const UserNav = ({ currentUser, logout, openModal }) => {
   const notLoggedIn = () => (
-    <div className="user-nav">
-      <div className="header">
-        <div className="logo">
-          <a href="/">
-            <img
-              className="logo-img"
-              src="https://streetsmart-safeassets.s3.amazonaws.com/images/logo.png"
-            />
-          </a>
+    <div className="user-nav-container">
+      <div className="user-nav">
+        <div className="header">
+          <div className="logo">
+            <a href="/">
+              <img
+                className="logo-img"
+                src="https://streetsmart-safeassets.s3.amazonaws.com/images/logo.png"
+              />
+            </a>
+          </div>
+          <ul>
+            <li>
+              <Link
+                to="/"
+                className="user-nav-account-links"
+                onClick={() => openModal("signup")}
+                replace
+              >
+                Register
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/"
+                className="user-nav-account-links"
+                onClick={() => openModal("login")}
+                replace
+              >
+                Login
+              </Link>
+            </li>
+          </ul>
         </div>
-        <ul>
-          <li>
-            <Link
-              to="/"
-              className="user-nav-account-links"
-              onClick={() => openModal("signup")}
-              replace
-            >
-              Register
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              className="user-nav-account-links"
-              onClick={() => openModal("login")}
-              replace
-            >
-              Login
-            </Link>
-          </li>
-        </ul>
       </div>
     </div>
   );

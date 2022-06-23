@@ -16,6 +16,12 @@ function searchMod(props) {
       return (e) => setState(() => ({ ...state, [field]: e.target.value }));
     }
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const filters = { ...state };
+    props.fetchListings(filters);
+  };
   return (
     <div className="searchMod">
       <form className="searchMod-form">
@@ -39,7 +45,12 @@ function searchMod(props) {
         </div>
         <div className="searchMod-location">
           <span className="searchMod-location-label">Location</span>
-          <button className="searchMod-location-button">Skrt</button>
+          <button
+            className="searchMod-location-button"
+            onClick={() => props.openModal("location")}
+          >
+            Skrt
+          </button>
         </div>
         <div className="searchMod-maxPrice">
           <span className="searchMod-maxprice-label">Max Price</span>
@@ -50,7 +61,10 @@ function searchMod(props) {
             onChange={update("maxPrice")}
           />
         </div>
-        <button className="searchMod-submit-btn" type="submit"></button>
+        <button
+          className="searchMod-submit-btn"
+          onClick={handleSubmit}
+        ></button>
       </form>
     </div>
   );

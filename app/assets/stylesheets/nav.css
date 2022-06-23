@@ -6,6 +6,17 @@
     box-sizing: border-box;
     display: block;
     font-size: 14px;
+    width: 100%;
+}
+
+.navs-container {
+    height: auto;
+    position: fixed;
+    box-sizing: border-box;
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    z-index: 10001;
 }
 
 .main-nav {

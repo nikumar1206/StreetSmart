@@ -1,6 +1,7 @@
 import React from "react";
 import LoginFormContainer from "../session/LoginFormContainer";
 import SignupFormContainer from "../session/SignupFormContainer";
+import LocationContainer from "../searchmod/location_container";
 
 const Modal = ({ modal, closeModal }) => {
   if (!modal) {
@@ -16,7 +17,7 @@ const Modal = ({ modal, closeModal }) => {
       component = <SignupFormContainer />;
       break;
     case "location":
-      // component = <LocationContainer />;
+      component = <LocationContainer />;
       break;
     default:
       return null;

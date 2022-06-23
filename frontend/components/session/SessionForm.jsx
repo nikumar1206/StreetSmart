@@ -15,12 +15,14 @@ function SessionForm(props) {
     const user = { ...values };
     props.processForm(user).then(() => props.closeModal());
   };
+
   const handleDemoSubmit = (e) => {
     e.preventDefault;
     const demoUser = { email: "demo_user@demo.com", password: "password" };
     setValues(demoUser);
     props.login(demoUser).then(() => props.closeModal());
   };
+
   const closeModal = (e) => {
     e.preventDefault();
     props.closeModal();
@@ -78,7 +80,6 @@ function SessionForm(props) {
         <p className="sf-divider-text">or</p>
       </div>
 
-      {/* <span className="session-form-divider">or</span> */}
       <button
         type="submit"
         className="demo-user-button"
