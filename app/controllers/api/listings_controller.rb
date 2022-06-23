@@ -9,10 +9,22 @@ class Api::ListingsController < ApplicationController
     def show
         @listing = Listing.find(params[:id])
     end
-    
+
     private
     def listing_params
         params.require(:listing).permit(:name, :location, :neighborhood, :zip, :realtor_id, :price, :beds, :baths)
+    end
+
+    def rb_toggle 
+        params[:rb_toggle]
+    end
+
+    def location
+        params[:location]
+    end
+
+    def maxPrice
+        params[:maxPrice]
     end
 
 end

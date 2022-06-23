@@ -1,14 +1,12 @@
 import { connect } from "react-redux";
-import { fetchListings } from "../../actions/listings_actions";
-import Listings from "./listings";
+import ResultDetails from "./resultdetails";
 
 export const mSTP = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.id],
   listings: Object.values(state.entities.listings),
 });
-
 export const mDTP = (dispatch) => ({});
 
-export const ListingsContainer = connect(mSTP, mDTP)(Listings);
+export const ResultDetailsContainer = connect(mSTP, mDTP)(ResultDetails);
 
-export default ListingsContainer;
+export default ResultDetailsContainer;

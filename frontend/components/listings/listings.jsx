@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import ListingsFormContainer from "./listings-form-container";
+import ResultBoxContainer from "./resultbox_container";
 function Listings(props) {
   const [state, setState] = useState({
     location: "NYC",
     price: [0],
   });
-  // useEffect({});
+  // useEffect({}, []);
+
   return (
     <div className="listings">
-      <div className="listings-form-container">
-        <select className="location-dropdown" disabled="disabled"></select>
-      </div>
+      <ListingsFormContainer />
+      <ResultBoxContainer />
     </div>
   );
 }

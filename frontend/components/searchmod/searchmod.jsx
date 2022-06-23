@@ -9,7 +9,7 @@ function searchMod(props) {
     maxPrice: "1,000,000",
   });
   // console.log(state);
-  console.log(props);
+  // console.log(props);
   const update = (field) => {
     if (field === "rent" || field === "buy") {
       return (e) => setState(() => ({ ...state, rb_toggle: e.target.value }));
@@ -17,16 +17,14 @@ function searchMod(props) {
       return (e) => setState(() => ({ ...state, [field]: e.target.value }));
     }
   };
-  // const createparams = () => {
-  //   const params = "";
-  //   for (i = 0; i < state.length)
-  // };
+  const queryString = `&rb_toggle=${state.rb_toggle}&location=${state.location}&maxPrice=${state.maxPrice}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const filters = { ...state };
-    props.fetchListings(filters);
-    props.history.push(`/listings/?search=${JSON.stringify(state)}`);
+    props.fetchListings(queryString);
+    props.history.push({
+      pathname: `/listings/${queryString}`,
+    });
   };
 
   return (

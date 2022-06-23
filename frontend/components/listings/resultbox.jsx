@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import ResultDetailsContainer from "./resultdetails_container";
 
 function ResultBox(props) {
   return (
     <div className="resultbox">
-      <h1>google maps and stuff</h1>
+      <ResultDetailsContainer />
+      <div className="maps-container"></div>
     </div>
   );
 }

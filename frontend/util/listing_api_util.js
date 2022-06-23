@@ -1,5 +1,5 @@
 export const fetchListings = (filters) =>
   $.ajax({
-    url: `/api/listings?search=${filters}`,
+    url: `/api/listings?=${filters}`,
     method: "get",
   });

@@ -3,6 +3,7 @@ import ResultBox from "./resultbox";
 
 export const mSTP = (state) => ({
   currentUser: state.entities.users[state.session.id],
+  listings: Object.values(state.entities.listings),
 });
 export const mDTP = (dispatch) => ({});
 
