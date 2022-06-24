@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_22_204154) do
+ActiveRecord::Schema.define(version: 2022_06_24_205423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2022_06_22_204154) do
     t.float "lat"
     t.float "lng"
     t.text "description", default: "", null: false
+    t.boolean "rent_bool", default: false
     t.index ["location"], name: "index_listings_on_location", unique: true
     t.index ["name"], name: "index_listings_on_name", unique: true
   end

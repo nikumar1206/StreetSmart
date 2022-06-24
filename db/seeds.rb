@@ -200,7 +200,7 @@ nyc_data = {
       ['Mid-Island', '1031']
     ]
   }
-PROPERTY_TYPE = %w(Townhouse Condo Penthouse Apartment Single-Family\ House Multi-Family\ House)
+PROPERTY_TYPE = %w(townhouse condo penthouse apartment single-family\ house multi-family\ house)
 BOROUGHS = %w(Manhattan Queens Brooklyn Staten\ Island Bronx)
 BEDS = [
   1, 1, 1, 1,
@@ -214,29 +214,34 @@ BATHS = [
   2, 2, 2,
   2.5, 3, 4
 ]
-
 2.times do
     i = 1
     name = Faker::Address.street_address
     borough = BOROUGHS.sample()
     bor_zip = nyc_data[borough].sample()
+    neighborhood = bor_zip[0]
     zip = bor_zip[1]
     property_type = PROPERTY_TYPE.sample()
     realtor = 1
-    price = Random.rand(5000..5000000)
+    price = rand(2..100) * 50000
+    beds = BEDS.sample()
+    baths = BATHS.sample()
     address = "#{name}, #{borough}, New York, #{zip}"
+    description = "This absolutely gorgeous #{property_type} situated in #{borough} features #{beds} bedrooms and #{baths} bathrooms. Separate room for home office for the perfect work from home lifestyle. This is THE best #{beds} bed #{property_type} in #{neighborhood}! All for only $#{price}!!"
     new_listing = Listing.create!({
         name: name, 
         location: address, 
-        neighborhood: bor_zip[0], 
+        neighborhood: neighborhood,
         zip: zip, 
-        property_type: property_type, 
-        lister_id: realtor, 
-        lat: 0.0,
-        lng: 0.0,
-        beds: BEDS.sample() ,
-        baths: BATHS.sample(),
-        price: Random.rand(2..20) * 500
+        property_type: property_type,
+        rent_bool: [true, false].sample(),
+        lister_id: realtor,
+        lat: -rand(73.765498..73.966863),
+        lng: rand(40.666885..40.740644),
+        beds: beds,
+        baths: baths,
+        price: price,
+        description: description
         })
     image = URI.open("https://streetsmart-safeassets.s3.amazonaws.com/listing_seed/listing#{i}.jpg")
     new_listing.photo.attach(io: image, filename: "listing#{i}")

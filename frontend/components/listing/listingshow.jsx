@@ -7,16 +7,14 @@ import ListerDescriptionContainer from "./listerdescription";
 import MapsContainer from "./maps";
 
 function ListingShowComponent(props) {
-  // console.log(props);
-
   useEffect(() => {
     props.fetchListing(props.match.params.listingId);
   }, []);
-  // debugger;
+
   if (props.listing) {
     return (
       <div className="listing-show-container">
-        <BreadcrumbComponent />
+        <BreadcrumbComponent listing={props.listing} />
         <Image imageUrl={props.listing.imageUrl} />
         <ListerDescriptionContainer />
         <DescriptionComponent />
