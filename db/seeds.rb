@@ -232,6 +232,7 @@ BATHS = [
         name: name, 
         location: address, 
         neighborhood: neighborhood,
+        borough: borough,
         zip: zip, 
         property_type: property_type,
         rent_bool: [true, false].sample(),

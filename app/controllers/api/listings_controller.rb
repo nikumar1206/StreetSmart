@@ -13,7 +13,7 @@ class Api::ListingsController < ApplicationController
 
     private
     def listing_params
-        params.require(:listing).permit(:name, :location, :neighborhood, :zip, :realtor_id, :price, :beds, :baths, :description)
+        params.require(:listing).permit(:name, :location, :neighborhood, :zip, :lister_id, :borough, :neighborhood, :price, :beds, :baths, :description)
     end
 
     def rb_toggle 
