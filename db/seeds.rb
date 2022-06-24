@@ -5,8 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
+Listing.destroy_all
 User.destroy_all
-user1 = User.create({ first_name: "demo", last_name: "user", email: "demo_user@demo.com", password: "password"})
+SavedListing.destroy_all
+
+user1 = User.create!({ first_name: "demo", last_name: "user", email: "demo_user@demo.com", password: "password"})
 
 
 nyc_data = {
@@ -210,8 +215,8 @@ BATHS = [
   2.5, 3, 4
 ]
 
-Listing.destroy_all
 2.times do
+    i = 1
     name = Faker::Address.street_address
     borough = BOROUGHS.sample()
     bor_zip = nyc_data[borough].sample()
@@ -220,7 +225,7 @@ Listing.destroy_all
     realtor = 1
     price = Random.rand(5000..5000000)
     address = "#{name}, #{borough}, New York, #{zip}"
-    Listing.create!({
+    new_listing = Listing.create!({
         name: name, 
         location: address, 
         neighborhood: bor_zip[0], 
@@ -233,4 +238,7 @@ Listing.destroy_all
         baths: BATHS.sample(),
         price: Random.rand(2..20) * 500
         })
+    image = URI.open("https://streetsmart-safeassets.s3.amazonaws.com/listing_seed/listing#{i}.jpg")
+    new_listing.photo.attach(io: image, filename: "listing#{i}")
+    i += 1
 end
