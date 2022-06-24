@@ -3,3 +3,9 @@ export const fetchListings = (filters) =>
     url: `/api/listings?=${filters}`,
     method: "get",
   });
+
+export const fetchListing = (listingId) =>
+  $.ajax({
+    url: `/api/listings/${listingId}`,
+    method: "get",
+  });
