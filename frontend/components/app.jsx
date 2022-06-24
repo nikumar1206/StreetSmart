@@ -8,6 +8,7 @@ import MainNavContainer from "./headers/main_nav_container";
 import UserNavContainer from "./headers/user_nav_container";
 import FooterComponent from "./headers/footer";
 import ListingsContainer from "./listings/listings_container";
+import ListingShowContainer from "./listing/listingshow_container";
 import Navs from "./headers/navs";
 const App = () => (
   <div className="app">
@@ -15,7 +16,8 @@ const App = () => (
     <Navs />
     <Switch>
       <Route exact path="/" component={HomeSplashContainer} />
-      <Route path="/listings" component={ListingsContainer} />
+      <Route path="/listings/search" component={ListingsContainer} />
+      <Route path="/listings/:listingId" component={ListingShowContainer} />
     </Switch>
     <FooterComponent />
   </div>

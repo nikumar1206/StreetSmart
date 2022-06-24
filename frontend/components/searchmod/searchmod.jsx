@@ -23,7 +23,7 @@ function searchMod(props) {
     e.preventDefault();
     props.fetchListings(queryString);
     props.history.push({
-      pathname: `/listings/${queryString}`,
+      pathname: `/listings/search/${queryString}`,
     });
   };
 
