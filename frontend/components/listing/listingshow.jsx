@@ -15,9 +15,12 @@ function ListingShowComponent(props) {
     return (
       <div className="listing-show-container">
         <BreadcrumbComponent listing={props.listing} />
-        <Image imageUrl={props.listing.imageUrl} />
-        <ListerDescriptionContainer />
-        <DescriptionComponent />
+        <div className="listing-show-container-top">
+          <Image imageUrl={props.listing.imageUrl} />
+          <div className="divider"></div>
+          <ListerDescriptionContainer listing={props.listing} />
+        </div>
+        <DescriptionComponent description={props.listing.description} />
         <MapsContainer />
       </div>
     );

@@ -65,7 +65,7 @@
 
 .mvn-alinks {
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 15px;
     display: inline-block;
     background: none;
@@ -76,19 +76,19 @@
 
 .mvn-alinks:link {
     color: #1A1F2C;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
 }
 
 .mvn-alinks:visited {
     color: #1A1F2C;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .mvn-alinks:hover {
     color: rgba(25, 118, 219, 255);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .mvn-li {

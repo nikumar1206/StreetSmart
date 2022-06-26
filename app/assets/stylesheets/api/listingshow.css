@@ -1,13 +1,99 @@
 .breadcrumb-container {
     width: 100%;
-    display: block;
+    display: inline-block;
 }
 
 .listing-show-container {
-    padding-top: 150px;
+    padding: 150px 200px;
+}
+
+.listing-show-container-top {
+    display: flex;
+}
+
+.image-container {
+    width: 50%;
+    overflow: hidden;
 }
 
 .image-container>img {
-    width: 50%;
-    height: 30%;
+    width: auto;
+    height: 400px
+}
+
+div.divider {
+    width: 10px;
+}
+
+.lister-descript-container {
+    width: 40%;
+}
+
+.listing-descript-name {
+    font-size: 30px;
+    font-weight: 200;
+    line-height: 30px;
+    margin-bottom: 8px;
+}
+
+.listing-descript-price {
+    font-size: 27px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.details-info {
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    padding: 3px;
+}
+
+.details-info-breakdown {
+    display: flex;
+}
+
+.det-cell-1-child {
+    border-right: 1px solid #E6E6E6;
+    padding-right: 10px;
+}
+
+.det-cell-2-child {
+    border-right: 1px solid #E6E6E6;
+    padding-right: 10px;
+}
+
+.description-container {
+    display: inline-block;
+}
+
+.details-buttons {
+    align-content: center;
+    text-align: center;
+}
+
+.maps-container {
+    display: inline-block;
+
+}
+
+.details-buttons>link>button {
+    background: green;
+}
+
+.description-container {
+    width: 40%;
+}
+
+div.description-container>h1 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 300;
+}
+
+div.description-container>p {
+    font-size: 14px;
+    line-height: 22px;
+    color: rgb(26, 31, 44)
 }

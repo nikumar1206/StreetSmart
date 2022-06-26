@@ -202,6 +202,7 @@ nyc_data = {
   }
 PROPERTY_TYPE = %w(townhouse condo penthouse apartment single-family\ house multi-family\ house)
 BOROUGHS = %w(Manhattan Queens Brooklyn Staten\ Island Bronx)
+
 BEDS = [
   1, 1, 1, 1,
   2, 2, 2, 2, 2, 2, 2, 2, 2,
@@ -240,6 +241,7 @@ BATHS = [
         lat: -rand(73.765498..73.966863),
         lng: rand(40.666885..40.740644),
         beds: beds,
+        saves: 0,
         baths: baths,
         price: price,
         description: description
