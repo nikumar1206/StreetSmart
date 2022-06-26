@@ -9,9 +9,11 @@ class Api::SavedListingsController < ApplicationController
         @saved_listing = SavedListing.find(params[:id])
         if current_user.id == @listing.lister_id
             @saved_listing.destroy
-            render json: status: 200
+            render json: ["couldnt destroy the save my b"], status: 200
         else
             render json: ["Sorry an error has occured deleting the listing"], status: 404
+        end
+        
     end
 end
 

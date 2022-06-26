@@ -9,10 +9,10 @@
     overflow: auto;
     width: 100vw;
 }
-  
+
 .modal-child {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -45%);
 }

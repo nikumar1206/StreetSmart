@@ -46,6 +46,7 @@ body {
     overflow-x: hidden;
     scroll-padding: 175px 0 0;
     -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
 }
 
 p {

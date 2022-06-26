@@ -8,8 +8,9 @@ function searchMod(props) {
     location: "NYC",
     maxPrice: "1,000,000",
   });
-  // console.log(state);
+  console.log(state);
   // console.log(props);
+
   const update = (field) => {
     if (field === "rent" || field === "buy") {
       return (e) => setState(() => ({ ...state, rb_toggle: e.target.value }));
@@ -50,7 +51,12 @@ function searchMod(props) {
         </div>
         <div className="searchMod-location">
           <span className="searchMod-location-label">Location</span>
-          <select
+          <input
+            type="text"
+            className="searchMod-location-input"
+            placeholder="NYC"
+          />
+          {/* <select
             defaultValue={"NYC"}
             // value={state.location}
             className="searchMod-location-select"
@@ -62,7 +68,7 @@ function searchMod(props) {
             <option value="Brooklyn">Brooklyn</option>
             <option value="Staten Island">Staten Island</option>
             <option value="Bronx">Bronx</option>
-          </select>
+          </select> */}
         </div>
         <div className="searchMod-maxPrice">
           <span className="searchMod-maxprice-label">Max Price ($)</span>
@@ -73,10 +79,13 @@ function searchMod(props) {
             onChange={update("maxPrice")}
           />
         </div>
-        <button
-          className="searchMod-submit-btn"
-          onClick={handleSubmit}
-        ></button>
+
+        <button className="searchMod-submit-btn" onClick={handleSubmit}>
+          <img
+            className="searchMod-submit-img"
+            src="https://streetsmart-safeassets.s3.amazonaws.com/images/Screen+Shot+2022-06-26+at+11.58.48+AM.png"
+          />
+        </button>
       </form>
     </div>
   );

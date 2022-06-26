@@ -17,6 +17,9 @@
 #  lat           :float
 #  lng           :float
 #  description   :text             default(""), not null
+#  rent_bool     :boolean          default(FALSE)
+#  borough       :string           default("Queens")
+#  saves         :integer          default(0)
 #
 require 'test_helper'
 

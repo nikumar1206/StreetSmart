@@ -83,7 +83,7 @@ div.divider {
 }
 
 .description-container {
-    width: 40%;
+    width: 50%;
 }
 
 div.description-container>h1 {
@@ -95,5 +95,12 @@ div.description-container>h1 {
 div.description-container>p {
     font-size: 14px;
     line-height: 22px;
-    color: rgb(26, 31, 44)
+    color: rgb(26, 31, 44);
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E6E6E6;
 }
+
+/* div.description-divider {
+    height: 1px;
+    border-bott
+} */
