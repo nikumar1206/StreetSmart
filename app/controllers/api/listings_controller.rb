@@ -2,7 +2,11 @@ class Api::ListingsController < ApplicationController
     before_action :require_logged_in, only: [:create]
 
     def index
-        @listings = Listing.all
+        if location == "NYC"
+            @listings = Listing.where("price < ? AND rent_bool = ?", maxPrice, "#{rb_toggle}")
+        else
+            @listings = Listing.where("price < ? AND rent_bool = ? AND LOWER(location) LIKE ?", "#{maxPrice}", "#{rb_toggle}", "%#{location}%")
+        end
         render :index
     end
 
@@ -17,11 +21,11 @@ class Api::ListingsController < ApplicationController
     end
 
     def rb_toggle 
-        params[:rb_toggle]
+        params[:rb_toggle] == "rent" ? true : false
     end
 
     def location
-        params[:location]
+        params[:location].downcase
     end
 
     def maxPrice

@@ -6,10 +6,9 @@ function searchMod(props) {
   const [state, setState] = useState({
     rb_toggle: "rent",
     location: "NYC",
-    maxPrice: "1,000,000",
+    maxPrice: "99999999",
   });
   console.log(state);
-  // console.log(props);
 
   const update = (field) => {
     if (field === "rent" || field === "buy") {
@@ -55,20 +54,8 @@ function searchMod(props) {
             type="text"
             className="searchMod-location-input"
             placeholder="NYC"
-          />
-          {/* <select
-            defaultValue={"NYC"}
-            // value={state.location}
-            className="searchMod-location-select"
             onChange={update("location")}
-          >
-            <option value="NYC">NYC</option>
-            <option value="Queens">Queens</option>
-            <option value="Manhattan">Manhattan</option>
-            <option value="Brooklyn">Brooklyn</option>
-            <option value="Staten Island">Staten Island</option>
-            <option value="Bronx">Bronx</option>
-          </select> */}
+          />
         </div>
         <div className="searchMod-maxPrice">
           <span className="searchMod-maxprice-label">Max Price ($)</span>
@@ -77,6 +64,7 @@ function searchMod(props) {
             className="searchMod-maxprice-input"
             placeholder="No max"
             onChange={update("maxPrice")}
+            maxLength={9}
           />
         </div>
 
