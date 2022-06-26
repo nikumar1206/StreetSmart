@@ -29,7 +29,7 @@ function searchMod(props) {
 
   return (
     <div className="searchMod">
-      <form className="searchMod-form">
+      <form className="searchMod-form" onSubmit={() => handleSubmit}>
         <div className="searchMod-toggle">
           <button
             role="radio"
@@ -68,7 +68,11 @@ function searchMod(props) {
           />
         </div>
 
-        <button className="searchMod-submit-btn" onClick={handleSubmit}>
+        <button
+          type="submit"
+          className="searchMod-submit-btn"
+          onClick={handleSubmit}
+        >
           <img
             className="searchMod-submit-img"
             src="https://streetsmart-safeassets.s3.amazonaws.com/images/Screen+Shot+2022-06-26+at+11.58.48+AM.png"

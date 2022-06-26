@@ -1,4 +1,6 @@
 import React from "react";
+import { Link, withRouter } from "react-router-dom";
+
 function mainNav(props) {
   return (
     <div className="main-nav-container">
@@ -11,9 +13,17 @@ function mainNav(props) {
               </a>
             </li>
             <li className="mvn-li">
-              <a href="" className="mvn-alinks">
+              <Link
+                to="/listings/search/&rb_toggle=buy&location=NYC&maxPrice=99999999"
+                className="mvn-alinks"
+                onClick={() =>
+                  props.history.push(
+                    "/listings/search/&rb_toggle=buy&location=NYC&maxPrice=99999999"
+                  )
+                }
+              >
                 Buy
-              </a>
+              </Link>
             </li>
             <li className="mvn-li">
               <a href="" className="mvn-alinks">
@@ -58,6 +68,7 @@ function mainNav(props) {
               name=""
               id=""
               placeholder="e.g. address, building, agent"
+              disabled
             />
             <button type="submit" className="main-nav-search-button">
               <img
@@ -72,4 +83,4 @@ function mainNav(props) {
   );
 }
 
-export default mainNav;
+export default withRouter(mainNav);

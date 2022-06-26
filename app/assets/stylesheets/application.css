@@ -73,7 +73,8 @@ input {
 .user-nav {
     height: 50px;
     line-height: 50px;
-    background: #032765;
+    /* background: #4285F4; */
+    background: #2074dc;
     /* position: fixed; */
     padding: 0 25px;
 }
