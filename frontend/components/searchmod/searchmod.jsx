@@ -17,13 +17,19 @@ function searchMod(props) {
       return (e) => setState(() => ({ ...state, [field]: e.target.value }));
     }
   };
-  const queryString = `&rb_toggle=${state.rb_toggle}&location=${state.location}&maxPrice=${state.maxPrice}`;
+  // const handletoggle = (but_val) => {
+  //   if (but_val == "rent") {
+  //   }
+  // };
+  const queryString = `?rb_toggle=${state.rb_toggle}&location=${state.location}&maxPrice=${state.maxPrice}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     props.fetchListings(queryString);
     props.history.push({
-      pathname: `/listings/search/${queryString}`,
+      pathname: `/listings`,
+      search: `${queryString}`,
+      state: state,
     });
   };
 
@@ -32,6 +38,7 @@ function searchMod(props) {
       <form className="searchMod-form" onSubmit={() => handleSubmit}>
         <div className="searchMod-toggle">
           <button
+            type="button"
             role="radio"
             className="sm-toggle-rent-btn"
             onClick={update("rent")}
@@ -40,6 +47,7 @@ function searchMod(props) {
             Rent
           </button>
           <button
+            type="button"
             role="radio"
             className="sm-toggle-buy-btn checked"
             onClick={update("buy")}

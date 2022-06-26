@@ -7,7 +7,9 @@ export const mSTP = (state, ownProps) => ({
   listings: Object.values(state.entities.listings),
 });
 
-export const mDTP = (dispatch) => ({});
+export const mDTP = (dispatch) => ({
+  fetchListings: (filter) => dispatch(fetchListings(filter)),
+});
 
 export const ListingsContainer = connect(mSTP, mDTP)(Listings);
 

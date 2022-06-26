@@ -87,10 +87,10 @@ input {
 }
 
 .logo-img {
-    width: 140px;
-    height: 40px;
+    width: 150px;
+    height: 30px;
     padding-left: 40px;
-    padding-top: 5px;
+    padding-top: 8px;
 }
 
 div.header>ul {

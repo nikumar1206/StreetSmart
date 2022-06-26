@@ -16,8 +16,8 @@ const App = () => (
     <Navs />
     <Switch>
       <Route exact path="/" component={HomeSplashContainer} />
-      <Route path="/listings/search" component={ListingsContainer} />
       <Route path="/listings/:listingId" component={ListingShowContainer} />
+      <Route path="/listings/" component={ListingsContainer} />
     </Switch>
     <FooterComponent />
   </div>
