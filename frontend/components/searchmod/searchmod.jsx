@@ -10,7 +10,7 @@ function searchMod(props) {
     maxPrice: "99999999",
   });
   const [toggled, setToggled] = useState(true);
-  console.log(state);
+  // console.log(state);
 
   const handleToggle = (field) => {
     if (field === "rent") {

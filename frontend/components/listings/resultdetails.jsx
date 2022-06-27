@@ -5,7 +5,6 @@ function ResultDetails(props) {
   return (
     <div className="resultdetails">
       <ul>
-        {console.log(props.listings)}
         {props.listings.map((listing) => {
           return <ListingItemComponent key={listing.id} listing={listing} />;
         })}

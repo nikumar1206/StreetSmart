@@ -48,6 +48,10 @@
     background-position: top left;
 }
 
+.sm-toggle-btn:focus {
+    outline: 0;
+}
+
 .sm-toggle-btn.rent {
     background: linear-gradient(to top, #2074dc 50%, #fff 50%);
     background-size: 100% 200%;
