@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { createRef } from "react";
 import { useEffect } from "react";
 import { withRouter } from "react-router-dom";
 
@@ -8,19 +9,27 @@ function searchMod(props) {
     location: "NYC",
     maxPrice: "99999999",
   });
+  const [toggled, setToggled] = useState(true);
   console.log(state);
 
-  const update = (field) => {
-    if (field === "rent" || field === "buy") {
-      return (e) => setState(() => ({ ...state, rb_toggle: e.target.value }));
-    } else {
-      return (e) => setState(() => ({ ...state, [field]: e.target.value }));
+  const handleToggle = (field) => {
+    if (field === "rent") {
+      return (e) => {
+        setToggled(true);
+        setState(() => ({ ...state, rb_toggle: e.target.value }));
+      };
+    } else if (field === "buy") {
+      return (e) => {
+        setToggled(false);
+        setState(() => ({ ...state, rb_toggle: e.target.value }));
+      };
     }
   };
-  // const handletoggle = (but_val) => {
-  //   if (but_val == "rent") {
-  //   }
-  // };
+
+  const update = (field) => {
+    return (e) => setState(() => ({ ...state, [field]: e.target.value }));
+  };
+
   const queryString = `?rb_toggle=${state.rb_toggle}&location=${state.location}&maxPrice=${state.maxPrice}`;
 
   const handleSubmit = (e) => {
@@ -29,7 +38,6 @@ function searchMod(props) {
     props.history.push({
       pathname: `/listings`,
       search: `${queryString}`,
-      state: state,
     });
   };
 
@@ -40,18 +48,27 @@ function searchMod(props) {
           <button
             type="button"
             role="radio"
-            className="sm-toggle-rent-btn"
-            onClick={update("rent")}
+            id="rent-btn"
+            className={
+              toggled ? "sm-toggle-btn rent clicked" : "sm-toggle-btn rent"
+            }
+            onClick={handleToggle("rent")}
             value="rent"
+            checked={state.rb_toggle === "rent"}
+            autoFocus
           >
             Rent
           </button>
           <button
             type="button"
             role="radio"
-            className="sm-toggle-buy-btn checked"
-            onClick={update("buy")}
+            id="buy-btn"
+            className={
+              !toggled ? "sm-toggle-btn buy clicked" : "sm-toggle-btn buy"
+            }
+            onClick={handleToggle("buy")}
             value="buy"
+            checked={state.rb_toggle === "buy"}
           >
             Buy
           </button>

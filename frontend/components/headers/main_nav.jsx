@@ -8,19 +8,27 @@ function mainNav(props) {
         <div className="main-nav-items">
           <ul className="main-nav-list">
             <li className="mvn-li">
-              <a href="" className="mvn-alinks">
-                Rent
-              </a>
-            </li>
-            <li className="mvn-li">
               <Link
-                to="/listings/search/&rb_toggle=buy&location=NYC&maxPrice=99999999"
+                to="/listings?rb_toggle=rent&location=NYC&maxPrice=99999999"
                 className="mvn-alinks"
                 onClick={() =>
                   props.history.push(
-                    "/listings/search/&rb_toggle=buy&location=NYC&maxPrice=99999999"
+                    "/listings?rb_toggle=rent&location=NYC&maxPrice=99999999"
                   )
                 }
+              >
+                Rent
+              </Link>
+            </li>
+            <li className="mvn-li">
+              <Link
+                to="/listings?rb_toggle=buy&location=NYC&maxPrice=99999999"
+                className="mvn-alinks"
+                onClick={() => {
+                  props.history.push(
+                    "/listings?rb_toggle=buy&location=NYC&maxPrice=99999999"
+                  );
+                }}
               >
                 Buy
               </Link>
@@ -70,7 +78,11 @@ function mainNav(props) {
               placeholder="e.g. address, building, agent"
               disabled
             />
-            <button type="submit" className="main-nav-search-button">
+            <button
+              type="button"
+              onClick={() => console.log("search button pressed")}
+              className="main-nav-search-button"
+            >
               <img
                 className="main-nav-search-img"
                 src="https://streetsmart-safeassets.s3.amazonaws.com/images/Screen+Shot+2022-06-21+at+11.52.39+AM.png"

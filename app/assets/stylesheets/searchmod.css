@@ -12,42 +12,52 @@
 .searchMod-toggle {
     background: rgb(245, 245, 245);
     border: 1px solid rgb(230, 230, 230);
-    border-radius: 4px;
     display: flex;
     flex-direction: column;
     max-width: 100px;
     position: relative;
     width: 100%;
+    max-height: 90px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-.sm-toggle-rent-btn {
+.sm-toggle-btn {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 16px;
-    font-weight: 600;
-    height: 34px;
+    font-weight: 200;
+    height: 40px;
     line-height: 34px;
     position: relative;
     text-align: center;
     z-index: 20;
-    color: rgb(255, 255, 255);
-    transition: all 0.5s ease 0s;
+    color: black;
 }
 
-.sm-toggle-buy-btn {
-    background: none;
-    border: none;
-    color: rgb(98, 100, 106);
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    height: 34px;
-    line-height: 34px;
-    position: relative;
-    text-align: center;
-    transition: all 0.5s ease 0s;
-    z-index: 20;
+.sm-toggle-btn.buy {
+    background: linear-gradient(to bottom, #2074dc 50%, #fff 50%);
+    background-size: 100% 200%;
+    background-position: bottom left;
+    transition: all .4s ease-out;
+}
+
+.sm-toggle-btn.buy.clicked {
+    color: white;
+    background-position: top left;
+}
+
+.sm-toggle-btn.rent {
+    background: linear-gradient(to top, #2074dc 50%, #fff 50%);
+    background-size: 100% 200%;
+    background-position: top left;
+    transition: all .4s ease-out;
+}
+
+.sm-toggle-btn.rent.clicked {
+    background-position: bottom left;
+    color: white;
 }
 
 .searchMod-location {
