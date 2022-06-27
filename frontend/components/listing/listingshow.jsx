@@ -4,7 +4,7 @@ import BreadcrumbComponent from "./breadcrumb";
 import DescriptionComponent from "./description";
 import Image from "./image";
 import ListerDescriptionContainer from "./listerdescription";
-import MapsContainer from "./maps";
+import MapsComponent from "./maps";
 
 function ListingShowComponent(props) {
   useEffect(() => {
@@ -21,7 +21,7 @@ function ListingShowComponent(props) {
           <ListerDescriptionContainer listing={props.listing} />
         </div>
         <DescriptionComponent description={props.listing.description} />
-        <MapsContainer />
+        <MapsComponent listing={props.listing} />
       </div>
     );
   }

@@ -2,6 +2,10 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
 function mainNav(props) {
+  // handleClick = (e) => {
+  //   e.preventDefault();
+
+  // };
   return (
     <div className="main-nav-container">
       <div className="main-nav">
@@ -11,11 +15,11 @@ function mainNav(props) {
               <Link
                 to="/listings?rb_toggle=rent&location=NYC&maxPrice=99999999"
                 className="mvn-alinks"
-                onClick={() =>
+                onClick={() => {
                   props.history.push(
                     "/listings?rb_toggle=rent&location=NYC&maxPrice=99999999"
-                  )
-                }
+                  );
+                }}
               >
                 Rent
               </Link>
