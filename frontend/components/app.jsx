@@ -4,10 +4,8 @@ import { AuthRoute } from "../util/route_util";
 
 import ModalContainer from "./modal/modal_container";
 import HomeSplashContainer from "./homesplash/homesplash_container";
-import MainNavContainer from "./headers/main_nav_container";
-import UserNavContainer from "./headers/user_nav_container";
 import FooterComponent from "./headers/footer";
-import ListingsContainer from "./listings/listings_container";
+import ListingsIndexContainer from "./listings/listings_container";
 import ListingShowContainer from "./listing/listingshow_container";
 import Navs from "./headers/navs";
 const App = () => (
@@ -17,7 +15,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={HomeSplashContainer} />
       <Route path="/listings/:listingId" component={ListingShowContainer} />
-      <Route path="/listings/" component={ListingsContainer} />
+      <Route path="/listings/" component={ListingsIndexContainer} />
     </Switch>
     <FooterComponent />
   </div>

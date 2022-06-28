@@ -19,7 +19,6 @@ const UserNav = ({ currentUser, logout, openModal }) => {
               <button
                 className="user-nav-account-links"
                 onClick={() => openModal("signup")}
-                replace
               >
                 Register
               </button>
@@ -28,7 +27,6 @@ const UserNav = ({ currentUser, logout, openModal }) => {
               <button
                 className="user-nav-account-links"
                 onClick={() => openModal("login")}
-                replace
               >
                 Login
               </button>

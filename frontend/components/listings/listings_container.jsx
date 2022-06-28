@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { fetchListings } from "../../actions/listings_actions";
-import Listings from "./listings";
+import ListingsIndexComponent from "./listings_index_component";
 
 export const mSTP = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.id],
@@ -11,6 +11,4 @@ export const mDTP = (dispatch) => ({
   fetchListings: (filter) => dispatch(fetchListings(filter)),
 });
 
-export const ListingsContainer = connect(mSTP, mDTP)(Listings);
-
-export default ListingsContainer;
+export default connect(mSTP, mDTP)(ListingsIndexComponent);

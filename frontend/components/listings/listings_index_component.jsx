@@ -4,7 +4,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import ListingsFormContainer from "./listings-form-container";
 import ResultBoxContainer from "./resultbox_container";
-function Listings(props) {
+function ListingsIndexComponent(props) {
   const params = Object.fromEntries(new URLSearchParams(props.location.search));
   const [state, setState] = useState(params);
 
@@ -22,12 +22,14 @@ function Listings(props) {
     props.fetchListings(queryString);
   }, [props.location.search]);
 
-  return (
-    <div className="listings">
-      <ListingsFormContainer />
-      <ResultBoxContainer />
-    </div>
-  );
+  if (props.listings) {
+    return (
+      <div className="listings">
+        <ListingsFormContainer />
+        <ResultBoxContainer listings={props.listings} />
+      </div>
+    );
+  }
 }
 
-export default withRouter(Listings);
+export default withRouter(ListingsIndexComponent);
