@@ -50,13 +50,18 @@ const UserNav = ({ currentUser, logout, openModal }) => {
         </div>
         <ul className="ul-user-nav">
           <li className="user-nav-account-links">
-            <Link
-              to={`/users/${currentUser.id}`}
-              className="user-nav-account-links"
-            >
-              Account
-            </Link>
+            <div className="account-dropdown">
+              <button className="account-btn">
+                Account
+                <div className="account-dropdown-content">
+                  <Link to={`/users/${currentUser.id}`}>Profile</Link>
+                  <Link to={`/users/${currentUser.id}`}>Activity</Link>
+                  {/* <Link to={`/users/${currentUser.id}`}>Profile</Link> */}
+                </div>
+              </button>
+            </div>
           </li>
+
           <li className="user-nav-account-links">
             <Link
               to="/"

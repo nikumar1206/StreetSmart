@@ -23,7 +23,7 @@ function HomeSplash(props) {
           <Link
             to="/"
             className="greeetings-submessage-links"
-            onClick={() => props.openModal("signup")}
+            onClick={() => props.openModal("login")}
           >
             login
           </Link>

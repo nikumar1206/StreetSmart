@@ -68,7 +68,7 @@ function mainNav(props) {
             </li>
           </ul>
         </div>
-        <div className="main-nav-search">
+        {/* <div className="main-nav-search">
           <form
           // onSubmit={() =>
           //   console.log("search button pressed, doesnt work tho")
@@ -95,7 +95,7 @@ function mainNav(props) {
               />
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
     </div>
   );
