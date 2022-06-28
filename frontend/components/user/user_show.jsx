@@ -16,15 +16,35 @@ const UserShowComponent = (props) => {
       <p>Send requests to listings faster by filling out this information</p>
       <form>
         <label htmlFor="name">Name</label>
-        <input id="name" onChange={update("name")} value="" type="text" />
+        <input
+          className="usershow-input"
+          id="name"
+          onChange={update("name")}
+          value={props.currentUser.name}
+          type="text"
+        />
 
         <label htmlFor="email">Email</label>
-        <input type="text" onChange={update("email")} value="" id="email" />
+        <input
+          className="usershow-input"
+          type="text"
+          onChange={update("email")}
+          value={props.currentUser.email}
+          id="email"
+        />
 
         <label htmlFor="phone">Phone</label>
-        <input type="text" onChange={update("phone")} value="" id="phone" />
+        <input
+          className="usershow-input"
+          type="text"
+          onChange={update("phone")}
+          value={props.currentUser.phone}
+          id="phone"
+        />
 
-        <button type="button">Save Changes</button>
+        <button className="usershow-btn" type="button">
+          Save Changes
+        </button>
       </form>
     </div>
   );

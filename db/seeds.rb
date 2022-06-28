@@ -11,7 +11,7 @@ Listing.destroy_all
 User.destroy_all
 SavedListing.destroy_all
 
-user1 = User.create!({ first_name: "demo", last_name: "user", email: "demo_user@demo.com", password: "password"})
+user1 = User.create!({ name:"Demo User", phone:"555-555-555", email: "demo_user@demo.com", password: "password"})
 
 
 nyc_data = {

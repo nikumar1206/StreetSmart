@@ -1,3 +1,74 @@
 .usershow-container {
     padding-top: 100px;
 }
+
+.usershow-container>form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+
+.usershow-input {
+    display: block;
+    width: 300px;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(148, 148, 148);
+    color: rgb(26, 31, 44);
+    font-family: "Source Sans Pro", Helvetica, Arial, Geneva, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 8px 15px;
+    text-transform: none;
+    height: 40px;
+}
+
+.usershow-btn {
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    text-transform: none;
+    height: 45px;
+    line-height: 43px;
+    width: 300px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.usershow-btn:hover {
+    background-color: #2074dc;
+    color: white;
+    transition: 0.3s;
+}
+
+/* 
+.demo-user-button {
+    align-items: center;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    text-transform: none;
+    height: 45px;
+    line-height: 43px;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.demo-user-button:hover {
+    background-color: #2074dc;
+    color: white;
+    transition: 0.3s;
+} */
