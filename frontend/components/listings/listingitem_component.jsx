@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ListingItemComponent(props) {
-  console.log(props);
+  // console.log(props);
   // const heartIcon = () => {
   //   return props.listing.rent_bool ? "♡" : "♡";
   // };

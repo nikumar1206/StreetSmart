@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
-import { AuthRoute } from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 import ModalContainer from "./modal/modal_container";
 import HomeSplashContainer from "./homesplash/homesplash_container";
@@ -14,6 +14,9 @@ const App = () => (
     <Navs />
     <Switch>
       <Route exact path="/" component={HomeSplashContainer} />
+      {/* <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
+      <ProtectedRoute path="/users/:userId/created" component={UserShowCreatedContainer} />
+      <ProtectedRoute path="/users/:userId/saves" component={UserShowSavesContainer} /> */}
       <Route path="/listings/:listingId" component={ListingShowContainer} />
       <Route path="/listings/" component={ListingsIndexContainer} />
     </Switch>

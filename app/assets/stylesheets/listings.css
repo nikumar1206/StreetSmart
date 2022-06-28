@@ -2,6 +2,7 @@
     overflow: auto;
     height: 100%;
     padding-top: 100px;
+    margin: 0 100px;
 }
 
 .resultdetails {

@@ -50,8 +50,11 @@ const UserNav = ({ currentUser, logout, openModal }) => {
         </div>
         <ul className="ul-user-nav">
           <li className="user-nav-account-links">
-            <Link to="/" className="user-nav-account-links">
-              My Activity
+            <Link
+              to={`/users/${currentUser.id}`}
+              className="user-nav-account-links"
+            >
+              Account
             </Link>
           </li>
           <li className="user-nav-account-links">
