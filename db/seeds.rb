@@ -215,8 +215,9 @@ BATHS = [
   2, 2, 2,
   2.5, 3, 4
 ]
-2.times do
-    i = 1
+
+i = 1
+10.times do
     name = Faker::Address.street_address
     borough = BOROUGHS.sample()
     bor_zip = nyc_data[borough].sample()

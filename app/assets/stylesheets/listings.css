@@ -1,5 +1,109 @@
 .listings {
     overflow: auto;
     height: 100%;
-    padding-top: 150px;
+    padding-top: 100px;
+}
+
+.resultdetails {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.searchCardList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    width: 60%;
+    padding-left: 2em;
+    justify-content: center;
+}
+
+.searchCardList-item {
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    min-height: 400px;
+    width: 40vh;
+    padding: 0 0;
+}
+
+div.listing-item-thumbnail>img {
+    width: 300px;
+    height: auto;
+}
+
+.listing-item-bottom {
+    padding: 5px 5px;
+}
+
+.listing-brief-info {
+    color: #62646A;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 22px;
+}
+
+.listing-link:link {
+    text-decoration: none;
+}
+
+.listing-link:visited {
+    text-decoration: none;
+}
+
+.listing-link:hover {
+    text-decoration: none;
+}
+
+.listing-link:active {
+    text-decoration: none;
+}
+
+.li-address {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 5px 5px;
+    color: #1876DB;
+}
+
+.li-price {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0 5px;
+    color: #1A1F2C;
+}
+
+.li-lowerblock {
+    margin-top: 70px;
+}
+
+.li-lowerblock-info {
+    display: flex;
+    justify-content: center;
+}
+
+ul.li-lowerblock-info>li {
+    color: #62646A;
+    font-size: 11px;
+}
+
+.first-child-li {
+    border-right: 1px solid #E6E6E6;
+    padding-right: 10px;
+}
+
+.li-lowerblock>p {
+    text-align: center;
+    margin: 0;
+    line-height: 16px;
+    font-size: 12px;
+    color: #62646A;
+    margin: 0;
 }

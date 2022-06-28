@@ -24,7 +24,7 @@
 class Listing < ApplicationRecord
     validates :name, :location, :neighborhood, :borough, :zip, :lister_id, :price, :beds, :baths, presence: true
 
-    belongs_to :user, foreign_key: "lister_id"
+    belongs_to :lister, class_name: "User", foreign_key: "lister_id"
     # has_many :saves, class_name: "Save", foreign_key: "listing_id"
     # has_many :favorites, class_name: "Favorite", foreign_key: "listing_id"
 

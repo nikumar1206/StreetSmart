@@ -5,6 +5,7 @@ function ResultBox(props) {
   return (
     <div className="resultbox">
       <ResultDetailsContainer />
+      <div className="result-vertical-divider"></div>
       <div className="maps-container"></div>
     </div>
   );
