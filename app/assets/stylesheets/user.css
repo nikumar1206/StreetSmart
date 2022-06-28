@@ -1,17 +1,37 @@
 .usershow-container {
-    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+}
+
+.usershow-info-container {
+    align-self: center;
+}
+
+
+.usershow-label {
+    margin-left: 2rem;
+}
+
+.usershow-container>label {
+    margin-left: 20px;
+}
+
+.usershow-descript {
+    font-size: 12px;
+    text-align: center;
 }
 
 .usershow-container>form {
     display: flex;
     flex-direction: column;
-    align-self: center;
+    align-items: center;
 }
-
 
 .usershow-input {
     display: block;
-    width: 300px;
+    width: 20rem;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     background-color: rgb(255, 255, 255);
@@ -23,6 +43,8 @@
     padding: 8px 15px;
     text-transform: none;
     height: 40px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .usershow-btn {
@@ -36,10 +58,11 @@
     text-transform: none;
     height: 45px;
     line-height: 43px;
-    width: 300px;
-    margin-top: 20px;
+    width: 20rem;
     cursor: pointer;
     transition: 0.3s;
+    margin: 20px auto;
+    font-weight: lighter;
 }
 
 .usershow-btn:hover {
@@ -48,27 +71,14 @@
     transition: 0.3s;
 }
 
-/* 
-.demo-user-button {
-    align-items: center;
-    background: rgb(255, 255, 255);
-    border: 1px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
-    display: flex;
-    font-size: 14px;
-    font-weight: 500;
-    justify-content: center;
+.usershow-title {
+    -webkit-font-smoothing: antialiased;
+    color: rgb(26, 31, 44);
+    font-family: "Source Sans Pro", Helvetica, Arial, Geneva, sans-serif;
+    margin-top: 20px 0 20px;
     text-transform: none;
-    height: 45px;
-    line-height: 43px;
-    width: 100%;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: 0.3s;
+    font-size: 45px;
+    font-weight: 300;
+    line-height: 36px;
+    text-align: center;
 }
-
-.demo-user-button:hover {
-    background-color: #2074dc;
-    color: white;
-    transition: 0.3s;
-} */

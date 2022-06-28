@@ -1,51 +1,74 @@
 import React, { useEffect } from "react";
+import { useState } from "react";
 import { connect } from "react-redux";
 import { fetchUser } from "../../actions/user_actions";
+import { updateUser } from "../../actions/user_actions";
+import { openModal } from "../../actions/modal_actions";
 
 const UserShowComponent = (props) => {
+  const [state, setState] = useState(props.currentUser);
+
   useEffect(() => {
     props.fetchUser(props.match.params.userId);
   }, []);
 
+  console.log(state);
   const update = (field) => {
     return (e) => setState({ ...state, [field]: e.target.value });
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.updateUser(state).then(() => openModal("popup"));
+  };
+
   return (
     <div className="usershow-container">
-      <h1>Personal Information</h1>
-      <p>Send requests to listings faster by filling out this information</p>
-      <form>
-        <label htmlFor="name">Name</label>
-        <input
-          className="usershow-input"
-          id="name"
-          onChange={update("name")}
-          value={props.currentUser.name}
-          type="text"
-        />
+      <section className="usershow-info-container">
+        <h1 className="usershow-title">Personal Information</h1>
+        <p className="usershow-descript">
+          Send requests to listings faster by filling out this information
+        </p>
+        <form onSubmit={handleSubmit}>
+          <label className="usershow-label" htmlFor="name">
+            Name
+          </label>
+          <input
+            className="usershow-input"
+            id="name"
+            onChange={update("name")}
+            value={state.name}
+            type="text"
+            autoFocus
+          />
 
-        <label htmlFor="email">Email</label>
-        <input
-          className="usershow-input"
-          type="text"
-          onChange={update("email")}
-          value={props.currentUser.email}
-          id="email"
-        />
+          <label className="usershow-label" htmlFor="email">
+            Email
+          </label>
+          <input
+            className="usershow-input"
+            type="email"
+            onChange={update("email")}
+            value={state.email}
+            id="email"
+            required
+          />
 
-        <label htmlFor="phone">Phone</label>
-        <input
-          className="usershow-input"
-          type="text"
-          onChange={update("phone")}
-          value={props.currentUser.phone}
-          id="phone"
-        />
+          <label className="usershow-label" htmlFor="phone">
+            Phone
+          </label>
+          <input
+            className="usershow-input"
+            type="text"
+            onChange={update("phone")}
+            value={state.phone}
+            id="phone"
+          />
 
-        <button className="usershow-btn" type="button">
-          Save Changes
-        </button>
-      </form>
+          <button className="usershow-btn" type="submit">
+            Save Changes
+          </button>
+        </form>
+      </section>
     </div>
   );
 };
@@ -60,7 +83,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
   return {
     fetchUser: (userId) => dispatch(fetchUser(userId)),
-    openModal: (formType) => dispatch(openModal(formType)),
+    updateUser: (user) => dispatch(updateUser(user)),
+    openModal: (modal) => dispatch(openModal(modal)),
   };
 };
 

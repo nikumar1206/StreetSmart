@@ -10,8 +10,7 @@ function SessionForm(props) {
     setValues((values) => ({ ...values, [field]: event.target.value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     const user = { ...values };
     props.processForm(user).then(() => props.closeModal());
   };
@@ -44,7 +43,7 @@ function SessionForm(props) {
           </p>
         ))}
       </div>
-      <form className="form-box">
+      <form className="form-box" onSubmit={handleSubmit}>
         <label htmlFor="email">
           <div>email</div>
         </label>
@@ -68,14 +67,11 @@ function SessionForm(props) {
           onChange={() => update("password")}
           required
         />
+        <button type="submit" className="form-submit-button">
+          Submit
+        </button>
       </form>
-      <button
-        type="submit"
-        className="form-submit-button"
-        onClick={handleSubmit}
-      >
-        Submit
-      </button>
+
       <div className="session-form-divider">
         <p className="sf-divider-text">or</p>
       </div>
