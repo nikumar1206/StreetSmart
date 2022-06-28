@@ -86,10 +86,12 @@ function mainNav(props) {
               type="button"
               onClick={() => console.log("search button pressed")}
               className="main-nav-search-button"
+              disabled
             >
               <img
                 className="main-nav-search-img"
                 src="https://streetsmart-safeassets.s3.amazonaws.com/images/Screen+Shot+2022-06-21+at+11.52.39+AM.png"
+                disabled
               />
             </button>
           </form>

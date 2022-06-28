@@ -15,11 +15,7 @@
  */
 @import url(reset.css);
 @import url(fonts.scss);
-@import url(splash.css);
-@import url(modal.scss);
-@import url(nav.css);
-@import url(searchmod.css);
-@import url(footer.css);
+
 
 
 .greetings-message {
@@ -105,7 +101,21 @@ li {
     font-size: 14px;
 }
 
-.user-nav-account-links:link,
+input:focus {
+    outline: 0;
+}
+
+.user-nav-account-links {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* .user-nav-account-links:link,
 .user-nav-account-links:visited {
     color: white;
     background-color: transparent;
@@ -116,7 +126,7 @@ li {
     color: white;
     background-color: transparent;
     text-decoration: underline;
-}
+} */
 
 .fa-solid fa-magnifying-glass {
     min-width: 20px;

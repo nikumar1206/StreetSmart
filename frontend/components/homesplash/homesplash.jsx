@@ -13,7 +13,7 @@ function HomeSplash(props) {
         <p className="greeting-submessage">
           Find the right home faster:{" "}
           <Link
-            to="/signup"
+            to="/"
             className="greeetings-submessage-links"
             onClick={() => props.openModal("signup")}
           >
@@ -21,7 +21,7 @@ function HomeSplash(props) {
           </Link>
           {" or "}
           <Link
-            to="/signup"
+            to="/"
             className="greeetings-submessage-links"
             onClick={() => props.openModal("signup")}
           >

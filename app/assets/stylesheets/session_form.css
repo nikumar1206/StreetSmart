@@ -58,7 +58,7 @@ form>label {
 .location-tag-input {
     font-size: 16px;
     line-height: 20px;
-    border-color: 1px solid rgb(148, 148, 148);
+    border-color: 0.5px solid rgb(148, 148, 148);
     margin-bottom: 10px;
     padding: 8px 15px;
     width: 90%;
@@ -67,7 +67,7 @@ form>label {
 }
 
 .session-form-inputs.focus {
-    border-color: rgb(26, 31, 44);
+    border-color: 0.5px rgb(26, 31, 44);
 }
 
 .form-submit-button {
@@ -127,6 +127,10 @@ form>label {
 
 }
 
+a:link {
+    text-decoration: none;
+}
+
 .demo-user-button {
     align-items: center;
     background: rgb(255, 255, 255);
@@ -134,7 +138,7 @@ form>label {
     color: rgb(0, 0, 0);
     display: flex;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     justify-content: center;
     text-transform: none;
     height: 45px;
@@ -142,6 +146,12 @@ form>label {
     width: 100%;
     margin-top: 20px;
     cursor: pointer;
+}
+
+.demo-user-button:hover {
+    background-color: #2074dc;
+    color: white;
+    transition: 0.3s;
 }
 
 .disclaimer-text-container {

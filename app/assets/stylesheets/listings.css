@@ -14,9 +14,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 30px;
-    width: 60%;
+    width: 100%;
     padding-left: 2em;
     justify-content: center;
+}
+
+.result-vertical-divider {
+    width: 10vw;
 }
 
 .searchCardList-item {
@@ -106,4 +110,8 @@ ul.li-lowerblock-info>li {
     font-size: 12px;
     color: #62646A;
     margin: 0;
+}
+
+.resultbox {
+    display: flex;
 }

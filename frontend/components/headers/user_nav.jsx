@@ -16,24 +16,22 @@ const UserNav = ({ currentUser, logout, openModal }) => {
           </div>
           <ul>
             <li>
-              <Link
-                to="/"
+              <button
                 className="user-nav-account-links"
                 onClick={() => openModal("signup")}
                 replace
               >
                 Register
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                to="/"
+              <button
                 className="user-nav-account-links"
                 onClick={() => openModal("login")}
                 replace
               >
                 Login
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
