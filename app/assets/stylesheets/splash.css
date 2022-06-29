@@ -4,12 +4,10 @@
     font-weight: 600;
     line-height: 24px;
     text-align: center;
-    background: rgb(3, 39, 101);
+    background: #135EAF;
     padding: 12px 24px;
     text-align: center;
     margin: 0;
-    -webkit-font-smoothing: 100%;
-
 }
 
 .fairhousing-disclaimer-link {
@@ -25,6 +23,11 @@
     text-decoration: none;
     color: rgb(255, 255, 255);
     fill: rgb(255, 255, 255);
+}
+
+.fairhousing-disclaimer-link:hover {
+    background-color: #f1c4ac;
+    color: black;
 }
 
 .fairhousing-disclaimer-link:visited {

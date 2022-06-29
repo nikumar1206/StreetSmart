@@ -134,7 +134,7 @@ input:focus {
 }
 
 .home-page {
-    background: url(https://streetsmart-safeassets.s3.amazonaws.com/images/monopolybanner.png) center bottom / 3360px no-repeat rgb(220, 246, 255);
+    background: url(https://streetsmart-safeassets.s3.amazonaws.com/images/monopolybanner.png) center bottom / 100vh no-repeat rgb(220, 246, 255);
     background-size: contain;
     height: 100vh;
 }

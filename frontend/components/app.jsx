@@ -3,7 +3,7 @@ import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 import ModalContainer from "./modal/modal_container";
-import HomeSplashContainer from "./homesplash/homesplash_container";
+import HomeSplashContainer from "./homesplash/homesplash";
 import FooterComponent from "./headers/footer";
 import UserShowContainer from "./user/user_show";
 import ListingsIndexContainer from "./listings/listings_container";

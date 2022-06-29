@@ -178,7 +178,7 @@
 
 }
 
-.greeetings-submessage-links {
+.greetings-submessage-links {
     text-decoration: underline 1px;
     text-underline-offset: 3px;
     color: rgb(22, 77, 180);
@@ -186,6 +186,25 @@
     font-weight: 600;
 }
 
-.greeetings-submessage-links:hover {
+.greetings-submessage-links:hover {
     background-color: #f1c4ac;
+}
+
+.greetings-submessage-links-logged {
+    padding: 10px;
+    margin: 0px;
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 550;
+    line-height: 24px;
+    text-align: center;
+    display: block;
+    color: rgb(26, 31, 44);
+    left: 50%;
+    color: rgb(22, 77, 180);
+    ;
+}
+
+.greetings-submessage-links-logged:hover {
+    text-decoration: underline;
 }
