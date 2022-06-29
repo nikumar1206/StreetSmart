@@ -16,7 +16,7 @@ export const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,
 });
 
-export const recieveErrors = (errors) => ({
+export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors,
 });
@@ -44,4 +44,7 @@ export const logout = () => (dispatch) =>
   );
 
 export const signup = (user) => (dispatch) =>
-  SessionAPI.signup(user).then((user) => dispatch(receiveCurrentUser(user)));
+  SessionAPI.signup(user).then(
+    (user) => dispatch(receiveCurrentUser(user)),
+    (err) => dispatch(receiveSessionErrors(err.responseJSON))
+  );

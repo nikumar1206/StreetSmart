@@ -164,3 +164,7 @@ a:link {
     text-align: center;
     margin-top: 30px;
 }
+
+.error-message-container {
+    color: red;
+}
