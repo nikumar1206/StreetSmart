@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { fetchSavedListings } from "../../actions/save_listings_actions";
 import { connect } from "react-redux";
+import ResultDetails from "../listings/resultdetails";
 
 function UserShowSavedComponent(props) {
   console.log(props);
@@ -9,12 +10,19 @@ function UserShowSavedComponent(props) {
     props.fetchSavedListings(props.currentUser.id);
   }, []);
 
-  return (
-    <div className="usersave-container">
-      <h1 className="usershow-title">Saved Listings</h1>
-      <div className="usersave-main"></div>
-    </div>
-  );
+  if (props.listings) {
+    return (
+      <div className="usersave-container">
+        <h1 className="usershow-title">Saved Listings</h1>
+        <div className="usersave-main">
+          <section className="usersave-listings-container">
+            <ResultDetails listings={props.listings} />
+          </section>
+          <section className="usersave-maps-container"></section>
+        </div>
+      </div>
+    );
+  }
 }
 
 // container

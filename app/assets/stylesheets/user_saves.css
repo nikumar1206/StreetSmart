@@ -1,3 +1,8 @@
 .usersave-container {
     padding-top: 100px;
 }
+
+.usersave-main {
+    display: flex;
+
+}
