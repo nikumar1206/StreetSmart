@@ -34,7 +34,6 @@ function searchMod(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.fetchListings(queryString);
     props.history.push({
       pathname: `/listings`,
       search: `${queryString}`,

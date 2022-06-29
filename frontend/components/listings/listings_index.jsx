@@ -1,25 +1,20 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { withRouter } from "react-router-dom";
 import ListingsFormContainer from "./listings-form-container";
 import ResultBox from "./resultbox";
 function ListingsIndexComponent(props) {
   let params = Object.fromEntries(new URLSearchParams(props.location.search));
   let queryString = `?rb_toggle=${params.rb_toggle}&location=${params.location}&maxPrice=${params.maxPrice}`;
-  // const [state, setState] = useState(params);
+  const [state, setState] = useState(params);
 
   console.log(props);
 
   useEffect(() => {
-    props.fetchListings(queryString);
-  }, []);
-
-  useEffect(() => {
-    // props.removeListings();
+    props.removeListings();
     props.fetchListings(queryString);
   }, [props.location.search]);
 
-  if (props.listings) {
+  if (props.listings != [null]) {
     return (
       <div className="listings">
         <ListingsFormContainer />
@@ -39,4 +34,4 @@ function ListingsIndexComponent(props) {
   // }
 }
 
-export default withRouter(ListingsIndexComponent);
+export default ListingsIndexComponent;

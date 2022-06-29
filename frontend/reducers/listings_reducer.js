@@ -4,7 +4,7 @@ import {
   CLEAR_LISTINGS,
 } from "../actions/listings_actions";
 
-const emptyListings = { listings: null };
+const emptyListings = null;
 
 export const listingsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -18,7 +18,7 @@ export const listingsReducer = (state = {}, action) => {
       nextState[action.listing.id] = action.listing;
       return nextState;
     case CLEAR_LISTINGS:
-      return Object.assign(emptyListings);
+      return Object.assign({}, emptyListings);
     default:
       return state;
   }

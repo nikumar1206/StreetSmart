@@ -15,10 +15,10 @@ function MainNav(props) {
                 to={`${rent_query}`}
                 className="mvn-alinks"
                 onClick={() => {
-                  props.removeListings();
-                  props.fetchListings(
-                    "?rb_toggle=rent&location=NYC&maxPrice=99999999"
-                  );
+                  // props.removeListings();
+                  // props.fetchListings(
+                  //   "?rb_toggle=rent&location=NYC&maxPrice=99999999"
+                  // );
                   props.history.push(`${rent_query}`);
                 }}
               >
@@ -30,10 +30,10 @@ function MainNav(props) {
                 to={`${buy_query}`}
                 className="mvn-alinks"
                 onClick={() => {
-                  props.removeListings();
-                  props.fetchListings(
-                    "?rb_toggle=buy&location=NYC&maxPrice=99999999"
-                  );
+                  // props.removeListings();
+                  // props.fetchListings(
+                  //   "?rb_toggle=buy&location=NYC&maxPrice=99999999"
+                  // );
                   props.history.push(`${buy_query}`);
                 }}
               >
