@@ -2,6 +2,8 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
 function MainNav(props) {
+  const rent_query = "/listings/?rb_toggle=rent&location=NYC&maxPrice=99999999";
+  const buy_query = "/listings/?rb_toggle=buy&location=NYC&maxPrice=99999999";
   console.log(props);
   return (
     <div className="main-nav-container">
@@ -10,12 +12,14 @@ function MainNav(props) {
           <ul className="main-nav-list">
             <li className="mvn-li">
               <Link
-                to="/listings?rb_toggle=rent&location=NYC&maxPrice=99999999"
+                to={`${rent_query}`}
                 className="mvn-alinks"
                 onClick={() => {
-                  props.history.push(
-                    "/listings?rb_toggle=rent&location=NYC&maxPrice=99999999"
+                  props.removeListings();
+                  props.fetchListings(
+                    "?rb_toggle=rent&location=NYC&maxPrice=99999999"
                   );
+                  props.history.push(`${rent_query}`);
                 }}
               >
                 Rent
@@ -23,12 +27,14 @@ function MainNav(props) {
             </li>
             <li className="mvn-li">
               <Link
-                to="/listings?rb_toggle=buy&location=NYC&maxPrice=99999999"
+                to={`${buy_query}`}
                 className="mvn-alinks"
                 onClick={() => {
-                  props.history.push(
-                    "/listings?rb_toggle=buy&location=NYC&maxPrice=99999999"
+                  props.removeListings();
+                  props.fetchListings(
+                    "?rb_toggle=buy&location=NYC&maxPrice=99999999"
                   );
+                  props.history.push(`${buy_query}`);
                 }}
               >
                 Buy

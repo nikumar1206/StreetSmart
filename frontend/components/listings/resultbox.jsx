@@ -1,14 +1,13 @@
-import React, { Component } from "react";
-import ResultDetailsContainer from "./resultdetails_container";
+import React from "react";
+import ResultDetails from "./resultdetails";
 import MapsComponent from "./maps_component";
 
 function ResultBox(props) {
   return (
     <div className="resultbox">
-      {/* {console.log(props)} */}
-      <ResultDetailsContainer />
+      <ResultDetails listings={props.listings} />
       <div className="result-vertical-divider"></div>
-      <MapsComponent listing={props.listings.first} />
+      <MapsComponent />
     </div>
   );
 }
