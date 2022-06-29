@@ -5,15 +5,14 @@ import { connect } from "react-redux";
 function UserShowSavedComponent(props) {
   console.log(props);
 
-  // props.fetchSavedListings(props.currentUser.id);
-
   useEffect(() => {
     props.fetchSavedListings(props.currentUser.id);
   }, []);
 
   return (
-    <div className="usershow-container">
+    <div className="usersave-container">
       <h1 className="usershow-title">Saved Listings</h1>
+      <div className="usersave-main"></div>
     </div>
   );
 }
