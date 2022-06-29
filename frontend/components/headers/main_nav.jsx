@@ -1,11 +1,8 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
-function mainNav(props) {
-  // handleClick = (e) => {
-  //   e.preventDefault();
-
-  // };
+function MainNav(props) {
+  console.log(props);
   return (
     <div className="main-nav-container">
       <div className="main-nav">
@@ -38,9 +35,9 @@ function mainNav(props) {
               </Link>
             </li>
             <li className="mvn-li">
-              <a href="" className="mvn-alinks">
+              <Link to="/users/:userId" className="mvn-alinks">
                 Sell
-              </a>
+              </Link>
             </li>
             <li className="mvn-li">
               <a
@@ -101,4 +98,4 @@ function mainNav(props) {
   );
 }
 
-export default withRouter(mainNav);
+export default withRouter(MainNav);

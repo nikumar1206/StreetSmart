@@ -55,7 +55,7 @@ const UserNav = ({ currentUser, logout, openModal }) => {
                 Account
                 <div className="account-dropdown-content">
                   <Link to={`/users/${currentUser.id}`}>Profile</Link>
-                  <Link to={`/users/${currentUser.id}`}>Activity</Link>
+                  <Link to={`/users/${currentUser.id}`}>Saved Listings</Link>
                   <Link to={`/users/${currentUser.id}`}>My Listings</Link>
                 </div>
               </button>

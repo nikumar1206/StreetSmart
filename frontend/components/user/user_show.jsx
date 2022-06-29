@@ -38,7 +38,6 @@ const UserShowComponent = (props) => {
             onChange={update("name")}
             value={state.name}
             type="text"
-            autoFocus
           />
 
           <label className="usershow-label" htmlFor="email">
