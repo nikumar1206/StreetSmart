@@ -19,14 +19,14 @@
 #  description   :text             default(""), not null
 #  rent_bool     :boolean          default(FALSE)
 #  borough       :string           default("Queens")
-#  saves         :integer          default(0)
+#  save_count    :integer          default(0)
 #
 class Listing < ApplicationRecord
     validates :name, :location, :neighborhood, :borough, :zip, :lister_id, :price, :beds, :baths, presence: true
 
     belongs_to :lister, class_name: "User", foreign_key: "lister_id"
-    # has_many :saves, class_name: "Save", foreign_key: "listing_id"
-    # has_many :favorites, class_name: "Favorite", foreign_key: "listing_id"
+    has_many :saves, class_name: "Save", foreign_key: "listing_id"
+
 
     has_one_attached :photo
 end

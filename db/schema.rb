@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_28_160559) do
+ActiveRecord::Schema.define(version: 2022_06_29_201734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2022_06_28_160559) do
     t.text "description", default: "", null: false
     t.boolean "rent_bool", default: false
     t.string "borough", default: "Queens"
-    t.integer "saves", default: 0
+    t.integer "save_count", default: 0
     t.index ["location"], name: "index_listings_on_location", unique: true
     t.index ["name"], name: "index_listings_on_name", unique: true
   end

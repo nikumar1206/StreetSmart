@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchListing } from "../../actions/listings_actions";
+import { fetchListing, removeListings } from "../../actions/listings_actions";
 import ListingShowComponent from "./listingshow";
 
 const mapStatetoProps = (state, ownProps) => ({
@@ -8,6 +8,7 @@ const mapStatetoProps = (state, ownProps) => ({
 
 const mapDispatchtoProps = (dispatch) => ({
   fetchListing: (listingId) => dispatch(fetchListing(listingId)),
+  removeListings: () => dispatch(removeListings()),
 });
 
 export default connect(

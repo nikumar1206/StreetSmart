@@ -9,9 +9,9 @@
 #  updated_at :datetime         not null
 #
 class SavedListing < ApplicationRecord
-    validates :saver_id, :listing_id, presence: true
+    # validates :saver_id, :listing_id, presence: true
 
-    belongs_to :user, foreign_key: "saver_id"
-    belongs_to :listing, foreign_key: "listing_id"
+    # belongs_to :user, foreign_key: "saver_id"
+    # belongs_to :listing, foreign_key: "listing_id"
 
 end

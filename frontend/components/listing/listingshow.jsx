@@ -8,6 +8,7 @@ import MapsComponent from "./maps";
 
 function ListingShowComponent(props) {
   useEffect(() => {
+    props.removeListings();
     props.fetchListing(props.match.params.listingId);
   }, []);
 

@@ -11,6 +11,8 @@
 #  first_name      :string
 #  last_name       :string
 #  realtor         :boolean          default(FALSE)
+#  name            :string
+#  phone           :string
 #
 require 'test_helper'
 

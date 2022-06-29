@@ -13,9 +13,11 @@ const UserShowComponent = (props) => {
   }, []);
 
   console.log(state);
+
   const update = (field) => {
     return (e) => setState({ ...state, [field]: e.target.value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     props.updateUser(state).then(() => openModal("popup"));

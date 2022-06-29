@@ -3,6 +3,7 @@ import * as ListingAPI from "../util/listing_api_util";
 export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS";
 export const RECEIVE_LISTING = "RECEIVE_LISTING";
 export const CLEAR_LISTINGS = "CLEAR_LISTINGS";
+export const RECEIVE_SAVED_LISTINGS = "RECEIVE_SAVED_LISTINGS";
 
 export const receiveListings = (listings) => ({
   type: RECEIVE_LISTINGS,
@@ -15,6 +16,11 @@ export const receiveListing = (listing) => ({
 export const removeListings = () => ({
   type: CLEAR_LISTINGS,
 });
+
+// export const receiveSavedListings = (listings) => ({
+//   type: RECEIVE_SAVED_LISTINGS,
+//   listings,
+// });
 
 export const fetchListings = (filters) => (dispatch) =>
   ListingAPI.fetchListings(filters).then((listings) =>

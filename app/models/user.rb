@@ -11,6 +11,8 @@
 #  first_name      :string
 #  last_name       :string
 #  realtor         :boolean          default(FALSE)
+#  name            :string
+#  phone           :string
 #
 
 class User < ApplicationRecord
@@ -20,9 +22,10 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true} 
 
+    has_many :listings, class_name: "Listing", foreign_key: "lister_id"
+    has_many :saves, class_name: "Save", foreign_key: "user_id"
 
-    has_many :savedlistings, foreign_key: "saver_id"
-    has_many :listings, foreign_key: "lister_id"
+    has_many :saved_listings, through: :saves, source: :listing
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

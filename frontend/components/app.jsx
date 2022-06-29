@@ -8,6 +8,7 @@ import FooterComponent from "./headers/footer";
 import UserShowContainer from "./user/user_show";
 import ListingsIndexContainer from "./listings/listings_container";
 import ListingShowContainer from "./listing/listingshow_container";
+import UserShowSavedContainer from "./user/user_saved";
 import NavsContainer from "./headers/navs";
 const App = () => (
   <div className="app">
@@ -15,12 +16,15 @@ const App = () => (
     <NavsContainer />
     <Switch>
       <Route exact path="/" component={HomeSplashContainer} />
+      <ProtectedRoute
+        path="/users/:userId/saved"
+        component={UserShowSavedContainer}
+      />
       <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
       <ProtectedRoute
         path="/users/:userId/create"
         component={UserShowContainer}
       />
-      {/* <ProtectedRoute path="/users/:userId/saves" component={UserShowSavesContainer} /> */}
       <Route path="/listings/:listingId" component={ListingShowContainer} />
       <Route path="/listings/" component={ListingsIndexContainer} />
     </Switch>

@@ -251,3 +251,8 @@ i = 1
     new_listing.photo.attach(io: image, filename: "listing#{i}")
     i += 1
 end
+
+Save.create(user_id: 1, listing_id: 3)
+Save.create(user_id: 1, listing_id: 1)
+Save.create(user_id: 1, listing_id: 2)
+Save.create(user_id: 1, listing_id: 8)
