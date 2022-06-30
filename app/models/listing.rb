@@ -29,4 +29,10 @@ class Listing < ApplicationRecord
 
 
     has_one_attached :photo
+
+    def saved?(user)
+        !!self.saves.find{ |save| save.user_id == user.id }
+    end
+
+
 end

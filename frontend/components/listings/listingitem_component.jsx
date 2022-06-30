@@ -7,6 +7,16 @@ function ListingItemComponent(props) {
     let price = props.listing.price;
     return price.toLocaleString();
   };
+
+  const handleSave = () => {
+    if (props.listing.saved) {
+      console.log(scoop);
+    } else {
+      console.log(gloop);
+    }
+    setToggled(!toggle);
+  };
+
   return (
     <li className="searchCardList-item">
       <Link className="listing-link" to={`/listings/${props.listing.id}`}>
@@ -24,7 +34,7 @@ function ListingItemComponent(props) {
           </div>
 
           <div className="heart-container">
-            <button className="heartsave-btn" onClick={handleSave}>
+            <button className="heartsave-btn">
               <img src="" alt="" />
             </button>
           </div>

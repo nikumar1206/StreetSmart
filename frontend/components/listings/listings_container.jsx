@@ -5,6 +5,7 @@ import ListingsIndexComponent from "./listings_index";
 export const mSTP = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.id],
   listings: Object.values(state.entities.listings),
+  savedListings: Object.values(state.entities.users[state.session.id]),
 });
 
 export const mDTP = (dispatch) => ({

@@ -14,7 +14,7 @@ class Api::ListingsController < ApplicationController
         @listing = Listing.find(params[:id])
         render :show
     end
-
+    
     private
 
     def listing_params
@@ -32,5 +32,6 @@ class Api::ListingsController < ApplicationController
     def maxPrice
         params[:maxPrice]
     end
+
 
 end
