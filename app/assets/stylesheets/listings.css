@@ -119,3 +119,10 @@ ul.li-lowerblock-info>li {
 .resultbox {
     display: flex;
 }
+
+
+.heartsave-btn {
+    background-color: transparent;
+    background-repeat: none;
+    margin: 40px 0 0 50px;
+}
