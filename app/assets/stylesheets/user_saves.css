@@ -6,3 +6,11 @@
     display: flex;
 
 }
+
+.savedlistings {
+    padding: 20px 0 30px;
+}
+
+.usersave-listings-container {
+    margin: 0 auto;
+}

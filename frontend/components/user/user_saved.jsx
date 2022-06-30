@@ -13,7 +13,7 @@ function UserShowSavedComponent(props) {
   if (props.listings) {
     return (
       <div className="usersave-container">
-        <h1 className="usershow-title">Saved Listings</h1>
+        <h1 className="usershow-title savedlistings">Saved Listings</h1>
         <div className="usersave-main">
           <section className="usersave-listings-container">
             <ResultDetails listings={props.listings} />
