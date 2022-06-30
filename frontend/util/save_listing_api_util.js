@@ -5,7 +5,7 @@ export const saveListing = (userId, listingId) =>
     data: { listing_id: listingId },
   });
 
-export const unsaveListing = (saveListingId) =>
+export const unsaveListing = (userId, saveListingId) =>
   $.ajax({
     method: "delete",
     url: `/api/users/${userId}/saved_listings/${saveListingId}`,
