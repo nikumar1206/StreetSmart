@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { logout } from "../../actions/sessions_actions";
 import { Link } from "react-router-dom";
-import DreamHomeComponent from "./dreamhome";
 
 function HomeSplash({ openModal, currentUser }) {
   return (
@@ -51,7 +50,6 @@ function HomeSplash({ openModal, currentUser }) {
           Understand your rights.
         </a>
       </p>
-      {/* <DreamHomeComponent /> */}
     </div>
   );
 }

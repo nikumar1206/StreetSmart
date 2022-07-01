@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ListerDescriptionContainer(props) {
+  console.log(props.listing);
   const priceConvert = () => {
     let price = props.listing.price;
     return price.toLocaleString();
@@ -21,36 +22,33 @@ function ListerDescriptionContainer(props) {
 
       <section className="details-buttons">
         <Link to="/">
-          <button>Save</button>
+          <button className="save-button">Save</button>
         </Link>
-        <button>Share</button>
+        <button className="share-button">Share</button>
       </section>
-      <p>This listing has been saved by {props.listing.saves} people.</p>
+      <p>
+        This listing has been saved by {Math.floor(Math.random() * 500)} people.
+      </p>
       <div className="notes-container">
         <Link to="/">
-          <button>+ Add notes to this listing</button>
+          <button className="notes-button">+ Add notes to this listing</button>
         </Link>
       </div>
 
       <div className="contact-lister-buttons">
         {props.listing.rent_bool ? (
           <Link to="/">
-            <button>Request a tour</button>
+            <button className="tour-button">Request a tour</button>
           </Link>
         ) : (
           <Link to="/">
-            <button>Schedule a Showing</button>
+            <button className="schedule-button">Schedule a Showing</button>
           </Link>
         )}
       </div>
-      <section className="notes-button-container">
-        <Link to="/">
-          <button>Add notes to this listing</button>
-        </Link>
-      </section>
       <section className="lister-info">
-        <p>Listed by</p>
-        <p>Lister Info here/maybe image as well</p>
+        <img src="https://www.google.com/favicon.ico" alt="google ico" />
+        <h1 className="lister-info-title">{props.listing.lister.name}</h1>
       </section>
     </div>
   );

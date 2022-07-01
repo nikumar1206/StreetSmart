@@ -24,6 +24,11 @@
     width: 10vw;
 }
 
+.google-maps {
+    position: sticky;
+    top: 0;
+}
+
 .searchCardList-item {
     border: 1px solid #e6e6e6;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);

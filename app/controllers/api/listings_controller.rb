@@ -14,11 +14,31 @@ class Api::ListingsController < ApplicationController
         @listing = Listing.find(params[:id])
         render :show
     end
-    
-    private
 
+    def create
+        @listing = Listing.new(listing_params)
+        @listing.lister = current_user
+        @listing.location = "#{@listing.name}, #{@listing.borough}, New York, #{@listing.zip}"
+        if @listing.save!
+          render :show
+        else
+          render json: ["Could not create new listing"], status: 422
+        end
+    end
+
+    def update
+        @listing = Listing.find(params[:id])
+        if @listing.update(listing_params)
+          render :show
+        else
+          render json: ["Could not create new listing"], status: 422
+        end
+    end
+
+
+    private
     def listing_params
-        params.require(:listing).permit(:name, :location, :neighborhood, :zip, :lister_id, :borough, :neighborhood, :price, :beds, :baths, :description)
+        params.require(:listing).permit(:name, :location, :neighborhood, :zip, :lister_id, :borough, :neighborhood, :price, :beds, :baths, :description, :property_type, :lat, :lng, :rent_bool, :photo)
     end
 
     def rb_toggle 

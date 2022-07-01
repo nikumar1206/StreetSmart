@@ -10,7 +10,8 @@ function SessionForm(props) {
     setValues((values) => ({ ...values, [field]: event.target.value }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault;
     const user = { ...values };
     props.processForm(user).then(() => props.closeModal());
   };

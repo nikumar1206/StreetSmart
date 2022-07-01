@@ -7,7 +7,7 @@ function ResultBox(props) {
     <div className="resultbox">
       <ResultDetails listings={props.listings} />
       <div className="result-vertical-divider"></div>
-      <MapsComponent />
+      <MapsComponent listings={props.listings} />
     </div>
   );
 }

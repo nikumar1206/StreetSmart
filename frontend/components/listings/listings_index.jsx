@@ -24,6 +24,7 @@ function ListingsIndexComponent(props) {
   } else {
     return <h1>notworking</h1>;
   }
+
   // {
   //   props.listings ? (
   //     <div className="listings">

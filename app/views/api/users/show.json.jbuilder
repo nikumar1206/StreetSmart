@@ -4,10 +4,10 @@ json.partial! "api/users/user", user: @user
 # end
 
 
-saved_listings_arr = []
+# saved_listings_arr = []
 
-@user.saved_listings.each do |listing|
-    saved_listings_arr << listing.id
-end
+# @user.saved_listings.each do |listing|
+#     saved_listings_arr << listing.id
+# end
 
-json.saved_listings =  saved_listings_arr
+# json.saved_listings =  saved_listings_arr

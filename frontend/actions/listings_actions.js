@@ -3,7 +3,7 @@ import * as ListingAPI from "../util/listing_api_util";
 export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS";
 export const RECEIVE_LISTING = "RECEIVE_LISTING";
 export const CLEAR_LISTINGS = "CLEAR_LISTINGS";
-export const RECEIVE_SAVED_LISTINGS = "RECEIVE_SAVED_LISTINGS";
+export const CLEAR_LISTING = "CLEAR_LISTING";
 
 export const receiveListings = (listings) => ({
   type: RECEIVE_LISTINGS,
@@ -16,12 +16,9 @@ export const receiveListing = (listing) => ({
 export const removeListings = () => ({
   type: CLEAR_LISTINGS,
 });
-
-// export const receiveSavedListings = (listings) => ({
-//   type: RECEIVE_SAVED_LISTINGS,
-//   listings,
-// });
-
+export const removeListing = () => ({
+  type: CLEAR_LISTING,
+});
 export const fetchListings = (filters) => (dispatch) =>
   ListingAPI.fetchListings(filters).then((listings) =>
     dispatch(receiveListings(listings))
@@ -31,4 +28,17 @@ export const fetchListing = (listingId) => (dispatch) =>
     dispatch(receiveListing(listing))
   );
 
-// export const removeListings = () => (dispatch) => () => dispatch(clearListings);
+export const createListing = (listing) => (dispatch) =>
+  ListingAPI.createListing(listing).then((listing) =>
+    dispatch(receiveListing(listing))
+  );
+
+export const updateListing = (listing) => (dispatch) =>
+  ListingAPI.updateListing(listing).then((listing) =>
+    dispatch(receiveListing(listing))
+  );
+
+export const deleteListing = (listingId) => (dispatch) =>
+  ListingAPI.deleteListing(listingId).then(() =>
+    dispatch(removeListing(listingId))
+  );

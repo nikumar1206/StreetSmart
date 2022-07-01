@@ -1,0 +1,98 @@
+.listing-form-container {
+    padding: 100px;
+}
+
+.listing-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.listingFormInput {
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid rgb(148, 148, 148);
+    color: rgb(26, 31, 44);
+    font-family: "Source Sans Pro", Helvetica, Arial, Geneva, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 8px 15px;
+    text-transform: none;
+    width: 35rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+select {
+    margin-left: auto;
+    margin-right: auto;
+    width: 35rem;
+    padding: 7px 1px 7px 1px;
+}
+
+select:focus {
+    outline: none;
+}
+
+.listing-form-label,
+.rb-toggle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.listingFormTitle {
+    font-weight: 300;
+    text-align: center;
+    font-size: 45px;
+}
+
+.listingFormButton {
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    text-transform: none;
+    height: 45px;
+    line-height: 43px;
+    width: 20rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 20px auto;
+    font-weight: lighter;
+}
+
+.listingFormButton:hover {
+    background-color: #2074dc;
+    color: white;
+    transition: 0.3s;
+}
+
+.rb-toggle {
+    color: rgb(98, 100, 106);
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.lat-lng {
+    display: inline-flex;
+}
+
+.lat-lng-input {
+    width: 40%;
+    height: 0.4rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 9px;
+}
+
+textarea {
+    resize: none;
+    font-family: "Source Sans Pro", Helvetica, Arial, Geneva, sans-serif;
+}
+
+textarea:focus {
+    outline: none;
+}

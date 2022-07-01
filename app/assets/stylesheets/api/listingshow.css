@@ -29,6 +29,52 @@ div.divider {
     width: 40%;
 }
 
+.save-button,
+.share-button,
+.notes-button,
+.tour-button,
+.schedule-button {
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    text-transform: none;
+    height: 45px;
+    line-height: 43px;
+    width: 80%;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 20px auto;
+    font-weight: lighter;
+}
+
+.save-button:hover,
+.share-button:hover,
+.notes-button:hover,
+.tour-button:hover,
+.schedule-button:hover {
+    background-color: #2074dc;
+    color: white;
+    transition: 0.3s;
+}
+
+.lister-info {
+    width: 100%;
+    border: 1px solid black;
+    height: 100px;
+}
+
+.lister-info-img {
+    float: left;
+}
+
+.lister-info-title {
+    font-size: 1.23rem
+}
+
 .listing-descript-name {
     font-size: 30px;
     font-weight: 200;

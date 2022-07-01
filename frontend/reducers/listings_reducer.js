@@ -18,12 +18,6 @@ export const listingsReducer = (state = {}, action) => {
     case RECEIVE_LISTING:
       nextState[action.listing.id] = action.listing;
       return nextState;
-    case RECEIVE_SAVED_LISTINGS:
-      const listings = Object.values(action.listings);
-      listings.forEach((listing) => {
-        nextState[listing.id] = listing;
-      });
-      return nextState;
     case CLEAR_LISTINGS:
       return Object.assign({}, emptyListings);
     default:
@@ -31,3 +25,10 @@ export const listingsReducer = (state = {}, action) => {
   }
 };
 export default listingsReducer;
+
+// case RECEIVE_SAVED_LISTINGS:
+//   const listings = Object.values(action.listings);
+//   listings.forEach((listing) => {
+//     nextState[listing.id] = listing;
+//   });
+//   return nextState;

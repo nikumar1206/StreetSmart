@@ -9,3 +9,27 @@ export const fetchListing = (listingId) =>
     url: `/api/listings/${listingId}`,
     method: "get",
   });
+
+export const createListing = (listing) =>
+  $.ajax({
+    url: `/api/listings/`,
+    method: "post",
+    data: listing,
+    contentType: false,
+    processData: false,
+  });
+
+export const updateListing = (listing) =>
+  $.ajax({
+    url: `/api/listings/${listing.id}`,
+    method: "patch",
+    data: listing,
+    contentType: false,
+    processData: false,
+  });
+
+export const deleteListing = (listingId) =>
+  $.ajax({
+    url: `/api/listings/${listingId}`,
+    method: "delete",
+  });
