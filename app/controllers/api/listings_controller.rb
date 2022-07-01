@@ -5,7 +5,7 @@ class Api::ListingsController < ApplicationController
         if location == "nyc"
             @listings = Listing.where("price < ? AND rent_bool = ?", maxPrice, "#{(rb_toggle)}")
         else
-            @listings = Listing.where("price < ? AND rent_bool = ? AND (LOWER(location) LIKE ? or LOWER(neighborhood) LIKE ?)", "#{maxPrice}", "#{rb_toggle}", "%#{location}%")
+            @listings = Listing.where("price < ? AND rent_bool = ? AND (LOWER(location) LIKE ? or LOWER(neighborhood) LIKE ?)", "#{maxPrice}", "#{rb_toggle}", "%#{location}%","%#{location}%" )
         end
         render :index
     end
@@ -47,6 +47,10 @@ class Api::ListingsController < ApplicationController
 
     def location
         params[:location].downcase
+    end
+
+    def neighborhood
+        params[:neighborhood].downcase
     end
 
     def maxPrice
