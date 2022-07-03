@@ -47,7 +47,11 @@ function ListerDescriptionContainer(props) {
         )}
       </div>
       <section className="lister-info">
-        <img src="https://www.google.com/favicon.ico" alt="google ico" />
+        <img
+          className="lister-info-img"
+          src="https://www.google.com/favicon.ico"
+          alt="google ico"
+        />
         <h1 className="lister-info-title">{props.listing.lister.name}</h1>
       </section>
     </div>
