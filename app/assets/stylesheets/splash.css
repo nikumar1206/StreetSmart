@@ -1,3 +1,17 @@
+.greetings-message {
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: 300;
+    padding: 13rem 0 5rem;
+    text-align: center;
+}
+
+.home-page {
+    background: url(https://streetsmart-safeassets.s3.amazonaws.com/images/monopolybanner.png) center bottom / 100vh no-repeat rgb(220, 246, 255);
+    background-size: contain;
+    height: 100vh;
+}
+
 .fairhousing-disclaimer {
     color: rgb(255, 255, 255);
     font-size: 16px;

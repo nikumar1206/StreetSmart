@@ -7,8 +7,6 @@ function ListingsIndexComponent(props) {
   let queryString = `?rb_toggle=${params.rb_toggle}&location=${params.location}&maxPrice=${params.maxPrice}`;
   const [state, setState] = useState(params);
 
-  console.log(props);
-
   useEffect(() => {
     props.removeListings();
     props.fetchListings(queryString);

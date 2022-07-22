@@ -17,20 +17,6 @@
 @import url(fonts.scss);
 
 
-
-.greetings-message {
-    font-size: 40px;
-    line-height: 50px;
-    font-weight: 300;
-    padding: 150px 0 50px;
-    text-align: center;
-}
-
-::placeholder {
-    font-weight: lighter;
-    color: #aaa;
-}
-
 html,
 body {
     font-family: "Source Sans Pro", sans-serif;
@@ -41,7 +27,6 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     scroll-padding: 175px 0 0;
-    -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -51,6 +36,7 @@ p {
     margin-inline-start: 0;
     margin-inline-end: 0;
 }
+
 
 input {
     writing-mode: horizontal-tb;
@@ -66,75 +52,7 @@ input {
     border-image: initial;
 }
 
-.user-nav {
-    height: 50px;
-    line-height: 50px;
-    /* background: #4285F4; */
-    background: #135EAF;
-    /* position: fixed; */
-    padding: 0 25px;
-}
-
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-}
-
-.logo-img {
-    width: 150px;
-    height: 30px;
-    padding-left: 40px;
-    padding-top: 8px;
-}
-
-div.header>ul {
-    font-size: 14px;
-    padding-right: 10px;
-    display: flex;
-}
-
-li {
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 14px;
-}
-
-input:focus {
-    outline: 0;
-}
-
-.user-nav-account-links {
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    /* overflow: hidden; */
-    outline: none;
-    color: white;
-    cursor: pointer;
-}
-
-/* .user-nav-account-links:link,
-.user-nav-account-links:visited {
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-}
-
-.user-nav-account-links:hover {
-    color: white;
-    background-color: transparent;
-    text-decoration: underline;
-} */
-
-.fa-solid fa-magnifying-glass {
-    min-width: 20px;
-    min-height: 20px;
-}
-
-.home-page {
-    background: url(https://streetsmart-safeassets.s3.amazonaws.com/images/monopolybanner.png) center bottom / 100vh no-repeat rgb(220, 246, 255);
-    background-size: contain;
-    height: 100vh;
+::placeholder {
+    font-weight: lighter;
+    color: #aaa;
 }

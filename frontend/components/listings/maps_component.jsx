@@ -6,12 +6,13 @@ function MapsComponent(props) {
   // console.log(props);
   const [map, setMap] = React.useState(null);
   const containerStyle = {
-    width: "550px",
-    height: "400px",
+    width: "40vw",
+    height: "75vh",
+    overflow: "visible",
   };
   const center = {
-    lat: 40.73413040316269,
-    lng: -73.77498038023461,
+    lat: 40.7447,
+    lng: -73.85,
   };
   const isLoaded =
     typeof google === "object" && typeof google.maps === "object";
@@ -30,7 +31,10 @@ function MapsComponent(props) {
       >
         {props.listings.map((listing) => {
           return (
-            <Marker position={{ lat: listing.lat, lng: listing.lng }}></Marker>
+            <Marker
+              key={Math.random()}
+              position={{ lat: listing.lat, lng: listing.lng }}
+            ></Marker>
           );
         })}
         <TransitLayer />

@@ -1,47 +1,35 @@
 .listings {
     overflow: auto;
     height: 100%;
-    padding-top: 100px;
-    margin: 0 100px;
+    margin: 6rem 6rem 0 6rem;
 }
 
-.resultdetails {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
 
 .searchCardList {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 30px;
-    row-gap: 30px;
-    width: 100%;
-    justify-content: center;
-}
-
-.result-vertical-divider {
-    width: 10vw;
+    column-gap: 1rem;
+    row-gap: 1rem;
 }
 
 .google-maps {
     position: sticky;
-    top: 0;
+    left: 55%;
 }
 
 .searchCardList-item {
     border: 1px solid #e6e6e6;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);
     box-sizing: border-box;
-    margin-bottom: 16px;
-    min-height: 400px;
-    width: 40vh;
-    padding: 0 0;
+    min-height: 20vh;
+    min-width: 21vw;
+    cursor: pointer;
 }
 
 div.listing-item-thumbnail>img {
-    width: 100%;
-    height: 224px;
+
+    width: 21vw;
+    height: 25vh;
 }
 
 .listing-item-bottom {
@@ -50,6 +38,9 @@ div.listing-item-thumbnail>img {
     width: 100%;
 }
 
+.listing-item-top-info {
+    width: 75%;
+}
 
 .listing-brief-info {
     color: #62646A;
@@ -94,7 +85,8 @@ div.listing-item-thumbnail>img {
 }
 
 .li-lowerblock {
-    margin-top: 70px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .li-lowerblock-info {
@@ -105,6 +97,7 @@ div.listing-item-thumbnail>img {
 ul.li-lowerblock-info>li {
     color: #62646A;
     font-size: 11px;
+    margin: 5px;
 }
 
 .first-child-li {
@@ -123,11 +116,18 @@ ul.li-lowerblock-info>li {
 
 .resultbox {
     display: flex;
+    gap: 2rem;
 }
-
 
 .heartsave-btn {
     background-color: transparent;
     background-repeat: none;
-    margin: 40px 0 0 50px;
+    z-index: 100;
+}
+
+.heart-container {
+    position: relative;
+    margin-right: 7px;
+    top: 2rem;
+    left: 2rem;
 }

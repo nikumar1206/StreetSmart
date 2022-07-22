@@ -12,6 +12,7 @@
 .navs-container {
     height: auto;
     position: fixed;
+    top: 0;
     box-sizing: border-box;
     display: block;
     font-size: 14px;
@@ -26,7 +27,6 @@
     justify-content: space-between;
     margin: 0 auto;
     padding: 0 32px;
-
 
 }
 
@@ -135,6 +135,7 @@
     background-repeat: no-repeat;
     border: none;
     color: white;
+    margin: 5px;
 }
 
 .account-dropdown-content {
@@ -167,4 +168,72 @@
 
 .account-dropdown:hover .account-dropdown-content {
     display: block;
+}
+
+
+.user-nav {
+    height: 50px;
+    line-height: 50px;
+    /* background: #4285F4; */
+    background: #135EAF;
+    /* position: fixed; */
+    padding: 0 25px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.logo-img {
+    width: 150px;
+    height: 30px;
+    padding-left: 40px;
+    padding-top: 8px;
+}
+
+div.header>ul {
+    font-size: 14px;
+    padding-right: 10px;
+    display: flex;
+}
+
+li {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.user-nav-account-links {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    /* overflow: hidden; */
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* .user-nav-account-links:link,
+.user-nav-account-links:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.user-nav-account-links:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+} */
+
+.fa-solid fa-magnifying-glass {
+    min-width: 20px;
+    min-height: 20px;
 }

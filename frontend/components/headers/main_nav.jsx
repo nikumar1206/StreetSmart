@@ -4,7 +4,6 @@ import { Link, withRouter } from "react-router-dom";
 function MainNav(props) {
   const rent_query = "/listings/?rb_toggle=rent&location=NYC&maxPrice=99999999";
   const buy_query = "/listings/?rb_toggle=buy&location=NYC&maxPrice=99999999";
-  console.log(props);
   return (
     <div className="main-nav-container">
       <div className="main-nav">
@@ -41,7 +40,7 @@ function MainNav(props) {
               </Link>
             </li>
             <li className="mvn-li">
-              <Link to="/users/:userId" className="mvn-alinks">
+              <Link to="/listings/create" className="mvn-alinks">
                 Sell
               </Link>
             </li>
@@ -55,17 +54,14 @@ function MainNav(props) {
             </li>
             <li className="mvn-li">
               <a
-                href="https://www.github.com/nikumar1206"
+                href="https://github.com/nikumar1206/StreetSmart"
                 className="mvn-alinks"
               >
                 Github
               </a>
             </li>
             <li className="mvn-li">
-              <a
-                href="https://nikumar1206.github.io/personal-website/"
-                className="mvn-alinks"
-              >
+              <a href="http://nikhil-kumar.tk/" className="mvn-alinks">
                 Personal Website
               </a>
             </li>

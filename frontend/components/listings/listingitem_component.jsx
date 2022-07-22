@@ -1,55 +1,60 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { withRouter } from "react-router-dom";
 
 function ListingItemComponent(props) {
-  const [toggle, setToggled] = useState({});
+  const [saveToggle, setSaveToggle] = useState(props.listing.saved);
+
   const priceConvert = () => {
     let price = props.listing.price;
     return price.toLocaleString();
   };
 
-  const handleSave = () => {
-    if (props.listing.saved) {
-      console.log(scoop);
-    } else {
-      console.log(gloop);
-    }
-    setToggled(!toggle);
+  const handleSave = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setSaveToggle(!saveToggle);
+  };
+
+  console.log(saveToggle);
+
+  const handleClick = () => {
+    // e.stopPropagation();
+    props.history.push(`/listings/${props.listing.id}`);
   };
 
   return (
-    <li className="searchCardList-item">
-      <Link className="listing-link" to={`/listings/${props.listing.id}`}>
-        <div className="listing-item-thumbnail">
-          <img src={props.listing.imageUrl} />
+    <li className="searchCardList-item" onClick={handleClick}>
+      <div className="listing-item-thumbnail">
+        <img src={props.listing.imageUrl} />
+      </div>
+      <div className="listing-item-bottom">
+        <div className="listing-item-top-info">
+          <span className="listing-brief-info">
+            {props.listing.property_type} in {props.listing.neighborhood}
+          </span>
+          <p className="li-address">{props.listing.name}</p>
+          <p className="li-price">${priceConvert()}</p>
         </div>
 
-        <div className="listing-item-bottom">
-          <div className="listing-item-top-info">
-            <span className="listing-brief-info">
-              {props.listing.property_type} in {props.listing.neighborhood}
-            </span>
-            <p className="li-address">{props.listing.name}</p>
-            <p className="li-price">${priceConvert()}</p>
-          </div>
-
-          <div className="heart-container">
-            <button className="heartsave-btn">
-              <img src="" alt="" />
-            </button>
-          </div>
+        <div className="heart-container">
+          {saveToggle ? (
+            <FaHeart className="heartsave-btn" onClick={handleSave} />
+          ) : (
+            <FaRegHeart className="heartsave-btn" onClick={handleSave} />
+          )}
         </div>
+      </div>
 
-        <div className="li-lowerblock">
-          <ul className="li-lowerblock-info">
-            <li className="first-child-li">{props.listing.beds} Beds</li>
-            <li>{props.listing.baths} Baths</li>
-          </ul>
-          <p>Listing by {props.listing.lister.name}</p>
-        </div>
-      </Link>
+      <div className="li-lowerblock">
+        <ul className="li-lowerblock-info">
+          <li className="first-child-li">{props.listing.beds} Beds</li>
+          <li>{props.listing.baths} Baths</li>
+        </ul>
+        <p>Listing by {props.listing.lister.name}</p>
+      </div>
     </li>
   );
 }
 
-export default ListingItemComponent;
+export default withRouter(ListingItemComponent);

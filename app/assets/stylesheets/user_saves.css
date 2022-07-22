@@ -2,15 +2,12 @@
     padding-top: 100px;
 }
 
-.usersave-main {
-    display: flex;
-
-}
 
 .savedlistings {
     padding: 20px 0 30px;
 }
 
 .usersave-listings-container {
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
