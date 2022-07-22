@@ -9,11 +9,14 @@ const emptyListings = null;
 
 export const listingsReducer = (state = {}, action) => {
   Object.freeze(state);
-  let nextState = Object.assign({}, state);
+  let nextState = { ...state };
 
   switch (action.type) {
     case RECEIVE_LISTINGS:
-      Object.assign(nextState, action.listings);
+      const listings = Object.values(action.listings);
+      listings.forEach((listing) => {
+        nextState[listing.id] = listing;
+      });
       return nextState;
     case RECEIVE_LISTING:
       nextState[action.listing.id] = action.listing;
@@ -25,10 +28,3 @@ export const listingsReducer = (state = {}, action) => {
   }
 };
 export default listingsReducer;
-
-// case RECEIVE_SAVED_LISTINGS:
-//   const listings = Object.values(action.listings);
-//   listings.forEach((listing) => {
-//     nextState[listing.id] = listing;
-//   });
-//   return nextState;

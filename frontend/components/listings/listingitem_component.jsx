@@ -1,25 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { withRouter } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {
+  saveListing,
+  unSaveListing,
+} from "../../actions/save_listings_actions";
 
 function ListingItemComponent(props) {
   const [saveToggle, setSaveToggle] = useState(props.listing.saved);
-
+  const dispatch = useDispatch();
   const priceConvert = () => {
     let price = props.listing.price;
     return price.toLocaleString();
   };
 
+  useEffect(() => {
+    setSaveToggle(props.listing.saved);
+  }, [props.listing.saved]);
+
   const handleSave = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setSaveToggle(!saveToggle);
+    saveToggle
+      ? dispatch(unSaveListing(props.listing.id))
+      : dispatch(saveListing(props.listing.id));
   };
 
-  console.log(saveToggle);
-
   const handleClick = () => {
-    // e.stopPropagation();
     props.history.push(`/listings/${props.listing.id}`);
   };
 

@@ -13,7 +13,7 @@ const UserShowComponent = (props) => {
     props.fetchUser(props.match.params.userId);
   }, []);
 
-  console.log(state);
+  // console.log(state);
 
   const update = (field) => {
     return (e) => setState({ ...state, [field]: e.target.value });

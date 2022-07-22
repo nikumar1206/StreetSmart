@@ -12,9 +12,8 @@ class Api::SavedListingsController < ApplicationController
 
     def create
         @listing = Listing.find_by(id: params[:listing_id])
-        @listing.lister_id = current_user
-        if @listing.save
-            render "api/users/show"
+        if @listing && Save.create(user_id: current_user.id, listing_id: @listing.id)
+            render "api/listings/show"
         else
             render json: ["Create method for saved listing has failed"], status: 422
         end
@@ -22,9 +21,10 @@ class Api::SavedListingsController < ApplicationController
 
     def destroy
         @listing = Listing.find_by(id: params[:id])
-        if current_user.id == @listing.lister_id
-            @saved_listing.destroy
-            render "api/users/show"
+        @save = Save.find_by(user_id: current_user.id, listing_id: @listing.id)
+        if @listing && @save
+            Save.destroy(@save.id)
+            render "api/listings/show"
         else
             render json: ["Sorry an error has occured deleting the listing"], status: 404
         end
