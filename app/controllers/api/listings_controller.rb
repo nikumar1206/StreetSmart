@@ -2,17 +2,19 @@ class Api::ListingsController < ApplicationController
     before_action :require_logged_in, only: [:create]
 
     def index
-        if location == "nyc"
-            @listings = Listing.where("price < ? AND rent_bool = ?", maxPrice, "#{(rb_toggle)}")
-        else
-            @listings = Listing.where("price < ? AND rent_bool = ? AND (LOWER(location) LIKE ? or LOWER(neighborhood) LIKE ?)", "#{maxPrice}", "#{rb_toggle}", "%#{location}%","%#{location}%" )
+        if params[:user_id]
+            @listings = Listing.where("lister_id = ?", params[:user_id])
+        else 
+            if location == "nyc"
+                @listings = Listing.where("price < ? AND rent_bool = ?", maxPrice, "#{(rb_toggle)}")
+            else
+                @listings = Listing.where("price < ? AND rent_bool = ? AND (LOWER(location) LIKE ? or LOWER(neighborhood) LIKE ?)", "#{maxPrice}", "#{rb_toggle}", "%#{location}%","%#{location}%" )
+            end
         end
-        render :index
     end
 
     def show
         @listing = Listing.find(params[:id])
-        render :show
     end
 
     def create

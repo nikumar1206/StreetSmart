@@ -4,16 +4,14 @@ import { connect } from "react-redux";
 import { fetchUser } from "../../actions/user_actions";
 import { updateUser } from "../../actions/user_actions";
 import { openModal } from "../../actions/modal_actions";
-import Tippy from "@tippyjs/react";
 
 const UserShowComponent = (props) => {
+  console.log(props);
   const [state, setState] = useState(props.currentUser);
   const [saved, setSaved] = useState(false);
   useEffect(() => {
     props.fetchUser(props.match.params.userId);
   }, []);
-
-  // console.log(state);
 
   const update = (field) => {
     return (e) => setState({ ...state, [field]: e.target.value });
@@ -41,13 +39,14 @@ const UserShowComponent = (props) => {
             onChange={update("name")}
             value={state.name}
             type="text"
+            minLength={5}
           />
 
           <label className="usershow-label" htmlFor="email">
             Email
           </label>
           <input
-            className="usershow-input"
+            className="usershow-input email"
             type="email"
             onChange={update("email")}
             value={state.email}
@@ -61,29 +60,39 @@ const UserShowComponent = (props) => {
           </label>
           <input
             className="usershow-input"
-            type="text"
+            type="tel"
             onChange={update("phone")}
             value={state.phone}
             id="phone"
+            minLength={5}
             maxLength={12}
           />
-
-          <Tippy
-            content={
-              saved
-                ? "User successfully updated!"
-                : "User not updated. Try again!"
-            }
-            trigger="click"
-            placement="bottom"
-            animation="fade"
-            theme="light"
-          >
-            <button className="usershow-btn" type="submit">
-              Save Changes
-            </button>
-          </Tippy>
+          <button className="usershow-btn" type="submit">
+            Save Changes
+          </button>
         </form>
+        <section className="profile-links">
+          <button
+            onClick={() =>
+              props.history.push(`/users/${props.currentUser.id}/saved`)
+            }
+            className="profile-link-btn"
+          >
+            Saved Listings
+          </button>
+          <button
+            onClick={() => props.history.push(`/listings/create`)}
+            className="profile-link-btn"
+          >
+            Create Listing
+          </button>
+          <button
+            onClick={() => props.history.push(`/listings`)}
+            className="profile-link-btn"
+          >
+            Created Listings
+          </button>
+        </section>
       </section>
     </div>
   );

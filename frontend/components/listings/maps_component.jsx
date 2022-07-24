@@ -3,7 +3,6 @@ import React from "react";
 import { GoogleMap, Marker, TransitLayer } from "@react-google-maps/api";
 
 function MapsComponent(props) {
-  // console.log(props);
   const [map, setMap] = React.useState(null);
   const containerStyle = {
     width: "40vw",

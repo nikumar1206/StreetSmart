@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { BiBed, BiBath } from "react-icons/bi";
 import { withRouter } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
   saveListing,
   unSaveListing,
 } from "../../actions/save_listings_actions";
+import { openModal } from "../../actions/modal_actions";
+import { useHistory } from "react-router-dom";
 
 function ListingItemComponent(props) {
   const [saveToggle, setSaveToggle] = useState(props.listing.saved);
+  const history = useHistory();
   const dispatch = useDispatch();
   const priceConvert = () => {
     let price = props.listing.price;
@@ -22,13 +26,18 @@ function ListingItemComponent(props) {
   const handleSave = (e) => {
     e.preventDefault();
     e.stopPropagation();
+    if (!props.currentUser) {
+      console.log(props);
+      return dispatch(openModal("login"));
+    }
+
     saveToggle
       ? dispatch(unSaveListing(props.listing.id))
       : dispatch(saveListing(props.listing.id));
   };
 
   const handleClick = () => {
-    props.history.push(`/listings/${props.listing.id}`);
+    history.push(`/listings/${props.listing.id}`);
   };
 
   return (
@@ -56,8 +65,14 @@ function ListingItemComponent(props) {
 
       <div className="li-lowerblock">
         <ul className="li-lowerblock-info">
-          <li className="first-child-li">{props.listing.beds} Beds</li>
-          <li>{props.listing.baths} Baths</li>
+          <li className="first-child-li">
+            {props.listing.beds + " Beds"}
+            <BiBed />
+          </li>
+          <li>
+            {props.listing.baths + " Baths"}
+            <BiBath />
+          </li>
         </ul>
         <p>Listing by {props.listing.lister.name}</p>
       </div>
@@ -65,4 +80,11 @@ function ListingItemComponent(props) {
   );
 }
 
-export default withRouter(ListingItemComponent);
+import { connect } from "react-redux";
+
+export const mSTP = (state, ownProps) => ({
+  currentUser: state.entities.users[state.session.id],
+});
+export const mDTP = (dispatch) => ({});
+
+export default connect(mSTP, mDTP)(ListingItemComponent);

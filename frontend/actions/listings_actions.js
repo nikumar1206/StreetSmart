@@ -23,8 +23,8 @@ export const fetchListings = (filters) => (dispatch) =>
   ListingAPI.fetchListings(filters).then((listings) =>
     dispatch(receiveListings(listings))
   );
-export const fetchListing = (listingId) => (dispatch) =>
-  ListingAPI.fetchListing(listingId).then((listing) =>
+export const fetchListing = (userId) => (dispatch) =>
+  ListingAPI.fetchListing(userId).then((listing) =>
     dispatch(receiveListing(listing))
   );
 
@@ -38,7 +38,10 @@ export const updateListing = (listing) => (dispatch) =>
     dispatch(receiveListing(listing))
   );
 
-export const deleteListing = (listingId) => (dispatch) =>
-  ListingAPI.deleteListing(listingId).then(() =>
-    dispatch(removeListing(listingId))
+export const deleteListing = (userId) => (dispatch) =>
+  ListingAPI.deleteListing(userId).then(() => dispatch(removeListing(userId)));
+
+export const fetchUserListings = (userId) => (dispatch) =>
+  ListingAPI.fetchUserListings(userId).then((listings) =>
+    dispatch(receiveListings(listings))
   );

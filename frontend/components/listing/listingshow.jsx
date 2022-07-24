@@ -18,11 +18,17 @@ function ListingShowComponent(props) {
         <BreadcrumbComponent listing={props.listing} />
         <div className="listing-show-container-top">
           <Image imageUrl={props.listing.imageUrl} />
-          <div className="divider"></div>
-          <ListerDescriptionContainer listing={props.listing} />
+          <ListerDescriptionContainer
+            listing={props.listing}
+            saveListing={props.saveListing}
+            unSaveListing={props.unSaveListing}
+            currentUser={props.currentUser}
+          />
         </div>
-        <DescriptionComponent description={props.listing.description} />
-        <MapsComponent listing={props.listing} />
+        <div className="listing-show-container-bot">
+          <DescriptionComponent description={props.listing.description} />
+          <MapsComponent listing={props.listing} />
+        </div>
       </div>
     );
   }

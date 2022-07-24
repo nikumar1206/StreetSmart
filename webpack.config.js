@@ -1,11 +1,12 @@
 // webpack.config.js
-var path = require("path");
+const path = require("path");
 
 module.exports = {
   entry: "./frontend/index.jsx",
   output: {
     path: path.resolve(__dirname, "app", "assets", "javascripts"),
-    filename: "./bundle.js",
+    filename: "bundle.js",
+    sourceMapFilename: "bundle.js.map",
   },
   module: {
     rules: [

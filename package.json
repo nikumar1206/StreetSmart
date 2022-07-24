@@ -59,6 +59,7 @@
     "webpack-cli": "^4.10.0"
   },
   "devDependencies": {
-    "@types/node": "^18.0.0"
+    "@types/node": "^18.0.0",
+    "eslint": "^8.20.0"
   }
 }

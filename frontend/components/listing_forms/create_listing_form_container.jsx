@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import ListingForm from "./listing_form";
-// import { createListing } from "../../actions/listings_actions";
-import { createListing } from "../../util/listing_api_util";
+import { createListing } from "../../actions/listings_actions";
 const mSTP = (state, ownProps) => ({
   formType: "Create Listing",
   listing: {

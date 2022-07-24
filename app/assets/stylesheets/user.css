@@ -9,7 +9,6 @@
     align-self: center;
 }
 
-
 .usershow-label {
     margin-left: 2rem;
 }
@@ -47,6 +46,10 @@
     margin-right: auto;
 }
 
+.usershow-input.email {
+    cursor: not-allowed;
+}
+
 .usershow-btn {
     background: rgb(255, 255, 255);
     border: 1px solid rgb(0, 0, 0);
@@ -81,4 +84,27 @@
     font-weight: 300;
     line-height: 36px;
     text-align: center;
+}
+
+.profile-links {
+    display: flex;
+    margin-top: 5rem;
+    /* margin: 0; */
+
+}
+
+.profile-links>button {
+    margin: 8px;
+    background-color: rgb(211, 244, 255);
+    border: 1px solid rgb(205, 205, 205);
+    box-sizing: border-box;
+    color: rgb(26, 31, 44);
+    display: inline-block;
+    font: 14px / 38px "Source Sans Pro", Helvetica, Arial, Geneva, sans-serif;
+    height: 40px;
+    text-align: center;
+    flex: 1 1 100%;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    cursor: pointer;
 }

@@ -1,6 +1,4 @@
-import React, { useRef, useState } from "react";
-import { createRef } from "react";
-import { useEffect } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 
 function searchMod(props) {
@@ -10,7 +8,6 @@ function searchMod(props) {
     maxPrice: "99999999",
   });
   const [toggled, setToggled] = useState(true);
-  // console.log(state);
 
   const handleToggle = (field) => {
     if (field === "rent") {

@@ -5,8 +5,9 @@ import { GoogleMap, Marker, TransitLayer } from "@react-google-maps/api";
 function MapsComponent(props) {
   const [map, setMap] = React.useState(null);
   const containerStyle = {
-    width: "100%",
-    height: "100%",
+    width: "32vw",
+    height: "70vh",
+    // marginBottom: "5rem",
   };
 
   const center = {
@@ -22,15 +23,17 @@ function MapsComponent(props) {
   }, []);
 
   return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={15}
-      onUnmount={onUnmount}
-    >
-      <Marker position={center}></Marker>
-      <TransitLayer />
-    </GoogleMap>
+    <div className="maps-container listing">
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={15}
+        onUnmount={onUnmount}
+      >
+        <Marker position={center}></Marker>
+        <TransitLayer />
+      </GoogleMap>
+    </div>
   ) : (
     <></>
   );

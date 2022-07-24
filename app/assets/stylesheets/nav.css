@@ -67,14 +67,15 @@
 }
 
 .mvn-alinks {
+    font-family: "Source Sans Pro";
     text-transform: uppercase;
     font-weight: 600;
     font-size: 15px;
     display: inline-block;
+    position: relative;
     background: none;
     line-height: 48px;
     color: #1A1F2C;
-    font-family: "Source Sans Pro";
 }
 
 .mvn-alinks:link {

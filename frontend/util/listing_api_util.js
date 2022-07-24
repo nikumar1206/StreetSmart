@@ -33,3 +33,9 @@ export const deleteListing = (listingId) =>
     url: `/api/listings/${listingId}`,
     method: "delete",
   });
+
+export const fetchUserListings = (userId) =>
+  $.ajax({
+    url: `/api/users/${userId}/listings`,
+    method: "get",
+  });

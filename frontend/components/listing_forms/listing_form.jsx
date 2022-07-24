@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { receiveListing } from "../../actions/listings_actions";
-import { createListing } from "../../util/listing_api_util";
+import { receiveListing, createListing } from "../../actions/listings_actions";
+
 function ListingForm(props) {
   const [state, setState] = useState(() => props.listing);
   const dispatch = useDispatch();

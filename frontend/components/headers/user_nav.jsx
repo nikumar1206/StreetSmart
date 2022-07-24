@@ -58,7 +58,9 @@ const UserNav = ({ currentUser, logout, openModal }) => {
                   <Link to={`/users/${currentUser.id}/saved`}>
                     Saved Listings
                   </Link>
-                  <Link to={`/users/${currentUser.id}`}>My Listings</Link>
+                  <Link to={`/users/${currentUser.id}/created`}>
+                    My Listings
+                  </Link>
                 </div>
               </button>
             </div>
