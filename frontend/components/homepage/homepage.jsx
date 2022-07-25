@@ -1,11 +1,12 @@
 import React from "react";
 import SearchModContainer from "../searchmod/searchmod_container";
-import { connect } from "react-redux";
-import { openModal, closeModal } from "../../actions/modal_actions";
-import { logout } from "../../actions/sessions_actions";
 import { Link } from "react-router-dom";
+import { useOpenModal } from "../../util/dispatches";
+import { useCurrentUser } from "../../util/selectors";
 
-function HomeSplash({ openModal, currentUser }) {
+const HomeSplash = () => {
+  const currentUser = useCurrentUser();
+  const openModal = useOpenModal();
   return (
     <div>
       <div className="home-page">
@@ -15,8 +16,8 @@ function HomeSplash({ openModal, currentUser }) {
         <SearchModContainer />
         {currentUser ? (
           <Link
-            className="greetings-submessage-links-logged"
             to={`/users/${currentUser.id}`}
+            className="greetings-submessage-links-logged"
           >
             Update profile
           </Link>
@@ -52,16 +53,6 @@ function HomeSplash({ openModal, currentUser }) {
       </p>
     </div>
   );
-}
+};
 
-// container
-
-export const mSTP = (state) => ({
-  currentUser: state.entities.users[state.session.id],
-});
-export const mDTP = (dispatch) => ({
-  openModal: (modal) => dispatch(openModal(modal)),
-  closeModal: () => dispatch(closeModal()),
-});
-
-export default connect(mSTP, mDTP)(HomeSplash);
+export default HomeSplash;

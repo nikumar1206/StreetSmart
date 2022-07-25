@@ -1,5 +1,14 @@
 import React from "react";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useCurrListing, useCurrentUser } from "../../util/selectors";
+import { withRouter } from "react-router-dom";
+import {
+  saveListing,
+  unSaveListing,
+} from "../../actions/save_listings_actions";
+import { removeListings, fetchListing } from "../../actions/listings_actions";
+
 import BreadcrumbComponent from "./breadcrumb";
 import DescriptionComponent from "./description";
 import Image from "./image";
@@ -7,31 +16,35 @@ import ListerDescriptionContainer from "./listerdescription";
 import MapsComponent from "./maps";
 
 function ListingShowComponent(props) {
+  const currentUser = useCurrentUser();
+  const listing = useCurrListing(props.match.params.listingId);
+  const dispatch = useDispatch();
   useEffect(() => {
-    props.removeListings();
-    props.fetchListing(props.match.params.listingId);
+    dispatch(removeListings());
+    dispatch(fetchListing(props.match.params.listingId));
   }, []);
 
-  if (props.listing) {
+  if (listing) {
+    const { description, imageUrl } = listing;
     return (
       <div className="listing-show-container">
-        <BreadcrumbComponent listing={props.listing} />
+        <BreadcrumbComponent listing={listing} />
         <div className="listing-show-container-top">
-          <Image imageUrl={props.listing.imageUrl} />
+          <Image imageUrl={imageUrl} />
           <ListerDescriptionContainer
-            listing={props.listing}
-            saveListing={props.saveListing}
-            unSaveListing={props.unSaveListing}
-            currentUser={props.currentUser}
+            listing={listing}
+            saveListing={saveListing}
+            unSaveListing={unSaveListing}
+            currentUser={currentUser}
           />
         </div>
         <div className="listing-show-container-bot">
-          <DescriptionComponent description={props.listing.description} />
-          <MapsComponent listing={props.listing} />
+          <DescriptionComponent description={description} />
+          <MapsComponent listing={listing} />
         </div>
       </div>
     );
   }
 }
 
-export default ListingShowComponent;
+export default withRouter(ListingShowComponent);

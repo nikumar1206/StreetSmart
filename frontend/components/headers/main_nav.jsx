@@ -1,41 +1,21 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function MainNav(props) {
-  const rent_query = "/listings/?rb_toggle=rent&location=NYC&maxPrice=99999999";
-  const buy_query = "/listings/?rb_toggle=buy&location=NYC&maxPrice=99999999";
+function MainNav() {
+  const query = (toggle) =>
+    `/listings/?rb_toggle=${toggle}&location=NYC&maxPrice=99999999`;
   return (
     <div className="main-nav-container">
       <div className="main-nav">
         <div className="main-nav-items">
           <ul className="main-nav-list">
             <li className="mvn-li">
-              <Link
-                to={`${rent_query}`}
-                className="mvn-alinks"
-                onClick={() => {
-                  // props.removeListings();
-                  // props.fetchListings(
-                  //   "?rb_toggle=rent&location=NYC&maxPrice=99999999"
-                  // );
-                  props.history.push(`${rent_query}`);
-                }}
-              >
+              <Link to={`${query("rent")}`} className="mvn-alinks">
                 Rent
               </Link>
             </li>
             <li className="mvn-li">
-              <Link
-                to={`${buy_query}`}
-                className="mvn-alinks"
-                onClick={() => {
-                  // props.removeListings();
-                  // props.fetchListings(
-                  //   "?rb_toggle=buy&location=NYC&maxPrice=99999999"
-                  // );
-                  props.history.push(`${buy_query}`);
-                }}
-              >
+              <Link to={`${query("buy")}`} className="mvn-alinks">
                 Buy
               </Link>
             </li>
@@ -67,13 +47,13 @@ function MainNav(props) {
             </li>
           </ul>
         </div>
-        {/* <div className="main-nav-search">
+        <div className="main-nav-search">
           <form
           // onSubmit={() =>
           //   console.log("search button pressed, doesnt work tho")
           // }
           >
-            <input
+            {/* <input
               className="main-nav-search-input"
               type="text"
               name=""
@@ -83,7 +63,7 @@ function MainNav(props) {
             />
             <button
               type="button"
-              onClick={() => console.log("search button pressed")}
+              // onClick={() => console.log("search button pressed")}
               className="main-nav-search-button"
               disabled
             >
@@ -92,12 +72,12 @@ function MainNav(props) {
                 src="https://streetsmart-safeassets.s3.amazonaws.com/images/Screen+Shot+2022-06-21+at+11.52.39+AM.png"
                 disabled
               />
-            </button>
+            </button> */}
           </form>
-        </div> */}
+        </div>
       </div>
     </div>
   );
 }
 
-export default withRouter(MainNav);
+export default MainNav;

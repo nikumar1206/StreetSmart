@@ -1,38 +1,33 @@
 import React from "react";
-import { connect } from "react-redux";
 import MainNav from "./main_nav";
 import UserNav from "./user_nav";
-import { logout } from "../../actions/sessions_actions";
-import { openModal } from "../../actions/modal_actions";
-import { fetchListings, removeListings } from "../../actions/listings_actions";
+import { useCurrentUser } from "../../util/selectors";
+import {
+  useLogout,
+  useOpenModal,
+  useFetchListings,
+  useRemoveListings,
+} from "../../util/dispatches";
 
-function Navs(props) {
+const NavBars = () => {
+  const currentUser = useCurrentUser();
+  const logout = useLogout();
+  const openModal = useOpenModal();
+  const fetchListings = useFetchListings();
+  const removeListings = useRemoveListings();
   return (
     <div className="navs-container">
       <UserNav
-        currentUser={props.currentUser}
-        logout={props.logout}
-        openModal={props.openModal}
+        currentUser={currentUser}
+        logout={logout}
+        openModal={openModal}
       />
       <MainNav
         removeListings={removeListings}
-        currentUser={props.currentUser}
-        fetchListings={props.fetchListings}
+        currentUser={currentUser}
+        fetchListings={fetchListings}
       />
     </div>
   );
-}
-
-// container
-export const mSTP = (state, ownProps) => ({
-  currentUser: state.entities.users[state.session.id],
-});
-
-export const mDTP = (dispatch) => ({
-  logout: () => dispatch(logout()),
-  openModal: (modal) => dispatch(openModal(modal)),
-  fetchListings: (query) => dispatch(fetchListings(query)),
-  removeListings: () => dispatch(removeListings),
-});
-
-export default connect(mSTP, mDTP)(Navs);
+};
+export default NavBars;

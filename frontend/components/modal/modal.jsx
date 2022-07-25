@@ -1,12 +1,12 @@
 import React from "react";
 import LoginFormContainer from "../session/LoginFormContainer";
 import SignupFormContainer from "../session/SignupFormContainer";
-// import LocationContainer from "../searchmod/location_container";
+import { useSelector } from "react-redux";
 
-const Modal = ({ modal, closeModal }) => {
-  if (!modal) {
-    return null;
-  }
+const Modal = () => {
+  const modal = useSelector((state) => state.ui.modal);
+
+  if (!modal) return null;
 
   let component;
   switch (modal) {
@@ -16,9 +16,6 @@ const Modal = ({ modal, closeModal }) => {
     case "signup":
       component = <SignupFormContainer />;
       break;
-    // case "popup":
-    //   component = <PopupContainer />;
-    //   break;
     default:
       return null;
   }

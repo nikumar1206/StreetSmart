@@ -29,7 +29,8 @@ class Api::ListingsController < ApplicationController
     end
 
     def update
-        @listing = Listing.find(params[:id])
+        @listing = Listing.find(listing_params[:id])
+        p listing_params[:id]
         if @listing.update(listing_params)
           render :show
         else
@@ -40,7 +41,7 @@ class Api::ListingsController < ApplicationController
 
     private
     def listing_params
-        params.require(:listing).permit(:name, :location, :neighborhood, :zip, :lister_id, :borough, :neighborhood, :price, :beds, :baths, :description, :property_type, :lat, :lng, :rent_bool, :photo)
+        params.require(:listing).permit(:name, :location, :neighborhood, :zip, :lister_id, :borough, :neighborhood, :price, :beds, :baths, :description, :property_type, :lat, :lng, :rent_bool, :photo,:id)
     end
 
     def rb_toggle 

@@ -10,8 +10,9 @@ function fetchEditForm(props) {
     return (
       <div className="fetchEditForm">
         <ListingForm
-          action={props.processForm}
+          action={props.action}
           formType={props.formType}
+          listingId={props.listing.id}
           listing={props.listing}
         />
       </div>
@@ -21,13 +22,14 @@ function fetchEditForm(props) {
 
 import { connect } from "react-redux";
 import { updateListing, fetchListing } from "../../actions/listings_actions";
-// import { fetchListing } from "../../actions/listings_actions";
+
 const mSTP = (state, ownProps) => ({
   formType: "Update Listing",
   listing: state.entities.listings[ownProps.match.params.listingId],
 });
+
 const mDTP = (dispatch) => ({
-  processForm: (listing) => dispatch(updateListing(listing)),
+  action: (listing) => dispatch(updateListing(listing)),
   fetchListing: (listing) => dispatch(fetchListing(listing)),
 });
 

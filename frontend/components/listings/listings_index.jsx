@@ -1,42 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import ListingsFormContainer from "./listings-form-container";
+import ListingsForm from "./listings_form";
 import ResultBox from "./resultbox";
+import { useCurrentUser, useListings } from "../../util/selectors";
+import { useDispatch } from "react-redux";
+import { fetchListings, removeListings } from "../../actions/listings_actions";
+import { withRouter } from "react-router-dom";
 function ListingsIndexComponent(props) {
-  let params = Object.fromEntries(new URLSearchParams(props.location.search));
-  let queryString = `?rb_toggle=${params.rb_toggle}&location=${params.location}&maxPrice=${params.maxPrice}`;
-  const [state, setState] = useState(params);
+  const currentUser = useCurrentUser();
+  const dispatch = useDispatch();
+  const params = Object.fromEntries(new URLSearchParams(props.location.search));
+  const { rb_toggle, maxPrice, location } = params;
+  let queryString = `?rb_toggle=${rb_toggle}&location=${location}&maxPrice=${maxPrice}`;
 
-  const listings = useSelector(
-    (state) => Object.values(state.entities.listings),
-    (a, b) => JSON.stringify(a) === JSON.stringify(b)
-  );
+  const listings = useListings();
 
   useEffect(() => {
-    props.removeListings();
-    props.fetchListings(queryString);
-  }, [props.location.search, props.currentUser]);
+    dispatch(removeListings());
+    dispatch(fetchListings(queryString));
+  }, [props.location.search, currentUser]);
 
-  if (listings != [null]) {
+  if (listings) {
     return (
       <div className="listings">
-        <ListingsFormContainer />
+        <ListingsForm />
         <ResultBox listings={listings} />
       </div>
     );
-  } else {
-    return <h1>notworking</h1>;
   }
-
-  // {
-  //   props.listings ? (
-  //     <div className="listings">
-  //       <ListingsFormContainer />
-  //       <ResultBox listings={props.listings} />
-  //     </div>
-  //   ) : null;
-  // }
 }
 
-export default ListingsIndexComponent;
+export default withRouter(ListingsIndexComponent);

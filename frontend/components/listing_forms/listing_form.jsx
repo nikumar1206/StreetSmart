@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { useRef } from "react";
+import React from "react";
+
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { receiveListing, createListing } from "../../actions/listings_actions";
+import { useHistory } from "react-router-dom";
 
 function ListingForm(props) {
+  const history = useHistory();
   const [state, setState] = useState(() => props.listing);
-  const dispatch = useDispatch();
+
   const update = (field) => (e) =>
     setState({ ...state, [field]: e.target.value });
 
@@ -47,14 +47,19 @@ function ListingForm(props) {
     formData.append("listing[lng]", state.lng);
     formData.append("listing[description]", state.description);
 
+    if (props.listingId) {
+      formData.append("listing[id]", props.listingId);
+    }
+
     if (state.imageFile) {
       formData.append("listing[photo]", state.imageFile);
     }
-    createListing(formData).then((listing) => {
-      dispatch(receiveListing(listing));
-      props.history.push(`/listings/${listing.id}`);
+
+    props.action(formData).then((listing) => {
+      history.push(`/listings/${listing.id}`);
     });
   };
+
   return (
     <div className="listing-form-container">
       <h1 className="listingFormTitle">{props.formType}</h1>
@@ -68,6 +73,7 @@ function ListingForm(props) {
           className="listingFormInput"
           id="name"
           name="street-address"
+          value={state.name}
           required
         />
         <br />
@@ -89,6 +95,7 @@ function ListingForm(props) {
           id="neighborhood"
           name="neighborhood"
           maxLength={30}
+          value={state.neighborhood}
           required
         />
         <br />
@@ -113,6 +120,7 @@ function ListingForm(props) {
           id="zip"
           maxLength={5}
           name="zip"
+          value={state.zip}
           required
         />
         <br />
@@ -125,6 +133,7 @@ function ListingForm(props) {
           className="listingFormInput"
           id="price"
           name="price"
+          value={state.price}
           required
         />
         <br />
@@ -153,6 +162,7 @@ function ListingForm(props) {
           className="listingFormInput"
           id="beds"
           maxLength={2}
+          value={state.beds}
           required
           name="beds"
         />
@@ -167,6 +177,7 @@ function ListingForm(props) {
           id="baths"
           maxLength={2}
           required
+          value={state.baths}
           name="baths"
         />
         <br />
@@ -180,6 +191,7 @@ function ListingForm(props) {
             className="listingFormInput lat-lng-input"
             id="lat"
             maxLength="10"
+            value={state.lat}
             required
             name="lat"
           />
@@ -192,6 +204,7 @@ function ListingForm(props) {
             type="text"
             className="listingFormInput lat-lng-input"
             id="lng"
+            value={state.lng}
             maxLength="10"
             required
             name="lng"
@@ -201,11 +214,13 @@ function ListingForm(props) {
         <label className="listing-form-label" htmlFor="description">
           Description
         </label>
+
         <textarea
           name="description"
           id="description"
           onChange={update("description")}
           cols="30"
+          value={state.description}
           rows="10"
         />
         <input
@@ -214,6 +229,7 @@ function ListingForm(props) {
           name="myImage"
           accept="image/*"
           required
+          // value={state.image}
           multiple={false}
         />
 

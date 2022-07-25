@@ -7,13 +7,13 @@ const mSTP = (state, ownProps) => ({
     name: "",
     location: "",
     neighborhood: "",
-    zip: null,
-    price: null,
+    zip: "",
+    price: "",
     property_type: "Townhouse",
-    beds: null,
-    baths: null,
-    lat: null,
-    lng: null,
+    beds: "",
+    baths: "",
+    lat: "",
+    lng: "",
     description: "",
     rent_bool: true,
     borough: "Manhattan",
@@ -22,7 +22,7 @@ const mSTP = (state, ownProps) => ({
   },
 });
 const mDTP = (dispatch) => ({
-  processForm: (listing) => dispatch(createListing(listing)),
+  action: (listing) => dispatch(createListing(listing)),
 });
 
 export default connect(mSTP, mDTP)(ListingForm);

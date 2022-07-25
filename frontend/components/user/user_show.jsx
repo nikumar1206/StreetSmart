@@ -1,16 +1,19 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { connect } from "react-redux";
 import { fetchUser } from "../../actions/user_actions";
 import { updateUser } from "../../actions/user_actions";
-import { openModal } from "../../actions/modal_actions";
+import { useCurrentUser } from "../../util/selectors";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const UserShowComponent = (props) => {
-  console.log(props);
-  const [state, setState] = useState(props.currentUser);
-  const [saved, setSaved] = useState(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const currentUser = useCurrentUser();
+  const [state, setState] = useState(currentUser);
+
   useEffect(() => {
-    props.fetchUser(props.match.params.userId);
+    dispatch(fetchUser(props.match.params.userId));
   }, []);
 
   const update = (field) => {
@@ -19,7 +22,7 @@ const UserShowComponent = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.updateUser(state).then(() => setSaved(true));
+    dispatch(updateUser(state));
   };
 
   return (
@@ -71,23 +74,22 @@ const UserShowComponent = (props) => {
             Save Changes
           </button>
         </form>
+
         <section className="profile-links">
           <button
-            onClick={() =>
-              props.history.push(`/users/${props.currentUser.id}/saved`)
-            }
+            onClick={() => history.push(`/users/${currentUser.id}/saved`)}
             className="profile-link-btn"
           >
             Saved Listings
           </button>
           <button
-            onClick={() => props.history.push(`/listings/create`)}
+            onClick={() => history.push(`/listings/create`)}
             className="profile-link-btn"
           >
             Create Listing
           </button>
           <button
-            onClick={() => props.history.push(`/listings`)}
+            onClick={() => history.push(`/users/${currentUser.id}/created`)}
             className="profile-link-btn"
           >
             Created Listings
@@ -97,20 +99,4 @@ const UserShowComponent = (props) => {
     </div>
   );
 };
-
-// container
-const mSTP = (state, ownProps) => {
-  return {
-    currentUser: state.entities.users[ownProps.match.params.userId],
-  };
-};
-
-const mDTP = (dispatch) => {
-  return {
-    fetchUser: (userId) => dispatch(fetchUser(userId)),
-    updateUser: (user) => dispatch(updateUser(user)),
-    openModal: (modal) => dispatch(openModal(modal)),
-  };
-};
-
-export default connect(mSTP, mDTP)(UserShowComponent);
+export default UserShowComponent;

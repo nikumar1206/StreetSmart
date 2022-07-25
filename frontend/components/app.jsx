@@ -1,23 +1,24 @@
 import React from "react";
-import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
-import ModalContainer from "./modal/modal_container";
+import NavBars from "./headers/navs";
+import Modal from "./modal/modal";
 import HomePage from "./homepage/homepage";
-import FooterComponent from "./headers/footer";
-import UserShowContainer from "./user/user_show";
-import ListingsIndexContainer from "./listings/listings_container";
-import ListingShowContainer from "./listing/listingshow_container";
 import CreateListingForm from "./listing_forms/create_listing_form_container";
-import UserShowSavedContainer from "./user/user_saved";
-import NavsContainer from "./headers/navs";
-import UserCreatedContainer from "./user/user_created";
 import EditListingForm from "./listing_forms/edit_listing_form";
+import UserSavedContainer from "./user/user_saved";
+import UserShowContainer from "./user/user_show";
+import ListingsIndex from "./listings/listings_index";
+import ListingShow from "./listing/listingshow";
+import UserCreatedContainer from "./user/user_created";
+import FooterComponent from "./headers/footer";
 
 const App = () => (
-  <div className="app">
-    <ModalContainer />
-    <NavsContainer />
+  <>
+    <NavBars />
+    <Modal />
+
     <Switch>
       <Route exact path="/" component={HomePage} />
 
@@ -30,7 +31,7 @@ const App = () => (
 
       <ProtectedRoute
         path="/users/:userId/saved"
-        component={UserShowSavedContainer}
+        component={UserSavedContainer}
       />
 
       <ProtectedRoute
@@ -45,13 +46,13 @@ const App = () => (
         component={UserShowContainer}
       />
 
-      <Route path="/listings/:listingId" component={ListingShowContainer} />
+      <Route path="/listings/:listingId" component={ListingShow} />
 
-      <Route path="/listings/" component={ListingsIndexContainer} />
+      <Route path="/listings/" component={ListingsIndex} />
     </Switch>
 
     <FooterComponent />
-  </div>
+  </>
 );
 
 export default App;

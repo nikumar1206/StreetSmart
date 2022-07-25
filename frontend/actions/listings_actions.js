@@ -29,14 +29,16 @@ export const fetchListing = (userId) => (dispatch) =>
   );
 
 export const createListing = (listing) => (dispatch) =>
-  ListingAPI.createListing(listing).then((listing) =>
-    dispatch(receiveListing(listing))
-  );
+  ListingAPI.createListing(listing).then((listing) => {
+    dispatch(receiveListing(listing));
+    return listing;
+  });
 
 export const updateListing = (listing) => (dispatch) =>
-  ListingAPI.updateListing(listing).then((listing) =>
-    dispatch(receiveListing(listing))
-  );
+  ListingAPI.updateListing(listing).then((listing) => {
+    dispatch(receiveListing(listing));
+    return listing;
+  });
 
 export const deleteListing = (userId) => (dispatch) =>
   ListingAPI.deleteListing(userId).then(() => dispatch(removeListing(userId)));

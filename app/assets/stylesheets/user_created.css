@@ -1,5 +1,6 @@
 .usercreated-container {
-    margin: 10rem 0 8rem 0;
+
     display: flex;
     justify-content: center;
+    height: calc(100% - 100px);
 }
