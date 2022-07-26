@@ -16,6 +16,11 @@
 @import url(reset.css);
 @import url(fonts.scss);
 
+:root {
+    --dblue: #284F8F;
+    --lblue: #1676da;
+    --red: #B22B27;
+}
 
 html,
 body {
@@ -31,6 +36,7 @@ body {
 }
 
 div {
+    display: block;
     box-sizing: border-box;
 }
 

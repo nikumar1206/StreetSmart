@@ -127,7 +127,7 @@ ul.li-lowerblock-info>li {
 .heartsave-btn {
     background-color: transparent;
     font-size: 1.3rem;
-    color: #1876DB;
+    color: var(--red);
     z-index: 100;
 }
 

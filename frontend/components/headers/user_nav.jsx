@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const UserNav = ({ currentUser, logout, openModal }) => {
+  const history = useHistory();
   const notLoggedIn = () => (
     <div className="user-nav-container">
       <div className="user-nav">
         <div className="header">
-          <div className="logo">
-            <a href="/">
-              <img
-                className="logo-img"
-                src="https://streetsmart-safeassets.s3.amazonaws.com/images/logo.png"
-              />
-            </a>
+          <div className="logo" onClick={() => history.push("/")}>
+            <img
+              className="logo-img"
+              src="https://streetsmart-safeassets.s3.amazonaws.com/images/logo.png"
+            />
           </div>
           <ul>
             <li>

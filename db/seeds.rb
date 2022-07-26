@@ -9,7 +9,7 @@ require "open-uri"
 
 Listing.destroy_all
 User.destroy_all
-SavedListing.destroy_all
+Save.destroy_all
 
 user1 = User.create!({ name:"Demo User", phone:"555-555-555", email: "demo_user@demo.com", password: "password"})
 
@@ -242,7 +242,6 @@ i = 1
         lat: rand(40.666885..40.740644),
         lng: -rand(73.765498..73.966863),
         beds: beds,
-        saves: 0,
         baths: baths,
         price: price,
         description: description

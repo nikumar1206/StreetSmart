@@ -5,7 +5,7 @@ import { GoogleMap, Marker, TransitLayer } from "@react-google-maps/api";
 function MapsComponent(props) {
   const [map, setMap] = React.useState(null);
   const containerStyle = {
-    width: "32vw",
+    width: "36vw",
     height: "70vh",
     // marginBottom: "5rem",
   };

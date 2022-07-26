@@ -1,6 +1,9 @@
 .usersave-container {
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
+    margin-top: 1rem;
     margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
 }
 
 

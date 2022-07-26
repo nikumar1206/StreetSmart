@@ -4,7 +4,9 @@
 }
 
 .listing-show-container {
-    margin: 3rem 17vw;
+    padding: 3rem 0;
+    width: 75%;
+    margin: 0 auto;
     box-sizing: border-box;
 }
 
@@ -16,6 +18,7 @@
 
 .image-container {
     width: 50%;
+    height: auto;
     overflow: hidden;
 }
 
@@ -110,7 +113,6 @@
     background-color: #2074dc;
     color: white;
     padding: 0.4rem 1.5rem;
-    margin: 0.5rem 0 1rem;
     font-size: 12px;
     font-style: normal;
     font-weight: bold;
@@ -212,4 +214,30 @@ div.description-container>p {
     display: flex;
     /* gap: 2rem; */
     justify-content: space-between;
+}
+
+.edit-listing-button {
+    background-color: white;
+    border: 1px solid rgb(148, 148, 148);
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    color: #2074dc;
+    transition: 0.3s ease-in-out;
+    padding: 0.4rem 1.5rem;
+    margin: 0.5rem 0 1rem;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    height: 40px;
+    width: 20vw;
+    cursor: pointer;
+
+}
+
+.edit-listing-button:hover {
+    border: 1px solid #e6e6e6;
+    transition: 0.3s ease-in-out;
+
 }

@@ -36,7 +36,7 @@ const App = () => (
 
       <ProtectedRoute
         path="/users/:userId/created"
-        component={UserCreatedContainer}
+        component={UserSavedContainer}
       />
 
       <ProtectedRoute path="/users/:userId" component={UserShowContainer} />

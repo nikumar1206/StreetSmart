@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-
+import { FaSearch } from "react-icons/fa";
 function searchMod(props) {
   const [state, setState] = useState({
     rb_toggle: "rent",
@@ -94,10 +94,7 @@ function searchMod(props) {
           className="searchMod-submit-btn"
           onClick={handleSubmit}
         >
-          <img
-            className="searchMod-submit-img"
-            src="https://streetsmart-safeassets.s3.amazonaws.com/images/Screen+Shot+2022-06-26+at+11.58.48+AM.png"
-          />
+          <FaSearch />
         </button>
       </form>
     </div>

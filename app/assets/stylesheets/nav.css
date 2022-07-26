@@ -1,21 +1,16 @@
 .main-nav-container {
     background: #FFF;
     border-bottom: 1px solid #E6E6E6;
-    height: auto;
-    /* position: fixed; */
-    /* top: 50px; */
-    box-sizing: border-box;
-    display: block;
+    height: 45px;
     font-size: 14px;
     width: 100%;
     z-index: 1000;
+    padding: 0 5vw;
 }
 
 .navs-container {
     height: auto;
     top: 0;
-    box-sizing: border-box;
-    display: block;
     font-size: 14px;
     width: 100%;
     z-index: 1001;
@@ -71,15 +66,38 @@
 }
 
 .mvn-alinks {
-    font-family: "Source Sans Pro";
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 15px;
     display: inline-block;
     position: relative;
     background: none;
     line-height: 48px;
     color: #1A1F2C;
+    transition: 0.3s ease-in-out
+}
+
+
+.mvn-alinks:before {
+    content: '';
+    background: var(--lblue);
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.2s ease-in-out;
+}
+
+.mvn-alinks:hover {
+    background-position: 0;
+    color: var(--lblue);
+    text-decoration: none;
+}
+
+.mvn-alinks:hover::before {
+    width: 100%;
 }
 
 .mvn-alinks:link {
@@ -94,11 +112,6 @@
     font-weight: 600;
 }
 
-.mvn-alinks:hover {
-    color: rgba(25, 118, 219, 255);
-    text-decoration: none;
-    font-weight: 600;
-}
 
 .mvn-li {
     display: inline-block;
@@ -142,7 +155,6 @@
     background-repeat: no-repeat;
     border: none;
     color: white;
-    margin: 5px;
 }
 
 .account-dropdown-content {
@@ -179,13 +191,13 @@
 
 
 .user-nav {
-    height: 50px;
+    height: 45px;
     width: 100%;
-    line-height: 50px;
-    /* background: #4285F4; */
-    background: #135EAF;
-    padding: 0 25px;
+    line-height: 45px;
+    background: var(--dblue);
+    padding: 0 8vw;
     z-index: 1000;
+
 }
 
 .header {
@@ -195,17 +207,32 @@
 
 }
 
+.logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
 .logo-img {
     width: 150px;
     height: 30px;
-    padding-left: 40px;
-    padding-top: 8px;
+}
+
+.logo>a {
+    display: flex;
+    align-items: center;
+}
+
+div.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 div.header>ul {
     font-size: 14px;
-    padding-right: 10px;
     display: flex;
+    gap: 1rem;
 }
 
 li {
@@ -244,4 +271,12 @@ input:focus {
 .fa-solid fa-magnifying-glass {
     min-width: 20px;
     min-height: 20px;
+}
+
+.navbar.search-icon {
+    font-size: 15px;
+    position: absolute;
+    color: black;
+    right: 120px;
+    top: 62px;
 }

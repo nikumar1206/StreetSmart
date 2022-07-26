@@ -68,13 +68,6 @@ ActiveRecord::Schema.define(version: 2022_06_29_201734) do
     t.index ["name"], name: "index_listings_on_name", unique: true
   end
 
-  create_table "saved_listings", force: :cascade do |t|
-    t.integer "saver_id", null: false
-    t.integer "listing_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "saves", force: :cascade do |t|
     t.integer "listing_id", null: false
     t.integer "user_id", null: false

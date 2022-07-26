@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
 
 function MainNav() {
   const query = (toggle) =>
@@ -53,7 +54,7 @@ function MainNav() {
           //   console.log("search button pressed, doesnt work tho")
           // }
           >
-            {/* <input
+            <input
               className="main-nav-search-input"
               type="text"
               name=""
@@ -67,12 +68,8 @@ function MainNav() {
               className="main-nav-search-button"
               disabled
             >
-              <img
-                className="main-nav-search-img"
-                src="https://streetsmart-safeassets.s3.amazonaws.com/images/Screen+Shot+2022-06-21+at+11.52.39+AM.png"
-                disabled
-              />
-            </button> */}
+              <FaSearch className="search-icon navbar" />
+            </button>
           </form>
         </div>
       </div>
