@@ -14,4 +14,5 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+
 src = "https://kit.fontawesome.com/23650d1b39.js";
