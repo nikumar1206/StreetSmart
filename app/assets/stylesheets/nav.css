@@ -161,7 +161,7 @@
     background: #FFF;
     border: 1px solid #E6E6E6;
     border-top: 0;
-    box-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .15);
     display: none;
     position: absolute;
     right: -10px;
