@@ -1,9 +1,25 @@
 import React from "react";
-
-function FooterComponent(props) {
+import { FaAngellist, FaGithubAlt, FaLinkedinIn } from "react-icons/fa";
+function FooterComponent() {
   return (
     <div className="footer">
-      <ul className="footer-icon-links"></ul>
+      <ul className="footer-icon-links">
+        <li>
+          <a href="https://angel.co/u/nikhil-kumar-525" target={"_blank"}>
+            <FaAngellist className="icon-link-fa" />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/nikumar1206" target={"_blank"}>
+            <FaGithubAlt className="icon-link-fa" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/nikhilk99/" target={"_blank"}>
+            <FaLinkedinIn className="icon-link-fa" />
+          </a>
+        </li>
+      </ul>
       <p className="footer-disclaimer">
         StreetSmart is not a brand nor a registered trademark of Zillow, Inc.
         This demo is for educational purposes only

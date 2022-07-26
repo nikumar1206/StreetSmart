@@ -27,7 +27,6 @@ function ListingItemComponent(props) {
     e.preventDefault();
     e.stopPropagation();
     if (!props.currentUser) {
-      console.log(props);
       return dispatch(openModal("login"));
     }
 

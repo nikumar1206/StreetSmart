@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
 function searchMod(props) {
   const [state, setState] = useState({
     rb_toggle: "rent",
@@ -73,19 +73,20 @@ function searchMod(props) {
           <span className="searchMod-location-label">Location</span>
           <input
             type="text"
-            className="searchMod-location-input"
-            placeholder="NYC"
+            className="searchMod-location-input fa-location"
+            // placeholder="NYC"
+            value={state.location}
             onChange={update("location")}
           />
         </div>
         <div className="searchMod-maxPrice">
           <span className="searchMod-maxprice-label">Max Price ($)</span>
           <input
-            type="number"
+            type="text"
             className="searchMod-maxprice-input"
             placeholder="No max"
             onChange={update("maxPrice")}
-            maxLength={9}
+            maxLength={8}
           />
         </div>
 

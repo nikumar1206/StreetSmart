@@ -92,14 +92,15 @@
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(148, 148, 148);
     display: flex;
+    position: relative;
     font-size: 14px;
     font-weight: 400;
-    padding: 0px 8px;
+    padding: 0px 30px;
     text-align: left;
     transition-duration: 0.3s;
     transition-property: background-color, border-color, color;
     transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
-    width: 95%;
+    width: 75%;
 }
 
 .searchMod-form {
@@ -199,4 +200,11 @@
 
 .greetings-submessage-links-logged:hover {
     text-decoration: underline;
+}
+
+.fa-location {
+    background: url("https://cdn-assets-s3.streeteasy.com/assets/build/media/src/features/home-page-location-filter-widget/assets/mapPin-740f0525ac74bfa253909ae9d91ffb13.svg") no-repeat;
+    /* background-size: 10px; */
+    background-position: 10px;
+    display: inline-block;
 }

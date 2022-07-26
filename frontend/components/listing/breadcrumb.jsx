@@ -1,12 +1,9 @@
 import React from "react";
-function BreadcrumbComponent(props) {
-  const { listing } = props;
+function BreadcrumbComponent({ listing }) {
   const breadcrumbprefix = () => {
-    if (listing.rent_bool) {
-      return `Rental → ${listing.borough} → ${listing.neighborhood} → ${listing.name}`;
-    } else {
-      return `Sales → ${listing.borough} → ${listing.neighborhood} → ${listing.name}`;
-    }
+    let prefix = "";
+    listing.rent_bool ? (prefix = "Rental") : (prefix = "Sales");
+    return `${prefix} → ${listing.borough} → ${listing.neighborhood} → ${listing.name}`;
   };
   return (
     <div className="breadcrumb-container">

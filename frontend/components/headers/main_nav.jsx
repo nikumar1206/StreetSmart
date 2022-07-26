@@ -28,6 +28,7 @@ function MainNav() {
             <li className="mvn-li">
               <a
                 href="https://www.linkedin.com/in/nikhil-kumar7890/"
+                target={"_blank"}
                 className="mvn-alinks"
               >
                 LinkedIn
@@ -36,13 +37,18 @@ function MainNav() {
             <li className="mvn-li">
               <a
                 href="https://github.com/nikumar1206/StreetSmart"
+                target={"_blank"}
                 className="mvn-alinks"
               >
                 Github
               </a>
             </li>
             <li className="mvn-li">
-              <a href="http://nikhil-kumar.tk/" className="mvn-alinks">
+              <a
+                href="http://nikhil-kumar.tk/"
+                className="mvn-alinks"
+                target={"_blank"}
+              >
                 Personal Website
               </a>
             </li>

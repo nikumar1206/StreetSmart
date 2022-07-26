@@ -1,0 +1,28 @@
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(365deg);
+        color: #1e1e1e;
+    }
+}
+
+.loading-spinner {
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid var(--lblue);
+    margin: 0 auto;
+
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+}
+
+.loading-spinner-container {
+    height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
