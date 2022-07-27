@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useCurrListing, useCurrentUser } from "../../util/selectors";
@@ -14,17 +14,20 @@ import DescriptionComponent from "./description";
 import Image from "./image";
 import ListerDescriptionContainer from "./listerdescription";
 import MapsComponent from "./maps";
-
+import Spinner from "../spinner/spinner_component";
 function ListingShowComponent(props) {
   const currentUser = useCurrentUser();
+  const [loaded, isLoaded] = useState(false);
   const listing = useCurrListing(props.match.params.listingId);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(removeListings());
-    dispatch(fetchListing(props.match.params.listingId));
+    dispatch(fetchListing(props.match.params.listingId)).then(() =>
+      isLoaded(true)
+    );
   }, []);
 
-  if (listing) {
+  if (loaded) {
     const { description, imageUrl } = listing;
     return (
       <div className="listing-show-container">
@@ -44,6 +47,8 @@ function ListingShowComponent(props) {
         </div>
       </div>
     );
+  } else {
+    return <Spinner />;
   }
 }
 

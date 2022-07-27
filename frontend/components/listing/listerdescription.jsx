@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
-import { openModal, closeModal } from "../../actions/modal_actions";
+import { openModal } from "../../actions/modal_actions";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 function ListerDescriptionContainer(props) {
@@ -70,7 +70,8 @@ function ListerDescriptionContainer(props) {
             Schedule a Showing
           </button>
         )}
-        {props.listing.lister_id === props.currentUser.id ? (
+        {props.currentUser &&
+        props.listing.lister_id === props.currentUser.id ? (
           <button
             onClick={() => history.push(`/listings/${props.listing.id}/edit`)}
             className="edit-listing-button"

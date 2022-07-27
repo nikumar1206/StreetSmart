@@ -63,6 +63,7 @@
 .main-nav-list {
     display: flex;
     flex-direction: row;
+    gap: 1rem;
 }
 
 .mvn-alinks {
@@ -114,10 +115,10 @@
 
 
 .mvn-li {
-    display: inline-block;
+    /* display: flex; */
     font-size: 14px;
     height: 50px;
-    margin: 0 15px;
+    gap: 1rem;
     font-weight: 700;
     padding: 0 0;
 }

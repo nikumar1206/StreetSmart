@@ -1,0 +1,96 @@
+.listings-filter-container {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+    height: 95px;
+    position: fixed;
+    left: 0;
+    top: 90px;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+
+.listingsfilters {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    border-right: 5px solid #E6E6E6;
+    border-left: 5px solid #E6E6E6;
+}
+
+.listings-filter-form {
+    display: flex;
+    width: 100%;
+}
+
+.listingsfilter-location {
+    max-width: 300px;
+    width: 100%;
+    display: block;
+}
+
+.listingsfilter-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    height: 40px;
+}
+
+.listingsfilterbtn {
+    text-transform: uppercase;
+    border: 1px solid rgb(148, 148, 148);
+    background: none;
+    outline: none;
+    color: var(--lblue);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.listingsfilterbtn:hover {
+    border: 1px solid #e6e6e6;
+    transition: 0.3s ease-in-out;
+}
+
+.listingsfilter-submit-btn {
+    height: 50px;
+    width: 100px;
+    background-color: var(--lblue);
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+
+
+}
+
+.listings-filter-location {
+    height: 40px;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(148, 148, 148);
+    display: flex;
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0px 30px;
+    text-align: left;
+    transition-duration: 0.3s;
+    transition-property: background-color, border-color, color;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    background: url("https://cdn-assets-s3.streeteasy.com/assets/build/media/src/features/home-page-location-filter-widget/assets/mapPin-740f0525ac74bfa253909ae9d91ffb13.svg") no-repeat;
+    /* background-size: 10px; */
+    background-position: 10px;
+    /* display: inline-block; */
+}

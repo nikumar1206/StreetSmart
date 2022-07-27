@@ -202,7 +202,7 @@ nyc_data = {
   }
 PROPERTY_TYPE = %w(townhouse condo penthouse apartment single-family\ house multi-family\ house)
 BOROUGHS = %w(Manhattan Queens Brooklyn Staten\ Island Bronx)
-
+AMENITIES = %w(Doorman Pets\ Allowed Elevator Laundromat Private\ Outdoor\ Space Dishwasher)
 BEDS = [
   1, 1, 1, 1,
   2, 2, 2, 2, 2, 2, 2, 2, 2,
@@ -244,7 +244,8 @@ i = 1
         beds: beds,
         baths: baths,
         price: price,
-        description: description
+        description: description,
+        amenities: AMENITIES.sample(rand(1..AMENITIES.length))
         })
     image = URI.open("https://streetsmart-safeassets.s3.amazonaws.com/listing_seed/listing#{i}.jpg")
     new_listing.photo.attach(io: image, filename: "listing#{i}")

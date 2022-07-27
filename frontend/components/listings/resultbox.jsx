@@ -1,13 +1,16 @@
 import React from "react";
 import ResultDetails from "./resultdetails";
 import MapsComponent from "./maps_component";
-import { useListings } from "../../util/selectors";
-function ResultBox() {
-  const listings = useListings();
+import NoListingsComponent from "./listings_notfound_component";
 
+function ResultBox({ listings }) {
   return (
     <div className="resultbox">
-      <ResultDetails listings={listings} />
+      {listings.length > 0 ? (
+        <ResultDetails listings={listings} />
+      ) : (
+        <NoListingsComponent />
+      )}
       <MapsComponent listings={listings} />
     </div>
   );

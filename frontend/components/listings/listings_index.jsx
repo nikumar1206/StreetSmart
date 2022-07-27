@@ -6,10 +6,11 @@ import { useCurrentUser, useListings } from "../../util/selectors";
 import { useDispatch } from "react-redux";
 import { fetchListings, removeListings } from "../../actions/listings_actions";
 import { withRouter } from "react-router-dom";
-import Spinner from "./spinner/spinner_component";
+import Spinner from "../spinner/spinner_component";
 
 function ListingsIndexComponent(props) {
   const dispatch = useDispatch();
+
   const params = Object.fromEntries(new URLSearchParams(props.location.search));
   const { rb_toggle, maxPrice, location } = params;
   let queryString = `?rb_toggle=${rb_toggle}&location=${location}&maxPrice=${maxPrice}`;

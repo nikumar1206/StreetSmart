@@ -17,16 +17,14 @@ function UserShowSavedComponent(props) {
 
   let title = "";
   props.match.path === "/users/:userId/created"
-    ? (title = "Created Listing")
-    : (title = "Saved Listing");
+    ? (title = "Created Listings")
+    : (title = "Saved Listings");
 
   useEffect(() => {
     dispatch(removeListings());
     if (props.match.path === "/users/:userId/created") {
-      title = "Saved Listings";
       dispatch(fetchUserListings(currentUser.id));
     } else {
-      title = "Created Listings";
       dispatch(fetchSavedListings(currentUser.id));
     }
   }, [props.match.path]);
