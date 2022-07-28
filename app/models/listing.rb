@@ -23,6 +23,7 @@
 #
 class Listing < ApplicationRecord
     validates :name, :location, :neighborhood, :borough, :zip, :lister_id, :price, :beds, :baths, presence: true
+    validates :name, uniqueness: true
 
     belongs_to :lister, class_name: "User", foreign_key: "lister_id"
     has_many :saves, class_name: "Save", foreign_key: "listing_id"

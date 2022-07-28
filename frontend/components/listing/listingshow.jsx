@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useCurrListing, useCurrentUser } from "../../util/selectors";
 import { withRouter } from "react-router-dom";
@@ -16,6 +15,10 @@ import ListerDescriptionContainer from "./listerdescription";
 import MapsComponent from "./maps";
 import Spinner from "../spinner/spinner_component";
 function ListingShowComponent(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const currentUser = useCurrentUser();
   const [loaded, isLoaded] = useState(false);
   const listing = useCurrListing(props.match.params.listingId);

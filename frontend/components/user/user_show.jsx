@@ -7,6 +7,9 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 const UserShowComponent = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const dispatch = useDispatch();
   const history = useHistory();
   const currentUser = useCurrentUser();

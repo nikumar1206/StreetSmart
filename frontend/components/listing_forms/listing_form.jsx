@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import { useListingErrors } from "../../util/selectors";
 function ListingForm(props) {
   const history = useHistory();
+  const errors = useListingErrors();
   const [state, setState] = useState(() => props.listing);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const update = (field) => (e) =>
     setState({ ...state, [field]: e.target.value });
@@ -56,7 +60,9 @@ function ListingForm(props) {
     }
 
     props.action(formData).then((listing) => {
-      history.push(`/listings/${listing.id}`);
+      if (listing) {
+        history.push(`/listings/${listing.id}`);
+      }
     });
   };
 
@@ -64,6 +70,14 @@ function ListingForm(props) {
     <div className="listing-form-container">
       <h1 className="listingFormTitle">{props.formType}</h1>
       <form onSubmit={handleSubmit} className="listing-form" id="listing-form">
+        <label className="rb-toggle" htmlFor="rb-toggle">
+          What type of sale is this?
+        </label>
+        <select name="rb-toggle" onChange={update("rent_bool")} id="rb-toggle">
+          <option value={true}>Rental</option>
+          <option value={false}>For Sale</option>
+        </select>
+        <br />
         <label className="listing-form-label" htmlFor="name">
           Street Address
         </label>
@@ -76,14 +90,6 @@ function ListingForm(props) {
           value={state.name}
           required
         />
-        <br />
-        <label className="rb-toggle" htmlFor="rb-toggle">
-          What type of sale is this?
-        </label>
-        <select name="rb-toggle" onChange={update("rent_bool")} id="rb-toggle">
-          <option value={true}>Rental</option>
-          <option value={false}>For Sale</option>
-        </select>
         <br />
         <label className="listing-form-label" htmlFor="neighborhood">
           Neighborhood
@@ -135,6 +141,7 @@ function ListingForm(props) {
           name="price"
           value={state.price}
           required
+          maxLength={8}
         />
         <br />
         <label className="listing-form-label" htmlFor="property_type">
@@ -153,62 +160,70 @@ function ListingForm(props) {
           <option value="multi-family house">Multi-family House</option>
         </select>
         <br />
-        <label className="listing-form-label" htmlFor="beds">
-          Bedrooms
-        </label>
-        <input
-          onChange={update("beds")}
-          type="text"
-          className="listingFormInput"
-          id="beds"
-          maxLength={2}
-          value={state.beds}
-          required
-          name="beds"
-        />
-        <br />
-        <label className="listing-form-label" htmlFor="baths">
-          Bathrooms
-        </label>
-        <input
-          onChange={update("baths")}
-          type="text"
-          className="listingFormInput"
-          id="baths"
-          maxLength={2}
-          required
-          value={state.baths}
-          name="baths"
-        />
+        <div className="beds-baths">
+          <div className="listing-form-beds">
+            <label className="listing-form-label" htmlFor="beds">
+              Bedrooms
+            </label>
+            <input
+              onChange={update("beds")}
+              type="text"
+              className="listingFormInput beds-bath-input"
+              id="beds"
+              maxLength={2}
+              value={state.beds}
+              required
+              name="beds"
+            />
+          </div>
+          <div className="listing-form-baths">
+            <label className="listing-form-label" htmlFor="baths">
+              Bathrooms
+            </label>
+            <input
+              onChange={update("baths")}
+              type="text"
+              className="listingFormInput beds-bath-input"
+              id="baths"
+              maxLength={2}
+              required
+              value={state.baths}
+              name="baths"
+            />
+          </div>
+        </div>
         <br />
         <div className="lat-lng">
-          <label className="listing-form-label" htmlFor="lat">
-            Latitude: &nbsp;
-          </label>
-          <input
-            onChange={update("lat")}
-            type="text"
-            className="listingFormInput lat-lng-input"
-            id="lat"
-            maxLength="10"
-            value={state.lat}
-            required
-            name="lat"
-          />
-          &nbsp;&nbsp;
-          <label className="listing-form-label" htmlFor="lng">
-            Longitude: &nbsp;
-          </label>
-          <input
-            onChange={update("lng")}
-            type="text"
-            className="listingFormInput lat-lng-input"
-            id="lng"
-            value={state.lng}
-            maxLength="10"
-            required
-            name="lng"
-          />
+          <div className="listing-form-lat">
+            <label className="listing-form-label" htmlFor="lat">
+              Latitude
+            </label>
+            <input
+              onChange={update("lat")}
+              type="text"
+              className="listingFormInput lat-lng-input"
+              id="lat"
+              maxLength="10"
+              value={state.lat}
+              required
+              name="lat"
+            />
+          </div>
+          <div className="listing-form-lng">
+            <label className="listing-form-label" htmlFor="lng">
+              Longitude
+            </label>
+            <input
+              onChange={update("lng")}
+              type="text"
+              className="listingFormInput lat-lng-input"
+              id="lng"
+              value={state.lng}
+              maxLength="10"
+              required
+              name="lng"
+            />
+          </div>
         </div>
         <br />
         <label className="listing-form-label" htmlFor="description">
@@ -224,6 +239,7 @@ function ListingForm(props) {
           rows="10"
         />
         <input
+          className="fileupload-input"
           type="file"
           onChange={handleFile}
           name="myImage"
@@ -232,6 +248,15 @@ function ListingForm(props) {
           // value={state.image}
           multiple={false}
         />
+        <div className="listing-errors-container">
+          {errors.map((err, idx) => {
+            return (
+              <p className="error-msg" key={idx}>
+                {err}
+              </p>
+            );
+          })}
+        </div>
 
         <button type="submit" className="listingFormButton">
           {props.formType}

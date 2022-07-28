@@ -42,3 +42,9 @@ export const useCurrListing = (listingId) => {
 };
 
 // for create listings
+export const useListingErrors = () => {
+  return useSelector((state) => state.errors.listings);
+};
+export const useModal = () => {
+  return useSelector((state) => state.ui.modal);
+};

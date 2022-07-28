@@ -1,6 +1,10 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { clearErrors } from "../../actions/sessions_actions";
+import { useModal } from "../../util/selectors";
 function SessionForm(props) {
+  const dispatch = useDispatch();
+  const modal = useModal();
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -13,7 +17,9 @@ function SessionForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault;
     const user = { ...values };
-    props.processForm(user).then(() => props.closeModal());
+    props.processForm(user).then(() => {
+      props.closeModal();
+    });
   };
 
   const handleDemoSubmit = (e) => {
@@ -26,6 +32,7 @@ function SessionForm(props) {
   const closeModal = (e) => {
     e.preventDefault();
     props.closeModal();
+    dispatch(clearErrors());
   };
 
   return (

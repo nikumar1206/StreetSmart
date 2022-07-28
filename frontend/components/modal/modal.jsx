@@ -1,12 +1,14 @@
 import React from "react";
 import LoginFormContainer from "../session/LoginFormContainer";
 import SignupFormContainer from "../session/SignupFormContainer";
-import { useSelector } from "react-redux";
+import { useModal } from "../../util/selectors";
 
 const Modal = () => {
-  const modal = useSelector((state) => state.ui.modal);
+  const modal = useModal();
 
-  if (!modal) return null;
+  if (!modal) {
+    return null;
+  }
 
   let component;
   switch (modal) {

@@ -11,6 +11,10 @@ import { useCurrentUser } from "../../util/selectors";
 import { withRouter } from "react-router-dom";
 
 function UserShowSavedComponent(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const listings = useListings();
   const currentUser = useCurrentUser();
   const dispatch = useDispatch();

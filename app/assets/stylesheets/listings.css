@@ -122,7 +122,8 @@ ul.li-lowerblock-info>li {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 125px;
+    width: 40vw;
+    margin: 125px auto 0 auto;
 }
 
 .heartsave-btn {

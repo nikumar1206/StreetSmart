@@ -11,7 +11,6 @@ import UserSavedContainer from "./user/user_saved";
 import UserShowContainer from "./user/user_show";
 import ListingsIndex from "./listings/listings_index";
 import ListingShow from "./listing/listingshow";
-import UserCreatedContainer from "./user/user_created";
 import FooterComponent from "./headers/footer";
 
 const App = () => (

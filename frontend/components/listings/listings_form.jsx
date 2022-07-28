@@ -22,7 +22,7 @@ function ListingsForm(props) {
           <input
             type="text"
             className="listings-filter-location"
-            // placeholder="NYC"
+            placeholder="NYC"
             // value={state.location}
             // onChange={update("location")}
           />
@@ -33,7 +33,8 @@ function ListingsForm(props) {
             <button className="listingsfilterbtn amenities">Amenities</button>
           </div>
           <button type="submit" className="listingsfilter-submit-btn">
-            <FaSearch />
+            <FaSearch id="search-icon-submit-filter" />
+            Search
           </button>
         </div>
       </form>

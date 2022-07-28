@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ListingsForm from "./listings_form";
 import ResultBox from "./resultbox";
 import { useCurrentUser, useListings } from "../../util/selectors";
@@ -9,6 +8,10 @@ import { withRouter } from "react-router-dom";
 import Spinner from "../spinner/spinner_component";
 
 function ListingsIndexComponent(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const dispatch = useDispatch();
 
   const params = Object.fromEntries(new URLSearchParams(props.location.search));

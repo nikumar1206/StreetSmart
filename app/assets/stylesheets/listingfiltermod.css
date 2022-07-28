@@ -52,6 +52,7 @@
     height: 40px;
     display: flex;
     align-items: center;
+    /* justify-content: flex-start; */
 }
 
 .listingsfilterbtn:hover {
@@ -60,7 +61,7 @@
 }
 
 .listingsfilter-submit-btn {
-    height: 50px;
+    height: 40px;
     width: 100px;
     background-color: var(--lblue);
     background-repeat: no-repeat;
@@ -68,10 +69,13 @@
     overflow: hidden;
     outline: none;
     color: white;
-    font-size: 20px;
+    font-size: 11px;
     cursor: pointer;
-
-
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .listings-filter-location {
@@ -93,4 +97,8 @@
     /* background-size: 10px; */
     background-position: 10px;
     /* display: inline-block; */
+}
+
+#search-icon-submit-filter {
+    font-size: 14px;
 }

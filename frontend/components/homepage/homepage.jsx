@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SearchModContainer from "../searchmod/searchmod_container";
 import { Link } from "react-router-dom";
 import { useOpenModal } from "../../util/dispatches";
 import { useCurrentUser } from "../../util/selectors";
 
 const HomeSplash = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const currentUser = useCurrentUser();
   const openModal = useOpenModal();
   return (

@@ -5,8 +5,8 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const REMOVE_ERRORS = "REMOVE_ERRORS";
 
-// normal action creators
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
   currentUser,
@@ -21,9 +21,12 @@ export const receiveErrors = (errors) => ({
   errors,
 });
 
-export const clearErrors = () => ({
-  type: CLEAR_ERRORS,
-});
+export const clearErrors = () => {
+  console.log("bloop");
+  return {
+    type: CLEAR_ERRORS,
+  };
+};
 
 export const receiveSessionErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
