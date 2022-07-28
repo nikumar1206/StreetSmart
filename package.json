@@ -44,6 +44,7 @@
     "babel-loader": "^8.2.5",
     "dotenv": "^16.0.1",
     "figaro-js": "^3.0.2",
+    "formkit": "^1.0.0-beta.9",
     "jwt-decode": "^3.1.2",
     "query-string": "^7.1.1",
     "react": "^18.1.0",
