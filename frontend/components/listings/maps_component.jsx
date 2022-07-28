@@ -6,7 +6,7 @@ function MapsComponent(props) {
   const [map, setMap] = React.useState(null);
   const containerStyle = {
     width: "40vw",
-    height: "75vh",
+    height: "70vh",
     overflow: "visible",
   };
   const center = {

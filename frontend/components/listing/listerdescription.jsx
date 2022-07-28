@@ -5,6 +5,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { openModal } from "../../actions/modal_actions";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+
 function ListerDescriptionContainer({
   listing,
   unSaveListing,
@@ -52,7 +53,10 @@ function ListerDescriptionContainer({
           {toggleSaveIcon()}
           <span>{isSaved ? "saved" : "save"}</span>
         </button>
-        <button className="share-button">
+        <button
+          onClick={() => dispatch(openModal("thankyou"))}
+          className="share-button"
+        >
           <AiOutlineMail />
           <span>Share</span>
         </button>
@@ -66,9 +70,17 @@ function ListerDescriptionContainer({
 
       <section className="lister-info">
         {listing.rent_bool ? (
-          <button className="contact-lister tour">Request a tour</button>
+          <button
+            onClick={() => dispatch(openModal("thankyou"))}
+            className="contact-lister tour"
+          >
+            Request a tour
+          </button>
         ) : (
-          <button className="contact-lister schedule">
+          <button
+            onClick={() => dispatch(openModal("thankyou"))}
+            className="contact-lister schedule"
+          >
             Schedule a Showing
           </button>
         )}

@@ -1,0 +1,44 @@
+.thankyou-container {
+    background-color: white;
+    box-sizing: border-box;
+    display: block;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    align-items: center;
+    padding: 70px 70px 40px 70px;
+    width: 480px;
+}
+
+.thankyou-title {
+    font-size: 35px;
+    font-weight: 100;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.thankyou-container>p {
+    text-align: center;
+}
+
+#github-link,
+#personal-link {
+    text-decoration: underline;
+    color: black;
+}
+
+/* #github-link:visited {
+    text-decoration: no;
+} */
+
+.thankyou-img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thankyou-container>span {
+    display: flex;
+    justify-content: center;
+}

@@ -7,7 +7,6 @@ function MapsComponent(props) {
   const containerStyle = {
     width: "36vw",
     height: "70vh",
-    // marginBottom: "5rem",
   };
 
   const center = {

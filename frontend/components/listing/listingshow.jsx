@@ -31,7 +31,7 @@ function ListingShowComponent(props) {
   }, []);
 
   if (loaded) {
-    const { description, imageUrl } = listing;
+    const { description, imageUrl, amenities } = listing;
     return (
       <div className="listing-show-container">
         <BreadcrumbComponent listing={listing} />
@@ -45,7 +45,10 @@ function ListingShowComponent(props) {
           />
         </div>
         <div className="listing-show-container-bot">
-          <DescriptionComponent description={description} />
+          <DescriptionComponent
+            description={description}
+            amenities={amenities}
+          />
           <MapsComponent listing={listing} />
         </div>
       </div>

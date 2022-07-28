@@ -2,6 +2,7 @@ import React from "react";
 import LoginFormContainer from "../session/LoginFormContainer";
 import SignupFormContainer from "../session/SignupFormContainer";
 import { useModal } from "../../util/selectors";
+import ThankYouContainer from "./thankyou";
 
 const Modal = () => {
   const modal = useModal();
@@ -17,6 +18,9 @@ const Modal = () => {
       break;
     case "signup":
       component = <SignupFormContainer />;
+      break;
+    case "thankyou":
+      component = <ThankYouContainer />;
       break;
     default:
       return null;
