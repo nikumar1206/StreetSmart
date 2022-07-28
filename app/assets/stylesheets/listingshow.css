@@ -261,4 +261,5 @@ div.description-container>p {
     height: auto;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }

@@ -42,7 +42,9 @@ function ListerDescriptionContainer({
 
       <div className="details-info">
         <ul className="details-info-breakdown">
-          <li className="det-cell-1-child">{listing.beds + 1} rooms</li>
+          <li className="det-cell-1-child">
+            {listing.beds + listing.baths + 1} rooms
+          </li>
           <li className="det-cell-2-child">{listing.beds} beds</li>
           <li className="det-cell-3-child">{listing.baths} baths</li>
         </ul>
