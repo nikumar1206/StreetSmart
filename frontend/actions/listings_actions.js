@@ -25,8 +25,8 @@ export const recieveListingErrors = (errors) => ({
   errors,
 });
 
-export const fetchListings = (filters) => (dispatch) =>
-  ListingAPI.fetchListings(filters).then((listings) =>
+export const fetchListings = (filters, amenities) => (dispatch) =>
+  ListingAPI.fetchListings(filters, amenities).then((listings) =>
     dispatch(receiveListings(listings))
   );
 export const fetchListing = (userId) => (dispatch) =>

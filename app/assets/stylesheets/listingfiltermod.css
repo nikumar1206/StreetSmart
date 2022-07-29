@@ -13,8 +13,9 @@
 
 .listingsfilters {
     display: flex;
-    width: 100%;
+    align-items: flex-end;
     justify-content: space-evenly;
+    width: 100%;
     border-right: 5px solid #E6E6E6;
     border-left: 5px solid #E6E6E6;
 }
@@ -28,6 +29,10 @@
     max-width: 300px;
     width: 100%;
     display: block;
+}
+
+#nomrg-label {
+    margin: 0;
 }
 
 .listingsfilter-buttons {
@@ -101,4 +106,129 @@
 
 #search-icon-submit-filter {
     font-size: 14px;
+}
+
+.listingsfilterdiv {
+    display: none;
+}
+
+.listingsfilterdiv.clicked {
+    display: block;
+    position: absolute;
+    top: 80%;
+    background-color: white;
+    height: fit-content;
+    padding: 25px;
+    border: 4px lightgray;
+}
+
+.listfilter-priceinputs {
+    display: flex;
+    gap: 1rem;
+}
+
+.listfilter-priceinputs>div>input {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid var(--border);
+    outline: none;
+}
+
+.listingsfilter-closedivbtn {
+    display: block;
+    margin: 10px auto 0;
+    border: none;
+    outline: none;
+    background: none;
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: var(--lblue);
+    color: white;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+
+.bedbox,
+.bathbox {
+    background-color: white;
+    padding: 5px;
+    outline: 1px solid var(--border);
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bedbox.active,
+.bathbox.active {
+    background-color: var(--lightestblue);
+}
+
+.bedsdiv-parent-box,
+.bathsdiv-parent-box {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+}
+
+input[type=checkbox]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    border: 2px solid #555555;
+    border-radius: 3px;
+    background-color: white;
+}
+
+input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid var(--lblue);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+}
+
+.amenitieslist {
+    display: flex;
+    flex-direction: row;
+}
+
+.amenity-opt>span {
+    width: 100px;
+    margin-left: 25px;
+}
+
+.amenity-opt {
+    display: inline-block;
+    width: 200px;
 }

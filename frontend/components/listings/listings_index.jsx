@@ -15,15 +15,25 @@ function ListingsIndexComponent(props) {
   const dispatch = useDispatch();
 
   const params = Object.fromEntries(new URLSearchParams(props.location.search));
-  const { rb_toggle, maxPrice, location } = params;
-  let queryString = `?rb_toggle=${rb_toggle}&location=${location}&maxPrice=${maxPrice}`;
+  const {
+    rb_toggle,
+    maxPrice,
+    location,
+    minPrice,
+    minBeds,
+    minBaths,
+    amenities,
+  } = params;
+  const queryString = `?rb_toggle=${rb_toggle}&location=${location}&maxPrice=${maxPrice}&minPrice=${minPrice}&minBeds=${minBeds}&minBaths=${minBaths}`;
   const [loaded, isLoaded] = useState(false);
   const currentUser = useCurrentUser();
   const listings = useListings();
 
   useEffect(() => {
     dispatch(removeListings());
-    dispatch(fetchListings(queryString)).then(() => isLoaded(true));
+    dispatch(fetchListings(queryString, JSON.parse(amenities))).then(() =>
+      isLoaded(true)
+    );
   }, [props.location.search, currentUser]);
 
   if (loaded) {

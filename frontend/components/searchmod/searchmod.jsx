@@ -5,7 +5,18 @@ function searchMod(props) {
   const [state, setState] = useState({
     rb_toggle: "rent",
     location: "NYC",
+    minPrice: "0",
     maxPrice: "99999999",
+    minBeds: "0",
+    minBaths: "0",
+    amenities: {
+      "Pets Allowed": false,
+      Doorman: false,
+      "Private Outdoor Space": false,
+      Elevator: false,
+      Dishwasher: false,
+      Laundromat: false,
+    },
   });
   const [toggled, setToggled] = useState(true);
 
@@ -27,7 +38,11 @@ function searchMod(props) {
     return (e) => setState(() => ({ ...state, [field]: e.target.value }));
   };
 
-  const queryString = `?rb_toggle=${state.rb_toggle}&location=${state.location}&maxPrice=${state.maxPrice}`;
+  const queryString = `?rb_toggle=${state.rb_toggle}&location=${
+    state.location
+  }&maxPrice=${state.maxPrice}&minPrice=${state.minPrice}&minBeds=${
+    state.minBeds
+  }&minBaths=${state.minBaths}&amenities=${JSON.stringify(state.amenities)}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();

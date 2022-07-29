@@ -1,7 +1,8 @@
-export const fetchListings = (filters) =>
+export const fetchListings = (filters, amenities) =>
   $.ajax({
     url: `/api/listings/${filters}`,
     method: "get",
+    data: { amenities },
   });
 
 export const fetchListing = (listingId) =>
@@ -14,7 +15,7 @@ export const createListing = (listing) =>
   $.ajax({
     url: `/api/listings/`,
     method: "post",
-    data: listing,
+    data: { listing },
     contentType: false,
     processData: false,
   });
