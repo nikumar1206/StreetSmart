@@ -19,7 +19,6 @@ function searchMod(props) {
     },
   });
   const [toggled, setToggled] = useState(true);
-
   const handleToggle = (field) => {
     if (field === "rent") {
       return (e) => {
@@ -42,7 +41,7 @@ function searchMod(props) {
     state.location
   }&maxPrice=${state.maxPrice}&minPrice=${state.minPrice}&minBeds=${
     state.minBeds
-  }&minBaths=${state.minBaths}&amenities=${JSON.stringify(state.amenities)}`;
+  }&minBaths=${state.minBaths}&amen=${JSON.stringify(state.amenities)}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();

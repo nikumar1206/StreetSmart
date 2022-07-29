@@ -25,14 +25,24 @@ export const recieveListingErrors = (errors) => ({
   errors,
 });
 
-export const fetchListings = (filters, amenities) => (dispatch) =>
-  ListingAPI.fetchListings(filters, amenities).then((listings) =>
-    dispatch(receiveListings(listings))
-  );
-export const fetchListing = (userId) => (dispatch) =>
-  ListingAPI.fetchListing(userId).then((listing) =>
-    dispatch(receiveListing(listing))
-  );
+export const fetchListings = (filters, amenities) => async (dispatch) => {
+  try {
+    let res = await ListingAPI.fetchListings(filters, amenities);
+    dispatch(receiveListings(res));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const fetchListing = (userId) => async (dispatch) => {
+  try {
+    let res = await ListingAPI.fetchListing(userId);
+    dispatch(receiveListing(res));
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const createListing = (listing) => async (dispatch) => {
   try {

@@ -1,15 +1,15 @@
 class Api::ListingsController < ApplicationController
     before_action :require_logged_in, only: [:create]
-
     def index
-        # p params["amenities"].to_enum.to_h
         if params[:user_id]
             @listings = Listing.where("lister_id = ?", params[:user_id])
-        else 
+        else
+            query = "(price BETWEEN ? and ?) AND rent_bool = ? AND beds >= ? AND baths >= ?"
+            locquery = "(price BETWEEN ? AND ?) AND rent_bool = ? AND (LOWER(location) LIKE ? or LOWER(neighborhood) LIKE ?) AND beds >= ? AND baths >= ?"
             if location == "nyc"
-                @listings = Listing.where("price < ? AND rent_bool = ?", max_price, "#{(rb_toggle)}")
+                @listings = Listing.where(query, "#{min_price}", "#{max_price}", "#{(rb_toggle)}", "#{min_beds}", "#{min_baths}")
             else
-                @listings = Listing.where("price < ? AND rent_bool = ? AND (LOWER(location) LIKE ? or LOWER(neighborhood) LIKE ?)", "#{max_price}", "#{rb_toggle}", "%#{location}%","%#{location}%" )
+                @listings = Listing.where(locquery, "#{min_price}", "#{max_price}", "#{rb_toggle}", "%#{location}%","%#{location}%", "#{min_beds}", "#{min_baths}" )
             end
         end
     end
@@ -22,7 +22,10 @@ class Api::ListingsController < ApplicationController
         @listing = Listing.new(listing_params)
         @listing.lister = current_user
         @listing.location = "#{@listing.name}, #{@listing.borough}, New York, #{@listing.zip}"
+        @listing.amenities = fixed_amen_arr
         if @listing.save
+            p "uuuuuuuu"
+            p @listing
           render :show
         else
           render json: @listing.errors.full_messages, status: 422
@@ -119,6 +122,9 @@ class Api::ListingsController < ApplicationController
     def laundromat
         params["amenities"]["Laundromat"]
     end
-    
 
+    def fixed_amen_arr
+        p "bbbbbbbb"
+        params[:listing]["amenities"].split(",")
+    end 
 end

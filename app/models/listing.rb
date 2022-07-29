@@ -20,6 +20,7 @@
 #  rent_bool     :boolean          default(FALSE)
 #  borough       :string           default("Queens")
 #  save_count    :integer          default(0)
+#  amenities     :string           default([]), is an Array
 #
 class Listing < ApplicationRecord
     validates :name, :location, :neighborhood, :borough, :zip, :lister_id, :price, :beds, :baths, presence: true

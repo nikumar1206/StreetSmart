@@ -3,8 +3,18 @@ import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 
 function MainNav() {
+  const amenities = {
+    "Pets Allowed": false,
+    Doorman: false,
+    "Private Outdoor Space": false,
+    Elevator: false,
+    Dishwasher: false,
+    Laundromat: false,
+  };
   const query = (toggle) =>
-    `/listings/?rb_toggle=${toggle}&location=NYC&maxPrice=99999999`;
+    `/listings/?rb_toggle=${toggle}&location=NYC&maxPrice=99999999&minPrice=0&minBeds=0&minBaths=0&amen=${JSON.stringify(
+      amenities
+    )}`;
   return (
     <div className="main-nav-container">
       <div className="main-nav">

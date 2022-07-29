@@ -1,12 +1,11 @@
 .searchMod {
-    box-sizing: inherit;
+    /* box-sizing: inherit; */
     background: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, .16) 0px 8px 24px;
     display: flex;
     flex-direction: row;
     margin: 6px auto;
-    width: 50vw;
-    min-width: 750px;
+    width: 750px;
     padding: 16px;
 }
 

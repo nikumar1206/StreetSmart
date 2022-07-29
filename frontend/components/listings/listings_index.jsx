@@ -8,38 +8,33 @@ import { withRouter } from "react-router-dom";
 import Spinner from "../spinner/spinner_component";
 
 function ListingsIndexComponent(props) {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const dispatch = useDispatch();
 
   const params = Object.fromEntries(new URLSearchParams(props.location.search));
-  const {
-    rb_toggle,
-    maxPrice,
-    location,
-    minPrice,
-    minBeds,
-    minBaths,
-    amenities,
-  } = params;
-  const queryString = `?rb_toggle=${rb_toggle}&location=${location}&maxPrice=${maxPrice}&minPrice=${minPrice}&minBeds=${minBeds}&minBaths=${minBaths}`;
+  const { rb_toggle, maxPrice, location, minPrice, minBeds, minBaths, amen } =
+    params;
+  console.log(props);
+  const [amenity, setAmenity] = useState(() => JSON.parse(amen));
+  console.log(JSON.parse(amen));
+  const queryString = `?rb_toggle=${rb_toggle}&location=${location}&maxPrice=${maxPrice}&minPrice=${minPrice}&minBeds=${minBeds}&minBaths=${minBaths}&amen=${amen}`;
   const [loaded, isLoaded] = useState(false);
   const currentUser = useCurrentUser();
   const listings = useListings();
-
+  console.log(listings);
   useEffect(() => {
+    isLoaded(false);
     dispatch(removeListings());
-    dispatch(fetchListings(queryString, JSON.parse(amenities))).then(() =>
-      isLoaded(true)
-    );
-  }, [props.location.search, currentUser]);
+    dispatch(fetchListings(queryString, amenity)).then(() => isLoaded(true));
+  }, [props.location.search, currentUser, amen]);
 
   if (loaded) {
     return (
       <div className="listings">
-        <ListingsForm />
+        <ListingsForm
+          queryString={queryString}
+          params={params}
+          parentAmenity={setAmenity}
+        />
         <ResultBox listings={listings} />
       </div>
     );

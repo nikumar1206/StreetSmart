@@ -8,8 +8,6 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  first_name      :string
-#  last_name       :string
 #  realtor         :boolean          default(FALSE)
 #  name            :string
 #  phone           :string

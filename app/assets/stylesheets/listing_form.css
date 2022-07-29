@@ -138,3 +138,11 @@ select {
 select:focus {
     outline: none;
 }
+
+.amenities-opt {
+    width: 100%;
+}
+
+.amenities-opt>span {
+    margin-left: 20px;
+}

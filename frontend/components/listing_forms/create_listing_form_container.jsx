@@ -19,6 +19,14 @@ const mSTP = (state, ownProps) => ({
     borough: "Manhattan",
     imageFile: null,
     imageUrl: null,
+    amenities: {
+      "Pets Allowed": false,
+      Doorman: false,
+      "Private Outdoor Space": false,
+      Elevator: false,
+      Dishwasher: false,
+      Laundromat: false,
+    },
   },
 });
 const mDTP = (dispatch) => ({

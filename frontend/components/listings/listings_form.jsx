@@ -1,38 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter, useHistory } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-
+import { useDispatch } from "react-redux";
+import { removeListings, fetchListings } from "../../actions/listings_actions";
 function ListingsForm(props) {
-  const params = Object.fromEntries(new URLSearchParams(props.location.search));
-  const {
-    rb_toggle,
-    maxPrice,
-    location,
-    minPrice,
-    minBeds,
-    minBaths,
-    amenities,
-  } = params;
-  const parsedAmenities = JSON.parse(amenities);
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const [state, setState] = useState(() => props.params);
+  console.log(props);
+  const [amenity, setAmenity] = useState(() => JSON.parse(props.params.amen));
 
-  const [state, setState] = useState(() => ({
-    rb_toggle: rb_toggle,
-    location: location,
-    minPrice: minPrice,
-    maxPrice: maxPrice,
-    minBeds: minBeds,
-    minBaths: minBaths,
-  }));
-
-  const [amenity, setAmenity] = useState({
-    "Pets Allowed": parsedAmenities["Pets Allowed"],
-    Doorman: parsedAmenities.Doorman,
-    "Private Outdoor Space": parsedAmenities["Private Outdoor Space"],
-    Elevator: parsedAmenities.Elevator,
-    Dishwasher: parsedAmenities.Dishwasher,
-    Laundromat: parsedAmenities.Laundromat,
-  });
-
+  console.log(amenity);
   const update = (field) => {
     return (e) => setState({ ...state, [field]: e.target.value });
   };
@@ -41,15 +19,21 @@ function ListingsForm(props) {
     return () => setAmenity({ ...amenity, [field]: !amenity[field] });
   };
 
-  const history = useHistory();
+  let queryString = `?rb_toggle=${state.rb_toggle}&location=${
+    state.location
+  }&maxPrice=${state.maxPrice}&minPrice=${state.minPrice}&minBeds=${
+    state.minBeds
+  }&minBaths=${state.minBaths}&amen=${JSON.stringify(amenity)}`;
 
-  let queryString = `?rb_toggle=${state.rb_toggle}&location=${state.location}&maxPrice=${state.maxPrice}&minPrice=${state.minPrice}&minBeds=${state.minBeds}&minBaths=${state.minBaths}`;
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push({
-      pathname: `/listings`,
-      search: `${queryString}`,
-    });
+    dispatch(removeListings());
+    dispatch(fetchListings(queryString, amenity)).then(() =>
+      history.push({
+        pathname: `/listings`,
+        search: `${queryString}`,
+      })
+    );
   };
   const handlebedClick = (e, val) => {
     let beds = Array.from(document.getElementsByClassName("bedbox"));
@@ -59,6 +43,7 @@ function ListingsForm(props) {
     document.getElementsByClassName(`${e} bedbox`)[0].classList.add("active");
     setState({ ...state, minBeds: val });
   };
+
   const handlebathClick = (e, val) => {
     let baths = Array.from(document.getElementsByClassName("bathbox"));
     baths.map((bath) => {
@@ -266,29 +251,40 @@ function ListingsForm(props) {
                   <input
                     type="checkbox"
                     onChange={updateAmenity("Pets Allowed")}
+                    checked={amenity["Pets Allowed"]}
                   />
                   <span>Pets Allowed</span>
                 </label>
 
                 <label className="amenity-opt">
-                  <input type="checkbox" onChange={updateAmenity("Doorman")} />
+                  <input
+                    type="checkbox"
+                    onChange={updateAmenity("Doorman")}
+                    checked={amenity["Doorman"]}
+                  />
                   <span>Doorman</span>
                 </label>
                 <label className="amenity-opt">
                   <input
                     type="checkbox"
                     onChange={updateAmenity("Private Outdoor Space")}
+                    checked={amenity["Private Outdoor Space"]}
                   />
                   <span>Private Outdoor Space</span>
                 </label>
                 <label className="amenity-opt">
-                  <input type="checkbox" onChange={updateAmenity("Elevator")} />
+                  <input
+                    type="checkbox"
+                    onChange={updateAmenity("Elevator")}
+                    checked={amenity["Elevator"]}
+                  />
                   <span>Elevator</span>
                 </label>
                 <label className="amenity-opt">
                   <input
                     type="checkbox"
                     onChange={updateAmenity("Dishwasher")}
+                    checked={amenity["Dishwasher"]}
                   />
                   <span>Dishwasher</span>
                 </label>
@@ -296,6 +292,7 @@ function ListingsForm(props) {
                   <input
                     type="checkbox"
                     onChange={updateAmenity("Laundromat")}
+                    checked={amenity["Laundromat"]}
                   />
                   <span>Laundromat</span>
                 </label>

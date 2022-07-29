@@ -24,6 +24,7 @@ function ListingShowComponent(props) {
   const listing = useCurrListing(props.match.params.listingId);
   const dispatch = useDispatch();
   useEffect(() => {
+    isLoaded(false);
     dispatch(removeListings());
     dispatch(fetchListing(props.match.params.listingId)).then(() =>
       isLoaded(true)

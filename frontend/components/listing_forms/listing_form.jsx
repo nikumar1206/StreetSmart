@@ -6,13 +6,17 @@ function ListingForm(props) {
   const history = useHistory();
   const errors = useListingErrors();
   const [state, setState] = useState(() => props.listing);
-
+  const [amenities, setAmenities] = useState(props.listing.amenities);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  console.log(amenities);
   const update = (field) => (e) =>
     setState({ ...state, [field]: e.target.value });
+
+  const updateAmenities = (field) => {
+    return () => setAmenities({ ...amenities, [field]: !amenities[field] });
+  };
 
   const handleFile = (e) => {
     const fileReader = new FileReader();
@@ -34,7 +38,6 @@ function ListingForm(props) {
       setState({ ...state }, { imageUrl: null });
     }
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -58,6 +61,16 @@ function ListingForm(props) {
     if (state.imageFile) {
       formData.append("listing[photo]", state.imageFile);
     }
+
+    let amenitiesArr = [];
+
+    for (const [key, value] of Object.entries(amenities)) {
+      if (value) {
+        amenitiesArr.push(key);
+      }
+    }
+    console.log(amenitiesArr);
+    formData.append("listing[amenities]", amenitiesArr);
 
     props.action(formData).then((listing) => {
       if (listing) {
@@ -238,6 +251,57 @@ function ListingForm(props) {
           value={state.description}
           rows="10"
         />
+        <div className="amenities-list">
+          <label className="amenities-opt">
+            <input
+              type="checkbox"
+              onChange={updateAmenities("Pets Allowed")}
+              checked={amenities["Pets Allowed"]}
+            />
+            <span>Pets Allowed</span>
+          </label>
+
+          <label className="amenities-opt">
+            <input
+              type="checkbox"
+              onChange={updateAmenities("Doorman")}
+              checked={amenities["Doorman"]}
+            />
+            <span>Doorman</span>
+          </label>
+          <label className="amenities-opt">
+            <input
+              type="checkbox"
+              onChange={updateAmenities("Private Outdoor Space")}
+              checked={amenities["Private Outdoor Space"]}
+            />
+            <span>Private Outdoor Space</span>
+          </label>
+          <label className="amenities-opt">
+            <input
+              type="checkbox"
+              onChange={updateAmenities("Elevator")}
+              checked={amenities["Elevator"]}
+            />
+            <span>Elevator</span>
+          </label>
+          <label className="amenities-opt">
+            <input
+              type="checkbox"
+              onChange={updateAmenities("Dishwasher")}
+              checked={amenities["Dishwasher"]}
+            />
+            <span>Dishwasher</span>
+          </label>
+          <label className="amenities-opt">
+            <input
+              type="checkbox"
+              onChange={updateAmenities("Laundromat")}
+              checked={amenities["Laundromat"]}
+            />
+            <span>Laundromat</span>
+          </label>
+        </div>
         <input
           className="fileupload-input"
           type="file"
