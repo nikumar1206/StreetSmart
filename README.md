@@ -31,7 +31,7 @@ In order to show the location of the listings, Google Maps API was used to rende
   * Figaro
   * BCrypt
 
-### Future Features
+## Future Features
   * Upload multiple photos
   * Track user-specific search history
   * Implement Geocoding API, for better Google Maps API integration
