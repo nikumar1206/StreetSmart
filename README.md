@@ -1,37 +1,40 @@
-# SmartStreet
+# StreetSmart
 
-### Overview
-Welcome to StreetSmart, a StreetEasy clone. Users are able to browse listings each with their own list of amenities, based on the user's criteria. On login, a user will be able to save listings, contact the listing owner, and even create their own listing! 
+## Overview
+Welcome to StreetSmart, a comprehensive, full-stack clone of the real-estate search engine StreetEasy. Users are able to browse listings, filter for amenities, and toggle between properties listed as rentals or for sale. Users may also create, edit, and save listings to their own profile!
 
 [Check it out!](http://streetsmart1.herokuapp.com/)
 
-### Languages
-  * Ruby
-  * JavaScript
-  * HTML
-  * CSS
-  * SQL
-### Frameworks
-  * Ruby on Rails
-  * React/Redux
-  * Google Maps API
+## Main Features
+### User Authentication
+  * Users can login and signup, however being logged in is not required to browse listings. 
+### Listings
+  * Users may browse properties all across NYC!
+  * Listings created by the user can also be edited and deleted.
+  * Listings may be filtered by amenities, # of beds, baths, and price.
+### Profile
+  * Users may see and edit the information StreetSmart holds.
+  * Users may see their created listings and saved listings.
+ 
+## Technologies
+### Frontend: React and Redux
+StreetSmart's frontend is built primarily using React 18 with Hooks. Redux was used to manage the application's global state.
+### Backend: Ruby on Rails, PostgreSQL
+RoR was used to send JSON data back to the frontend from the PostgresQL database. Ruby on Rails also allowed making advanced SQL queries easier using the Active Record Query Interface and avoiding the N+1 Query problem.
+### Google Maps API
+In order to show the location of the listings, Google Maps API was used to render a dynamic map in which users can see information about local food places and nearby public transportation.
+### Other notable Frameworks/Libraries/Gems implemented
   * AWS S3
-### Libraries and Gems Implemented
-  * ReactJS
   * ReactRouter
-  * Redux
   * JBuilder
   * Faker
   * Figaro
   * BCrypt
-  * Tippy
-  
-### Main Features
-* none of my main features are done 
-### Future Features
+
+## Future Features
   * Upload multiple photos
   * Track user-specific search history
-  * Implement Geocoding API, for better GoogleMaps integration
+  * Implement Geocoding API, for better Google Maps API integration
 
 ## Design Docs
 [Link to Docs](https://github.com/nikumar1206/StreetSmart/wiki)
