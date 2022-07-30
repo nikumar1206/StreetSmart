@@ -10,10 +10,10 @@ Welcome to StreetSmart, a comprehensive, full-stack clone of the real-estate sea
   * Users can login and signup, however being logged in is not required to browse listings. 
 ### Listings
   * Users may browse properties all across NYC!
-  * Listings created by the user my also be edited and deleted.
+  * Listings created by the user can also be edited and deleted.
   * Listings may be filtered by amenities, # of beds, baths, and price.
 ### Profile
-  * Users may see and edit the information (except for their email) StreetSmart holds.
+  * Users may see and edit the information StreetSmart holds.
   * Users may see their created listings and saved listings.
  
 ## Technologies
