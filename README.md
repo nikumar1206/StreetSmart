@@ -30,9 +30,7 @@ In order to show the location of the listings, Google Maps API was used to rende
   * Faker
   * Figaro
   * BCrypt
- 
-### Main Features
-* none of my main features are done 
+
 ### Future Features
   * Upload multiple photos
   * Track user-specific search history
