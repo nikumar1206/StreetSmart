@@ -64,7 +64,7 @@ function MainNav() {
             </li>
           </ul>
         </div>
-        <div className="main-nav-search">
+        {/* <div className="main-nav-search">
           <form
           // onSubmit={() =>
           //   console.log("search button pressed, doesnt work tho")
@@ -87,7 +87,7 @@ function MainNav() {
               <FaSearch className="search-icon navbar" />
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
     </div>
   );

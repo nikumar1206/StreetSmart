@@ -12,7 +12,6 @@ function UserCreatedComponent(props) {
   const dispatch = useDispatch();
   const currentUser = useCurrentUser();
   const listings = useListings();
-  console.log(props);
   useEffect(() => {
     dispatch(removeListings());
     if (props.match.path === "/users/:userId/created") {

@@ -3,11 +3,9 @@ import ListingItemComponent from "./listingitem_component";
 import { withRouter } from "react-router-dom";
 function ResultDetails(props) {
   const amenityinclusionchecker = (listing) => {
-    console.log("listing", listing);
     const params = Object.fromEntries(
       new URLSearchParams(props.location.search)
     );
-    console.log(props);
     const amenities = JSON.parse(params.amen);
     let amenities_arr = [];
     for (const [key, value] of Object.entries(amenities)) {

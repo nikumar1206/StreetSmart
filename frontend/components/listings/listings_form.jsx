@@ -7,10 +7,8 @@ function ListingsForm(props) {
   const history = useHistory();
   const dispatch = useDispatch();
   const [state, setState] = useState(() => props.params);
-  console.log(props);
   const [amenity, setAmenity] = useState(() => JSON.parse(props.params.amen));
 
-  console.log(amenity);
   const update = (field) => {
     return (e) => setState({ ...state, [field]: e.target.value });
   };

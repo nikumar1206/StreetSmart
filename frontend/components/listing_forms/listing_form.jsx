@@ -10,7 +10,6 @@ function ListingForm(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  console.log(amenities);
   const update = (field) => (e) =>
     setState({ ...state, [field]: e.target.value });
 
@@ -69,7 +68,6 @@ function ListingForm(props) {
         amenitiesArr.push(key);
       }
     }
-    console.log(amenitiesArr);
     formData.append("listing[amenities]", amenitiesArr);
 
     props.action(formData).then((listing) => {

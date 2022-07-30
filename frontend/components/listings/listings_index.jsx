@@ -13,14 +13,11 @@ function ListingsIndexComponent(props) {
   const params = Object.fromEntries(new URLSearchParams(props.location.search));
   const { rb_toggle, maxPrice, location, minPrice, minBeds, minBaths, amen } =
     params;
-  console.log(props);
   const [amenity, setAmenity] = useState(() => JSON.parse(amen));
-  console.log(JSON.parse(amen));
   const queryString = `?rb_toggle=${rb_toggle}&location=${location}&maxPrice=${maxPrice}&minPrice=${minPrice}&minBeds=${minBeds}&minBaths=${minBaths}&amen=${amen}`;
   const [loaded, isLoaded] = useState(false);
   const currentUser = useCurrentUser();
   const listings = useListings();
-  console.log(listings);
   useEffect(() => {
     isLoaded(false);
     dispatch(removeListings());

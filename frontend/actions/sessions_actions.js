@@ -22,7 +22,6 @@ export const receiveErrors = (errors) => ({
 });
 
 export const clearErrors = () => {
-  console.log("bloop");
   return {
     type: CLEAR_ERRORS,
   };
