@@ -10,7 +10,5 @@
 
 .saved-listings-container {
     display: flex;
-    /* justify-content: center; */
-    margin: 0 auto;
-    width: 45%;
+    justify-content: center;
 }

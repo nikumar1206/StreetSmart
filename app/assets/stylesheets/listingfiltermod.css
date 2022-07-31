@@ -16,8 +16,6 @@
     align-items: flex-end;
     justify-content: space-evenly;
     width: 100%;
-    border-right: 5px solid #E6E6E6;
-    border-left: 5px solid #E6E6E6;
 }
 
 .listings-filter-form {

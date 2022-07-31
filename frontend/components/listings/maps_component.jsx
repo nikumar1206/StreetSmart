@@ -22,22 +22,25 @@ function MapsComponent(props) {
 
   return isLoaded && center ? (
     <div className="google-maps">
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10.135}
-        onUnmount={onUnmount}
-      >
-        {props.listings.map((listing) => {
-          return (
-            <Marker
-              key={Math.random()}
-              position={{ lat: listing.lat, lng: listing.lng }}
-            ></Marker>
-          );
-        })}
-        <TransitLayer />
-      </GoogleMap>
+      <div className="gmaps-container">
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={11.2}
+          onUnmount={onUnmount}
+        >
+          {props.listings.map((listing) => {
+            return (
+              <Marker
+                icon="https://streetsmart-safeassets.s3.amazonaws.com/mapPin.svg"
+                key={Math.random()}
+                position={{ lat: listing.lat, lng: listing.lng }}
+              ></Marker>
+            );
+          })}
+          <TransitLayer />
+        </GoogleMap>
+      </div>
     </div>
   ) : (
     <></>

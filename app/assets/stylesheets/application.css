@@ -38,6 +38,12 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+body {
+    overflow: auto;
+    overflow: initial;
+    /* overflow-y: hidden; */
+}
+
 div {
     display: block;
     box-sizing: border-box;

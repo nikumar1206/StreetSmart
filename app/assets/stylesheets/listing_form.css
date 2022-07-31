@@ -149,7 +149,7 @@ select:focus {
 
 .listing-delete-btn {
     position: fixed;
-    top: 10rem;
+    top: 8rem;
     right: 15rem;
     /* padding: 20px; */
     width: 120px;

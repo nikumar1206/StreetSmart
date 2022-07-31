@@ -29,7 +29,10 @@ function MapsComponent(props) {
         zoom={15}
         onUnmount={onUnmount}
       >
-        <Marker position={center}></Marker>
+        <Marker
+          icon="https://streetsmart-safeassets.s3.amazonaws.com/mapPin.svg"
+          position={center}
+        ></Marker>
         <TransitLayer />
       </GoogleMap>
     </div>
