@@ -12,6 +12,7 @@ User.destroy_all
 Save.destroy_all
 
 user1 = User.create!({ name:"Demo User", phone:"555-555-555", email: "demo_user@demo.com", password: "password"})
+user2 = User.create!({ name:"Justin Timberlake", phone:"555-555-555", email: "justin_timberlake@demo.com", password: "JbAV10A8YM30&8A59Gp"})
 
 
 nyc_data = {
@@ -224,7 +225,6 @@ i = 1
     neighborhood = bor_zip[0]
     zip = bor_zip[1]
     property_type = PROPERTY_TYPE.sample()
-    realtor = 1
     price = rand(2..100) * 50000
     beds = BEDS.sample()
     baths = BATHS.sample()
@@ -238,7 +238,7 @@ i = 1
         zip: zip, 
         property_type: property_type,
         rent_bool: [true, false].sample(),
-        lister_id: realtor,
+        lister_id: 2,
         lat: rand(40.666885..40.740644),
         lng: -rand(73.765498..73.966863),
         beds: beds,

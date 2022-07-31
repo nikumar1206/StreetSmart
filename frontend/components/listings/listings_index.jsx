@@ -18,6 +18,11 @@ function ListingsIndexComponent(props) {
   const [loaded, isLoaded] = useState(false);
   const currentUser = useCurrentUser();
   const listings = useListings();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     isLoaded(false);
     dispatch(removeListings());

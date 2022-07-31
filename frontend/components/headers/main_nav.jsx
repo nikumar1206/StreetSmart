@@ -17,7 +17,6 @@ function MainNav(props) {
     `/listings/?rb_toggle=${toggle}&location=NYC&maxPrice=99999999&minPrice=0&minBeds=0&minBaths=0&amen=${JSON.stringify(
       amenities
     )}`;
-  console.log(props);
   const handleSellbtn = () => {
     if (!props.currentUser) {
       props.openModal("login");

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { clearErrors } from "../../actions/sessions_actions";
-import { useModal } from "../../util/selectors";
 function SessionForm(props) {
   const dispatch = useDispatch();
-  const modal = useModal();
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -14,11 +12,18 @@ function SessionForm(props) {
     setValues((values) => ({ ...values, [field]: event.target.value }));
   };
 
+  const closeModal = () => {
+    props.closeModal();
+    dispatch(clearErrors());
+  };
+
   const handleSubmit = (e) => {
-    e.preventDefault;
+    e.preventDefault();
     const user = { ...values };
-    props.processForm(user).then(() => {
-      props.closeModal();
+    props.processForm(user).then((res) => {
+      if (res) {
+        closeModal();
+      }
     });
   };
 
@@ -26,13 +31,11 @@ function SessionForm(props) {
     e.preventDefault;
     const demoUser = { email: "demo_user@demo.com", password: "password" };
     setValues(demoUser);
-    props.login(demoUser).then(() => props.closeModal());
-  };
-
-  const closeModal = (e) => {
-    e.preventDefault();
-    props.closeModal();
-    dispatch(clearErrors());
+    props.login(demoUser).then((user) => {
+      if (user) {
+        closeModal();
+      }
+    });
   };
 
   return (

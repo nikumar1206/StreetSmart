@@ -33,20 +33,50 @@ export const receiveSessionErrors = (errors) => ({
 });
 
 // thunk action creators
-export const login = (user) => (dispatch) =>
-  SessionAPI.login(user).then(
-    (user) => dispatch(receiveCurrentUser(user)),
-    (err) => dispatch(receiveSessionErrors(err.responseJSON))
-  );
 
-export const logout = () => (dispatch) =>
-  SessionAPI.logout().then(
-    () => dispatch(logoutCurrentUser()),
-    (err) => dispatch(receiveSessionErrors(err.responseJSON))
-  );
+export const login = (user) => async (dispatch) => {
+  try {
+    let res = await SessionAPI.login(user);
+    dispatch(receiveCurrentUser(res));
+    return res;
+  } catch (err) {
+    dispatch(receiveSessionErrors(err.responseJSON));
+  }
+};
+export const logout = () => async (dispatch) => {
+  try {
+    let res = await SessionAPI.logout();
+    dispatch(logoutCurrentUser());
+    return res;
+  } catch (err) {
+    dispatch(receiveSessionErrors(err.responseJSON));
+  }
+};
 
-export const signup = (user) => (dispatch) =>
-  SessionAPI.signup(user).then(
-    (user) => dispatch(receiveCurrentUser(user)),
-    (err) => dispatch(receiveSessionErrors(err.responseJSON))
-  );
+export const signup = (user) => async (dispatch) => {
+  try {
+    let res = await SessionAPI.signup(user);
+    dispatch(receiveCurrentUser(res));
+    return res;
+  } catch (err) {
+    dispatch(receiveSessionErrors(err.responseJSON));
+  }
+};
+
+// export const login = (user) => (dispatch) =>
+//   SessionAPI.login(user).then(
+//     (user) => dispatch(receiveCurrentUser(user)),
+//     (err) => dispatch(receiveSessionErrors(err.responseJSON))
+//   );
+
+// export const logout = () => (dispatch) =>
+//   SessionAPI.logout().then(
+//     () => dispatch(logoutCurrentUser()),
+//     (err) => dispatch(receiveSessionErrors(err.responseJSON))
+//   );
+
+// export const signup = (user) => (dispatch) =>
+//   SessionAPI.signup(user).then(
+//     (user) => dispatch(receiveCurrentUser(user)),
+//     (err) => dispatch(receiveSessionErrors(err.responseJSON))
+//   );

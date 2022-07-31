@@ -11,7 +11,6 @@ function ListingForm(props) {
   const currentUser = useCurrentUser();
   const [state, setState] = useState(() => props.listing);
   const [amenities, setAmenities] = useState({});
-  console.log(props);
   useEffect(() => {
     if (props.match.path === "/listings/:listingId/edit") {
       const amenities_arr = props.listing.amenities;

@@ -99,8 +99,12 @@ function ListerDescriptionContainer({
         <div className="lister-info-bot">
           <img
             className="lister-info-img"
-            src="https://www.google.com/favicon.ico"
-            alt="google ico"
+            src={
+              listing.lister_id === 2
+                ? "https://streetsmart-safeassets.s3.amazonaws.com/justintimberlake.jpg"
+                : "https://www.google.com/favicon.ico"
+            }
+            alt="User Pic Here"
           />
           <h1 className="lister-info-title">{listing.lister.name}</h1>
         </div>

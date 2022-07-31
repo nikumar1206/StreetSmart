@@ -4,6 +4,9 @@ import { FaSearch } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { removeListings, fetchListings } from "../../actions/listings_actions";
 function ListingsForm(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const history = useHistory();
   const dispatch = useDispatch();
   const [state, setState] = useState(() => props.params);

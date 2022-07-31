@@ -67,14 +67,9 @@ const UserNav = ({ currentUser, logout, openModal }) => {
           </li>
 
           <li className="user-nav-account-links">
-            <Link
-              to="/"
-              className="user-nav-account-links"
-              onClick={logout}
-              replace
-            >
+            <a className="user-nav-account-links" onClick={logout}>
               Logout
-            </Link>
+            </a>
           </li>
         </ul>
       </div>

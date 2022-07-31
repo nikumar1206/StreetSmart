@@ -40,7 +40,15 @@ div.listing-item-thumbnail>img {
 .listing-item-bottom {
     padding: 5px 5px;
     display: flex;
+    height: auto;
+}
+
+.listing-item-bottom-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
+
 }
 
 .listing-item-top-info {
@@ -92,7 +100,7 @@ div.listing-item-thumbnail>img {
 }
 
 .li-lowerblock {
-    margin-top: 2rem;
+    margin-top: 5%;
     margin-bottom: 1rem;
 }
 

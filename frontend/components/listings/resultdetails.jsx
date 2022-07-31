@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ListingItemComponent from "./listingitem_component";
 import { withRouter } from "react-router-dom";
 function ResultDetails(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const amenityinclusionchecker = (listing) => {
     const params = Object.fromEntries(
       new URLSearchParams(props.location.search)
