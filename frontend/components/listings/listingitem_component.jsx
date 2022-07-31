@@ -42,41 +42,43 @@ function ListingItemComponent({ listing }) {
 
   return (
     <li className="searchCardList-item" onClick={handleClick}>
-      <div className="listing-item-thumbnail">
-        <img src={listing.imageUrl} />
-      </div>
-      <div className="listing-item-bottom-container">
-        <div className="listing-item-bottom">
-          <div className="listing-item-top-info">
-            <span className="listing-brief-info">
-              {listing.property_type} in {listing.neighborhood}
-            </span>
-            <p className="li-address">{listing.name}</p>
-            <p className="li-price">${priceConvert()}</p>
-          </div>
-          <div className="heart-container">
-            {saveToggle ? (
-              <FaHeart className="heartsave-btn" onClick={handleSave} />
-            ) : (
-              <FaRegHeart className="heartsave-btn" onClick={handleSave} />
-            )}
-          </div>
+      <article className="carditeminlist">
+        <div className="listing-item-thumbnail">
+          <img src={listing.imageUrl} />
         </div>
+        <div className="listing-item-bottom-container">
+          <div className="listing-item-bottom">
+            <div className="listing-item-top-info">
+              <span className="listing-brief-info">
+                {listing.property_type} in {listing.neighborhood}
+              </span>
+              <p className="li-address">{listing.name}</p>
+              <p className="li-price">${priceConvert()}</p>
+            </div>
+            <div className="heart-container">
+              {saveToggle ? (
+                <FaHeart className="heartsave-btn" onClick={handleSave} />
+              ) : (
+                <FaRegHeart className="heartsave-btn" onClick={handleSave} />
+              )}
+            </div>
+          </div>
 
-        <div className="li-lowerblock">
-          <ul className="li-lowerblock-info">
-            <li className="first-child-li">
-              {listing.beds + " Beds"}
-              <BiBed />
-            </li>
-            <li>
-              {listing.baths + " Baths"}
-              <BiBath />
-            </li>
-          </ul>
-          <p>Listing by {listing.lister.name}</p>
+          <div className="li-lowerblock">
+            <ul className="li-lowerblock-info">
+              <li className="first-child-li">
+                {listing.beds + " Beds"}
+                <BiBed />
+              </li>
+              <li>
+                {listing.baths + " Baths"}
+                <BiBath />
+              </li>
+            </ul>
+            <p>Listing by {listing.lister.name}</p>
+          </div>
         </div>
-      </div>
+      </article>
     </li>
   );
 }
