@@ -24,8 +24,6 @@ class Api::ListingsController < ApplicationController
         @listing.location = "#{@listing.name}, #{@listing.borough}, New York, #{@listing.zip}"
         @listing.amenities = fixed_amen_arr
         if @listing.save
-            p "uuuuuuuu"
-            p @listing
           render :show
         else
           render json: @listing.errors.full_messages, status: 422
@@ -34,11 +32,12 @@ class Api::ListingsController < ApplicationController
 
     def update
         @listing = Listing.find(listing_params[:id])
-        p listing_params[:id]
         if @listing.update(listing_params)
+            @listing.amenities = fixed_amen_arr
+            @listing.save
           render :show
         else
-          render json: @lisiting.errors.full_messages, status: 422
+          render json: @listing.errors.full_messages, status: 422
         end
     end
 
@@ -47,8 +46,7 @@ class Api::ListingsController < ApplicationController
     def listing_params
         params.require(:listing).permit(:name, :location, :neighborhood, :zip, 
             :lister_id, :borough, :neighborhood, :price, :beds, :baths, :description, 
-            :property_type, :lat, :lng, :rent_bool, :photo, :minBaths, :minBeds, :minPrice,
-            :amenities, :id, :maxPrice)
+            :property_type, :lat, :lng, :rent_bool, :photo, :minBaths, :minBeds, :minPrice, :id, :maxPrice, :amenities, amenities: [])
     end
 
     def rb_toggle 
@@ -124,7 +122,6 @@ class Api::ListingsController < ApplicationController
     end
 
     def fixed_amen_arr
-        p "bbbbbbbb"
         params[:listing]["amenities"].split(",")
     end 
 end

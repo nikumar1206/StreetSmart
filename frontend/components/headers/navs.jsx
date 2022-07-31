@@ -26,6 +26,7 @@ const NavBars = () => {
         removeListings={removeListings}
         currentUser={currentUser}
         fetchListings={fetchListings}
+        openModal={openModal}
       />
     </div>
   );

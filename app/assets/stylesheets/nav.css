@@ -281,3 +281,8 @@ input:focus {
     right: 120px;
     top: 62px;
 }
+
+#sneakyatag {
+    cursor: pointer;
+    font-weight: 600;
+}

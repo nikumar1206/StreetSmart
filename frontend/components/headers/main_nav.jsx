@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 
-function MainNav() {
+function MainNav(props) {
+  const history = useHistory();
   const amenities = {
     "Pets Allowed": false,
     Doorman: false,
@@ -11,10 +12,19 @@ function MainNav() {
     Dishwasher: false,
     Laundromat: false,
   };
+
   const query = (toggle) =>
     `/listings/?rb_toggle=${toggle}&location=NYC&maxPrice=99999999&minPrice=0&minBeds=0&minBaths=0&amen=${JSON.stringify(
       amenities
     )}`;
+  console.log(props);
+  const handleSellbtn = () => {
+    if (!props.currentUser) {
+      props.openModal("login");
+    } else {
+      history.push("/listings/create");
+    }
+  };
   return (
     <div className="main-nav-container">
       <div className="main-nav">
@@ -31,9 +41,13 @@ function MainNav() {
               </Link>
             </li>
             <li className="mvn-li">
-              <Link to="/listings/create" className="mvn-alinks">
+              <a
+                id="sneakyatag"
+                onClick={() => handleSellbtn()}
+                className="mvn-alinks"
+              >
                 Sell
-              </Link>
+              </a>
             </li>
             <li className="mvn-li">
               <a

@@ -3,10 +3,6 @@ import ListingForm from "./listing_form";
 
 function fetchEditForm(props) {
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
     props.fetchListing(props.match.params.listingId);
   }, []);
 
@@ -18,6 +14,7 @@ function fetchEditForm(props) {
           formType={props.formType}
           listingId={props.listing.id}
           listing={props.listing}
+          // amenities={amenities}
         />
       </div>
     );
