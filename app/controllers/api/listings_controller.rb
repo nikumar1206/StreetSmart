@@ -41,6 +41,16 @@ class Api::ListingsController < ApplicationController
         end
     end
 
+    def destroy
+        @listing = Listing.find(params[:id])
+        if @listing.destroy
+            render json: ["Successfully Deleted"], status: 200
+        else
+            
+            render json: ["Sorry, we couldn't find what you were looking for"], status: 404
+        end
+    end
+
 
     private
     def listing_params

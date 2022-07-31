@@ -1,8 +1,8 @@
 import {
   RECEIVE_LISTINGS,
   RECEIVE_LISTING,
+  CLEAR_LISTING,
   CLEAR_LISTINGS,
-  RECEIVE_SAVED_LISTINGS,
 } from "../actions/listings_actions";
 
 const emptyListings = null;
@@ -20,6 +20,9 @@ export const listingsReducer = (state = {}, action) => {
       return nextState;
     case RECEIVE_LISTING:
       nextState[action.listing.id] = action.listing;
+      return nextState;
+    case CLEAR_LISTING:
+      delete nextState[action.listingId];
       return nextState;
     case CLEAR_LISTINGS:
       return Object.assign({}, emptyListings);

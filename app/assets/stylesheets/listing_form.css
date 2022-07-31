@@ -146,3 +146,27 @@ select:focus {
 .amenities-opt>span {
     margin-left: 20px;
 }
+
+.listing-delete-btn {
+    position: fixed;
+    top: 10rem;
+    right: 15rem;
+    /* padding: 20px; */
+    width: 120px;
+    height: 45px;
+    background: none;
+    outline: none;
+    border: none;
+    background-color: var(--red);
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.listing-delete-btn:hover {
+    border: 1px solid black;
+    transition: 0.3s ease-in-out;
+}

@@ -22,7 +22,11 @@ function fetchEditForm(props) {
 }
 
 import { connect } from "react-redux";
-import { updateListing, fetchListing } from "../../actions/listings_actions";
+import {
+  updateListing,
+  fetchListing,
+  removeListing,
+} from "../../actions/listings_actions";
 
 const mSTP = (state, ownProps) => ({
   formType: "Update Listing",
@@ -32,6 +36,7 @@ const mSTP = (state, ownProps) => ({
 const mDTP = (dispatch) => ({
   action: (listing) => dispatch(updateListing(listing)),
   fetchListing: (listing) => dispatch(fetchListing(listing)),
+  removeListing: (listingId) => dispsatch(removeListing(listingId)),
 });
 
 export default connect(mSTP, mDTP)(fetchEditForm);

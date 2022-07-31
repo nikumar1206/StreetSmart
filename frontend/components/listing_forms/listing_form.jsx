@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory, withRouter } from "react-router-dom";
+import { deleteListing } from "../../actions/listings_actions";
 import { useListingErrors } from "../../util/selectors";
+import { useCurrentUser } from "../../util/selectors";
 function ListingForm(props) {
-  const history = useHistory();
   const errors = useListingErrors();
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const currentUser = useCurrentUser();
   const [state, setState] = useState(() => props.listing);
   const [amenities, setAmenities] = useState({});
-
+  console.log(props);
   useEffect(() => {
     if (props.match.path === "/listings/:listingId/edit") {
       const amenities_arr = props.listing.amenities;
@@ -32,6 +37,10 @@ function ListingForm(props) {
 
   const updateAmenities = (field) => {
     return () => setAmenities({ ...amenities, [field]: !amenities[field] });
+  };
+  const handleDelete = () => {
+    dispatch(deleteListing(props.listing.id));
+    history.push(`/users/${currentUser.id}/created`);
   };
 
   const handleFile = (e) => {
@@ -97,6 +106,15 @@ function ListingForm(props) {
   if (JSON.stringify(amenities) !== "{}") {
     return (
       <div className="listing-form-container">
+        {props.formType === "Update Listing" && (
+          <button
+            className="listing-delete-btn"
+            type="button"
+            onClick={handleDelete}
+          >
+            Delete Listing
+          </button>
+        )}
         <h1 className="listingFormTitle">{props.formType}</h1>
         <form
           onSubmit={handleSubmit}
