@@ -30,6 +30,7 @@ function MapsComponent(props) {
         onUnmount={onUnmount}
       >
         <Marker
+          nimation={"BOUNCE"}
           icon="https://streetsmart-safeassets.s3.amazonaws.com/mapPin.svg"
           position={center}
         ></Marker>

@@ -34,6 +34,7 @@ function MapsComponent(props) {
               <Marker
                 icon="https://streetsmart-safeassets.s3.amazonaws.com/mapPin.svg"
                 key={Math.random()}
+                animation={"BOUNCE"}
                 position={{ lat: listing.lat, lng: listing.lng }}
               ></Marker>
             );

@@ -9,11 +9,7 @@ function ResultBox({ listings }) {
   }, []);
   return (
     <div className="resultbox">
-      {listings.length > 0 ? (
-        <ResultDetails listings={listings} />
-      ) : (
-        <NoListingsComponent />
-      )}
+      <ResultDetails listings={listings} />
       <MapsComponent listings={listings} />
     </div>
   );

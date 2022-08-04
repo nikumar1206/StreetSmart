@@ -36,5 +36,8 @@ class Listing < ApplicationRecord
         !!self.saves.find{ |save| save.user_id == user.id }
     end
 
+    def number_of_saves(listing)
+        Save.where(listing_id: listing.id).size
+    end
 
 end

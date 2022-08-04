@@ -12,9 +12,10 @@ function ListerDescriptionContainer({
   saveListing,
   currentUser,
 }) {
-  const [isSaved, setSaved] = useState(listing.saved);
+  const [isSaved, setSaved] = useState(() => listing.saved);
   const dispatch = useDispatch();
   const history = useHistory();
+
   const priceConvert = () => {
     let price = listing.price;
     return price.toLocaleString();
@@ -64,10 +65,13 @@ function ListerDescriptionContainer({
         </button>
       </section>
       <p className="save-text-descript">
-        This listing has been saved by {Math.floor(Math.random() * 500)} people.
+        This listing has been saved by {listing.numSaves}{" "}
+        {listing.numSaves == 1 ? "person" : "people"}.
       </p>
       {/* <div className="notes-container">
-        <button className="notes-button">+ Add notes to this listing</button>
+        <button onClick={handleNotesButton} className="notes-button">
+          + Add notes to this listing
+        </button>
       </div> */}
 
       <section className="lister-info">
@@ -96,18 +100,22 @@ function ListerDescriptionContainer({
         ) : (
           <></>
         )}
-        <div className="lister-info-bot">
-          <img
-            className="lister-info-img"
-            src={
-              listing.lister_id === 2
-                ? "https://streetsmart-safeassets.s3.amazonaws.com/justintimberlake.jpg"
-                : "https://www.google.com/favicon.ico"
-            }
-            alt="User Pic Here"
-          />
-          <h1 className="lister-info-title">{listing.lister.name}</h1>
-        </div>
+        <>
+          <div className="lister-info-bot">
+            <img
+              className="lister-info-img"
+              src={
+                listing.lister_id === 2
+                  ? "https://streetsmart-safeassets.s3.amazonaws.com/justintimberlake.jpg"
+                  : "https://www.google.com/favicon.ico"
+              }
+              alt="User Pic Here"
+            />
+            <h1 className="lister-info-title">
+              Realtor: {listing.lister.name}
+            </h1>
+          </div>
+        </>
       </section>
     </div>
   );
