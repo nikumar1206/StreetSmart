@@ -22,6 +22,11 @@ class Api::ListingsController < ApplicationController
         @listing = Listing.new(listing_params)
         @listing.lister = current_user
         @listing.location = "#{@listing.name}, #{@listing.borough}, New York, #{@listing.zip}"
+
+        location_data = @listing.receive_location_object
+        @listing.lat = location_data["lat"]
+        @listing.lng = location_data["lng"]
+
         @listing.amenities = fixed_amen_arr
         if @listing.save
           render :show
@@ -33,6 +38,11 @@ class Api::ListingsController < ApplicationController
     def update
         @listing = Listing.find(listing_params[:id])
         if @listing.update(listing_params)
+
+            location_data = @listing.receive_location_object
+            @listing.lat = location_data["lat"]
+            @listing.lng = location_data["lng"]
+    
             @listing.amenities = fixed_amen_arr
             @listing.save
           render :show

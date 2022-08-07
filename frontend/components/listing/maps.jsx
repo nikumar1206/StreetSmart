@@ -1,9 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 
 import { GoogleMap, Marker, TransitLayer } from "@react-google-maps/api";
 
-function MapsComponent(props) {
-  const [map, setMap] = React.useState(null);
+const MapsComponent = (props) => {
   const containerStyle = {
     width: "36vw",
     height: "70vh",
@@ -17,29 +16,17 @@ function MapsComponent(props) {
   const isLoaded =
     typeof google === "object" && typeof google.maps === "object";
 
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null);
-  }, []);
-
-  return isLoaded ? (
+  isLoaded && (
     <div className="maps-container listing">
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={15}
-        onUnmount={onUnmount}
-      >
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
         <Marker
-          nimation={"BOUNCE"}
-          icon="https://streetsmart-safeassets.s3.amazonaws.com/mapPin.svg"
+          icon="https://streetsmart-safeassets.s3.amazonaws.com/mapPinlarge.svg"
           position={center}
         ></Marker>
         <TransitLayer />
       </GoogleMap>
     </div>
-  ) : (
-    <></>
   );
-}
+};
 
-export default React.memo(MapsComponent);
+export default memo(MapsComponent);

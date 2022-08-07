@@ -230,7 +230,7 @@ i = 1
     baths = BATHS.sample()
     address = "#{name}, #{borough}, New York, #{zip}"
     description = "This absolutely gorgeous #{property_type} situated in #{borough} features #{beds} bedrooms and #{baths} bathrooms. Separate room for home office for the perfect work from home lifestyle. This is THE best #{beds} bed #{property_type} in #{neighborhood}! All for only $#{price}!!"
-    new_listing = Listing.create!({
+    new_listing = Listing.new({
         name: name, 
         location: address, 
         neighborhood: neighborhood,
@@ -239,17 +239,26 @@ i = 1
         property_type: property_type,
         rent_bool: [true, false].sample(),
         lister_id: 2,
-        lat: rand(40.666885..40.740644),
-        lng: -rand(73.765498..73.966863),
         beds: beds,
         baths: baths,
         price: price,
         description: description,
         amenities: AMENITIES.sample(rand(1..AMENITIES.length))
         })
+
+    location_data = new_listing.receive_location_object
+    if location_data
+      new_listing.lat = location_data["lat"]
+      new_listing.lng = location_data["lng"]
+    else 
+      new_listing.lat = rand(40.666885..40.740644)
+      new_listing.lng = -rand(73.765498..73.966863)
+    end
     image = URI.open("https://streetsmart-safeassets.s3.amazonaws.com/listing_seed/listing#{i}.jpg")
     new_listing.photo.attach(io: image, filename: "listing#{i}")
+    new_listing.save
     i += 1
+
 end
 
 Save.create(user_id: 1, listing_id: 3)

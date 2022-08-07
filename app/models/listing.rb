@@ -23,9 +23,14 @@
 #  amenities     :string           default([]), is an Array
 #
 class Listing < ApplicationRecord
-    validates :name, :location, :neighborhood, :borough, :zip, :lister_id, :price, :beds, :baths, presence: true
-    validates :name, uniqueness: true
+    require "json"
+    require 'faraday'
+    require 'faraday/net_http'
+    Faraday.default_adapter = :net_http
 
+    validates :name, :location, :neighborhood, :borough, :zip, :lister_id, :price, :beds, :baths, :property_type, :description, :rent_bool, presence: true
+    validates :name, uniqueness: true
+    validates :zip, length: { is: 5 }
     belongs_to :lister, class_name: "User", foreign_key: "lister_id"
     has_many :saves, class_name: "Save", foreign_key: "listing_id"
 
@@ -36,8 +41,16 @@ class Listing < ApplicationRecord
         !!self.saves.find{ |save| save.user_id == user.id }
     end
 
-    def number_of_saves(listing)
-        Save.where(listing_id: listing.id).size
+    def number_of_saves
+        Save.where(listing_id: self.id).size
     end
+
+    def receive_location_object
+        url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{self.location}&key=#{Rails.application.credentials.google[:MAPS_API_KEY]}"
+        response = Faraday.get(url)
+        response_hash = JSON.parse(response.body)
+        response_hash["results"][0]["geometry"]["location"]
+    end
+
 
 end

@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory, withRouter } from "react-router-dom";
-import { deleteListing } from "../../actions/listings_actions";
-import { useListingErrors } from "../../util/selectors";
-import { useCurrentUser } from "../../util/selectors";
-function ListingForm(props) {
-  const errors = useListingErrors();
+import {
+  clearListingErrors,
+  deleteListing,
+} from "../../actions/listings_actions";
+import { useListingErrors, useCurrentUser } from "../../util/selectors";
+
+const ListingForm = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const errors = useListingErrors();
   const currentUser = useCurrentUser();
   const [state, setState] = useState(() => props.listing);
   const [amenities, setAmenities] = useState({});
@@ -98,6 +101,7 @@ function ListingForm(props) {
     props.action(formData).then((listing) => {
       if (listing) {
         history.push(`/listings/${listing.id}`);
+        dispatch(clearListingErrors());
       }
     });
   };
@@ -247,39 +251,7 @@ function ListingForm(props) {
             </div>
           </div>
           <br />
-          <div className="lat-lng">
-            <div className="listing-form-lat">
-              <label className="listing-form-label" htmlFor="lat">
-                Latitude
-              </label>
-              <input
-                onChange={update("lat")}
-                type="text"
-                className="listingFormInput lat-lng-input"
-                id="lat"
-                maxLength="10"
-                value={state.lat}
-                required
-                name="lat"
-              />
-            </div>
-            <div className="listing-form-lng">
-              <label className="listing-form-label" htmlFor="lng">
-                Longitude
-              </label>
-              <input
-                onChange={update("lng")}
-                type="text"
-                className="listingFormInput lat-lng-input"
-                id="lng"
-                value={state.lng}
-                maxLength="10"
-                required
-                name="lng"
-              />
-            </div>
-          </div>
-          <br />
+
           <label className="listing-form-label" htmlFor="description">
             Description
           </label>
@@ -370,6 +342,6 @@ function ListingForm(props) {
       </div>
     );
   }
-}
+};
 
 export default withRouter(ListingForm);

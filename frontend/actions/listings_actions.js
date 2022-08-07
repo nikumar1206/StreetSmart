@@ -5,25 +5,34 @@ export const RECEIVE_LISTING = "RECEIVE_LISTING";
 export const CLEAR_LISTINGS = "CLEAR_LISTINGS";
 export const CLEAR_LISTING = "CLEAR_LISTING";
 export const RECEIVE_LISTING_ERRORS = "RECEIVE_LISTING_ERRORS";
+export const CLEAR_LISTING_ERRORS = "CLEAR_LISTING_ERRORS";
 
 export const receiveListings = (listings) => ({
   type: RECEIVE_LISTINGS,
   listings,
 });
+
 export const receiveListing = (listing) => ({
   type: RECEIVE_LISTING,
   listing,
 });
+
 export const removeListings = () => ({
   type: CLEAR_LISTINGS,
 });
+
 export const removeListing = (listingId) => ({
   type: CLEAR_LISTING,
   listingId,
 });
+
 export const recieveListingErrors = (errors) => ({
   type: RECEIVE_LISTING_ERRORS,
   errors,
+});
+
+export const clearListingErrors = () => ({
+  type: CLEAR_LISTING_ERRORS,
 });
 
 export const fetchListings = (filters, amenities) => async (dispatch) => {
