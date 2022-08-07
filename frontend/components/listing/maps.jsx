@@ -16,16 +16,18 @@ const MapsComponent = (props) => {
   const isLoaded =
     typeof google === "object" && typeof google.maps === "object";
 
-  isLoaded && (
-    <div className="maps-container listing">
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
-        <Marker
-          icon="https://streetsmart-safeassets.s3.amazonaws.com/mapPinlarge.svg"
-          position={center}
-        ></Marker>
-        <TransitLayer />
-      </GoogleMap>
-    </div>
+  return (
+    isLoaded && (
+      <div className="maps-container listing">
+        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
+          <Marker
+            icon="https://streetsmart-safeassets.s3.amazonaws.com/mapPinlarge.svg"
+            position={center}
+          ></Marker>
+          <TransitLayer />
+        </GoogleMap>
+      </div>
+    )
   );
 };
 
