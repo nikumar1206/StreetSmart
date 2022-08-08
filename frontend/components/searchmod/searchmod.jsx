@@ -100,7 +100,7 @@ function searchMod(props) {
             className="searchMod-maxprice-input"
             placeholder="No max"
             onChange={update("maxPrice")}
-            maxLength={8}
+            maxLength={9}
           />
         </div>
 

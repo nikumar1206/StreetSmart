@@ -28,7 +28,7 @@ class Listing < ApplicationRecord
     require 'faraday/net_http'
     Faraday.default_adapter = :net_http
 
-    validates :name, :location, :neighborhood, :borough, :zip, :lister_id, :price, :beds, :baths, :property_type, :description, :rent_bool, presence: true
+    validates :name, :location, :neighborhood, :borough, :zip, :lister_id, :price, :beds, :baths, :property_type, :description, presence: true
     validates :name, uniqueness: true
     validates :zip, length: { is: 5 }
     belongs_to :lister, class_name: "User", foreign_key: "lister_id"

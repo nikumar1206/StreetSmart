@@ -28,7 +28,7 @@ const MapsComponent = (props) => {
             {props.listings.map((listing) => {
               return (
                 <Marker
-                  icon="https://streetsmart-safeassets.s3.amazonaws.com/mapPinlarge.svg"
+                  icon="https://streetsmart-safeassets.s3.amazonaws.com/mapPinRed.svg"
                   key={Math.random()}
                   position={{ lat: listing.lat, lng: listing.lng }}
                 ></Marker>

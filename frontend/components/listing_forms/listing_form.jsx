@@ -34,6 +34,7 @@ const ListingForm = (props) => {
     }
   }, []);
 
+  console.log(state);
   const update = (field) => (e) =>
     setState({ ...state, [field]: e.target.value });
 
@@ -199,7 +200,7 @@ const ListingForm = (props) => {
             name="price"
             value={state.price}
             required
-            maxLength={8}
+            maxLength={9}
           />
           <br />
           <label className="listing-form-label" htmlFor="property_type">

@@ -14,7 +14,8 @@ import Image from "./image";
 import ListerDescriptionContainer from "./listerdescription";
 import MapsComponent from "./maps";
 import Spinner from "../spinner/spinner_component";
-function ListingShowComponent(props) {
+
+const ListingShowComponent = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -57,6 +58,6 @@ function ListingShowComponent(props) {
   } else {
     return <Spinner />;
   }
-}
+};
 
 export default withRouter(ListingShowComponent);

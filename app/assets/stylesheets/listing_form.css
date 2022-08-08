@@ -95,6 +95,7 @@
 
 .listing-errors-container {
     display: flex;
+    flex-direction: column;
     text-align: center;
     color: var(--red);
     justify-content: center;

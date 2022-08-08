@@ -28,6 +28,8 @@ class Api::ListingsController < ApplicationController
         @listing.lng = location_data["lng"]
 
         @listing.amenities = fixed_amen_arr
+
+        @listing.price = sanitizeprice(params[:listing][:price])
         if @listing.save
           render :show
         else
@@ -44,6 +46,7 @@ class Api::ListingsController < ApplicationController
             @listing.lng = location_data["lng"]
     
             @listing.amenities = fixed_amen_arr
+            @listing.price = sanitizeprice(params[:listing][:price])
             @listing.save
           render :show
         else
@@ -89,7 +92,7 @@ class Api::ListingsController < ApplicationController
         if params[:maxPrice] == ""
             return "99999999"
         else
-            return params[:maxPrice]
+            return sanitizeprice(params[:maxPrice])
         end
     end
 
@@ -97,7 +100,7 @@ class Api::ListingsController < ApplicationController
         if params[:minPrice] == ""
             return "0"
         else
-            return params[:minPrice]
+            return sanitizeprice(params[:minPrice])
         end
     end
     
@@ -108,7 +111,7 @@ class Api::ListingsController < ApplicationController
             return params[:minBeds]
         end
     end
-    
+
     def min_baths
         if params[:minBaths] == ""
             return "0"
@@ -144,4 +147,17 @@ class Api::ListingsController < ApplicationController
     def fixed_amen_arr
         params[:listing]["amenities"].split(",")
     end 
+
+
+    def sanitizeprice(string)
+        result = ""
+        string.each_char do |char|
+            if char == "$" || char == ","
+                next
+            else
+                result += char
+            end
+        end
+        result
+    end
 end

@@ -107,7 +107,7 @@ function ListingsForm(props) {
                   <input
                     type="text"
                     placeholder="No minimum"
-                    maxLength={8}
+                    maxLength={9}
                     value={state.minPrice}
                     onChange={update("minPrice")}
                   />
@@ -119,7 +119,7 @@ function ListingsForm(props) {
                   <input
                     type="text"
                     placeholder="No maximum"
-                    maxLength={8}
+                    maxLength={9}
                     value={state.maxPrice}
                     onChange={update("maxPrice")}
                   />
