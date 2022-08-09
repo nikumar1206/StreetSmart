@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { AiOutlineMail } from "react-icons/ai";
+import { FaRegHeart, FaHeart, FaTwitter } from "react-icons/fa";
 import { openModal } from "../../actions/modal_actions";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -57,10 +56,15 @@ function ListerDescriptionContainer({
           <span>{isSaved ? "saved" : "save"}</span>
         </button>
         <button
-          onClick={() => dispatch(openModal("thankyou"))}
+          onClick={() =>
+            window.open(
+              `https://twitter.com/intent/tweet/?text=Hey%20everyone,%0ACheck%20out%20this%20listing%20I%20found%20over%20at%20https://streetsmart1.herokuapp.com/listings/${listing.id}`,
+              "_blank"
+            )
+          }
           className="share-button"
         >
-          <AiOutlineMail />
+          <FaTwitter />
           <span>Share</span>
         </button>
       </section>

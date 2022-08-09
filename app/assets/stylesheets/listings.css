@@ -15,11 +15,12 @@
 
 .google-maps {
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .gmaps-container {
-    position: sticky;
-    top: 100px;
+    position: relative;
 }
 
 .searchCardList-item {
@@ -30,6 +31,27 @@
     height: 425px;
 }
 
+.contentDiv {
+    align-items: center;
+    -webkit-animation: fadeIn .75s, slideIn 1s;
+    animation: fadeIn .75s, slideIn 1s;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    color: var(--lblue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 75px;
+    width: 50%;
+    position: absolute;
+    bottom: 5%;
+    z-index: 998;
+    cursor: pointer;
+}
+
+.contentDiv.false {
+    display: none;
+}
 
 div.listing-item-thumbnail>img {
 
