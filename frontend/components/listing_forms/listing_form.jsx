@@ -34,7 +34,6 @@ const ListingForm = (props) => {
     }
   }, []);
 
-  console.log(state);
   const update = (field) => (e) =>
     setState({ ...state, [field]: e.target.value });
 

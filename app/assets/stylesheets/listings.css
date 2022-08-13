@@ -13,15 +13,19 @@
 
 }
 
-.google-maps {
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
 .gmaps-container {
     position: relative;
+    width: 40vw;
+    height: 70vh;
 }
+
+.gmaps {
+    position: fixed;
+    width: 40vw;
+    height: 70vh;
+    overflow: hidden;
+}
+
 
 .searchCardList-item {
     border: 1px solid #e6e6e6;
@@ -159,11 +163,9 @@ ul.li-lowerblock-info>li {
 
 .resultbox {
     display: flex;
-    /* justify-content: space-evenly; */
     justify-content: center;
     gap: 1rem;
-    /* width: 60vw; */
-    margin: 125px auto 0 auto;
+    margin: 125px 0;
 }
 
 .heartsave-btn {
