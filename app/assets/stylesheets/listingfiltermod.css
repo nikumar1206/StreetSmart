@@ -118,6 +118,7 @@
     height: fit-content;
     padding: 25px;
     border: 4px lightgray;
+    z-index: 9999;
 }
 
 .listfilter-priceinputs {
@@ -130,6 +131,8 @@
     padding: 5px;
     border: 1px solid var(--border);
     outline: none;
+    font-weight: lighter;
+    color: #484a4e;
 }
 
 .listingsfilter-closedivbtn {

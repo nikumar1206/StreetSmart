@@ -14,7 +14,7 @@
     font-size: 14px;
     width: 100%;
     z-index: 1001;
-    position: sticky;
+    position: fixed;
 }
 
 .main-nav {

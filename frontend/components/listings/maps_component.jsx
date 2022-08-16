@@ -43,12 +43,15 @@ const MapsComponent = (props) => {
 
     let height = body.clientHeight;
     let refinedHeight = height - 90 - 95 - 500 - 700;
-    if (window.scrollY > refinedHeight && gmaps) {
-      gmaps.style.position = "absolute";
-      gmaps.style.top = `${refinedHeight}px`;
-    } else {
-      gmaps.style.position = "fixed";
-      gmaps.style.removeProperty("top");
+
+    if (gmaps) {
+      if (window.scrollY > refinedHeight) {
+        gmaps.style.position = "absolute";
+        gmaps.style.top = `${refinedHeight}px`;
+      } else {
+        gmaps.style.position = "fixed";
+        gmaps.style.removeProperty("top");
+      }
     }
   };
 
