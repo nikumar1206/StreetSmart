@@ -1,15 +1,21 @@
 import React from "react";
-function BreadcrumbComponent({ listing }) {
-  const breadcrumbprefix = () => {
-    let prefix = "";
-    listing.rent_bool ? (prefix = "Rental") : (prefix = "Sales");
-    return `${prefix} → ${listing.borough} → ${listing.neighborhood} → ${listing.name}`;
-  };
+import { FaAngleRight } from "react-icons/fa";
+
+const BreadcrumbComponent = ({ listing }) => {
+  const { borough, neighborhood, name } = listing;
+  let prefix = "";
+  listing.rent_bool ? (prefix = "Rental") : (prefix = "Sales");
   return (
-    <div className="breadcrumb-container">
-      <h1 className="breadcrumb">{breadcrumbprefix()}</h1>
-    </div>
+    <span className="breadcrumb-container">
+      <span>{prefix}</span>
+      <FaAngleRight />
+      <span>{borough}</span>
+      <FaAngleRight />
+      <span>{neighborhood}</span>
+      <FaAngleRight />
+      <span>{name}</span>
+    </span>
   );
-}
+};
 
 export default BreadcrumbComponent;

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
 
 function MainNav(props) {
   const history = useHistory();

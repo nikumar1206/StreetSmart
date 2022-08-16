@@ -1,19 +1,18 @@
 .breadcrumb-container {
     width: 100%;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(84, 84, 84);
 }
 
 .listing-show-container {
-    padding: 3rem 0;
     width: 75%;
-    margin: 0 auto;
-    box-sizing: border-box;
+    margin: 90px auto;
 }
 
 .listing-show-container-top {
     display: flex;
-    /* justify-content: space-between; */
-    gap: 2rem;
 }
 
 .image-container {
