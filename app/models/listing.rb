@@ -33,7 +33,7 @@ class Listing < ApplicationRecord
     validates :zip, length: { is: 5 }
     belongs_to :lister, class_name: "User", foreign_key: "lister_id"
     has_many :saves, class_name: "Save", foreign_key: "listing_id"
-
+    has_many :notes, class_name: "Notes", foreign_key: "listing_id"
 
     has_one_attached :photo
 
@@ -45,12 +45,15 @@ class Listing < ApplicationRecord
         Save.where(listing_id: self.id).size
     end
 
+    def user_note(user)
+        Note.find_by(user_id: user.id, listing_id: self.id)
+    end
+
     def receive_location_object
         url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{self.location}&key=#{Rails.application.credentials.google[:MAPS_API_KEY]}"
         response = Faraday.get(url)
         response_hash = JSON.parse(response.body)
         response_hash["results"][0]["geometry"]["location"]
     end
-
 
 end

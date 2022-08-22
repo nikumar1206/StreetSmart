@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_27_000643) do
+ActiveRecord::Schema.define(version: 2022_08_20_191402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,16 +36,6 @@ ActiveRecord::Schema.define(version: 2022_07_27_000643) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.integer "listing_id", null: false
-    t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["listing_id"], name: "index_favorites_on_listing_id"
-    t.index ["user_id", "listing_id"], name: "index_favorites_on_user_id_and_listing_id"
-    t.index ["user_id"], name: "index_favorites_on_user_id"
-  end
-
   create_table "listings", force: :cascade do |t|
     t.string "name", null: false
     t.string "location", null: false
@@ -63,10 +53,18 @@ ActiveRecord::Schema.define(version: 2022_07_27_000643) do
     t.text "description", default: "", null: false
     t.boolean "rent_bool", default: false
     t.string "borough", default: "Queens"
-    t.integer "save_count", default: 0
     t.string "amenities", default: [], array: true
     t.index ["location"], name: "index_listings_on_location", unique: true
     t.index ["name"], name: "index_listings_on_name", unique: true
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "listing_id", null: false
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "listing_id"], name: "index_notes_on_user_id_and_listing_id"
   end
 
   create_table "saves", force: :cascade do |t|

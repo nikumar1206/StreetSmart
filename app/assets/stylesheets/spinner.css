@@ -26,3 +26,10 @@
     justify-content: center;
     align-items: center;
 }
+
+.spinner-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+}

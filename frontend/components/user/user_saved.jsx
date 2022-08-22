@@ -47,7 +47,11 @@ function UserShowSavedComponent(props) {
       </div>
     );
   } else {
-    return <Spinner />;
+    return (
+      <div className="loading-spinner-container">
+        <Spinner />
+      </div>
+    );
   }
 }
 

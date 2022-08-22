@@ -21,18 +21,19 @@ const ListingShowComponent = (props) => {
   }, []);
 
   const currentUser = useCurrentUser();
-  const [loaded, isLoaded] = useState(false);
   const listing = useCurrListing(props.match.params.listingId);
   const dispatch = useDispatch();
-  useEffect(() => {
-    isLoaded(false);
-    dispatch(removeListings());
-    dispatch(fetchListing(props.match.params.listingId)).then(() =>
-      isLoaded(true)
-    );
-  }, []);
 
-  if (loaded) {
+  useEffect(() => {
+    getListing();
+  }, [currentUser]);
+
+  const getListing = () => {
+    dispatch(removeListings());
+    dispatch(fetchListing(props.match.params.listingId));
+  };
+
+  if (listing) {
     const { description, imageUrl, amenities } = listing;
     return (
       <div className="listing-show-container">
@@ -56,7 +57,11 @@ const ListingShowComponent = (props) => {
       </div>
     );
   } else {
-    return <Spinner />;
+    return (
+      <div className="loading-spinner-container">
+        <Spinner />
+      </div>
+    );
   }
 };
 
