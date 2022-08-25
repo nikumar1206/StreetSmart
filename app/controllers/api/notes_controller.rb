@@ -10,6 +10,20 @@ class Api::NotesController < ApplicationController
         @note.user = current_user
         @note.listing = @listing
         if @note.save
+            @listing = Listing.find_by(id: params[:listing_id])
+            p "rrrrr"
+            p @listing
+            render "api/listings/show"
+        else
+            render json: @note.errors.full_messages, status: 422
+        end
+    end
+
+
+    def update
+        @note = Note.find_by(user_id: current_user.id, listing_id: params[:listing_id])
+        if @note.update(notes_params)
+            @listing = Listing.find_by(id: params[:listing_id])
             render "api/listings/show"
         else
             render json: @note.errors.full_messages, status: 422
@@ -18,7 +32,8 @@ class Api::NotesController < ApplicationController
 
     def destroy
         @note = Note.find_by(user_id: current_user.id, listing_id: params[:listing_id])
-        if @listing.destroy
+        if @note.destroy
+            @listing = Listing.find_by(id: params[:listing_id])
             render "api/listings/show"
         else
             render json: ["Sorry, we couldn't find what you were looking for"], status: 404

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     
     resource :session, only: [:create, :destroy]
     resources :listings, only: [:index, :show, :create, :update, :destroy] do
-      resources :notes, only: [:show, :destroy, :create]
+      resources :notes, only: [:show, :destroy, :create, :update]
     end
     resources :saved_listings, only: [:index, :show, :destroy, :create]
   end

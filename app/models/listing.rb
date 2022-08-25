@@ -33,7 +33,7 @@ class Listing < ApplicationRecord
     validates :zip, length: { is: 5 }
     belongs_to :lister, class_name: "User", foreign_key: "lister_id"
     has_many :saves, class_name: "Save", foreign_key: "listing_id"
-    has_many :notes, class_name: "Notes", foreign_key: "listing_id"
+    has_many :notes, class_name: "Note", foreign_key: "listing_id"
 
     has_one_attached :photo
 

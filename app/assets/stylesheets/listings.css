@@ -2,6 +2,7 @@
     overflow: auto;
     min-height: calc(100vh - 90px);
     margin-bottom: 5rem;
+    overflow-x: hidden;
 }
 
 
@@ -20,7 +21,7 @@
 }
 
 .gmaps {
-    position: fixed;
+    position: absolute;
     width: 40vw;
     height: 70vh;
     overflow: hidden;
@@ -165,7 +166,7 @@ ul.li-lowerblock-info>li {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin: 215px 0;
+    margin-top: 215px;
 }
 
 .heartsave-btn {

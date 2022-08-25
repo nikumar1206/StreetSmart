@@ -11,12 +11,13 @@
     margin: 90px auto;
 }
 
-.listing-show-container-top {
+.listing-show-container-left {
     display: flex;
+    flex-direction: column;
 }
 
 .image-container {
-    width: 50%;
+    /* width: 50%; */
     height: auto;
     overflow: hidden;
 }
@@ -26,10 +27,6 @@
     height: 45vh;
 }
 
-
-.lister-descript-container {
-    width: 50%;
-}
 
 .save-button,
 .share-button,
@@ -79,6 +76,11 @@
     line-height: 15px;
     padding: 16px;
     box-sizing: border-box;
+}
+
+.addNote {
+    display: flex;
+    flex-direction: column;
 }
 
 .notes-button {
@@ -168,14 +170,15 @@
 
 
 .description-container {
-    display: inline-block;
+    /* display: inline-block; */
+    width: 90%;
 }
 
 .details-buttons {
     display: flex;
     align-content: center;
     text-align: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .maps-container {
@@ -187,9 +190,6 @@
     background: green;
 }
 
-.description-container {
-    width: 45%;
-}
 
 div.description-container>h1 {
     font-size: 32px;
@@ -270,4 +270,53 @@ div.description-container>p {
     height: 50px;
     border-radius: 100%;
     object-fit: cover;
+}
+
+.edit-icon-notes {
+    cursor: pointer;
+}
+
+.filled {
+    display: flex;
+    gap: 2rem;
+}
+
+.save-note-btn {
+    border: none;
+    height: 32px;
+    min-width: auto;
+    width: 95px;
+    margin: 8px 16px 8px 0px;
+    align-items: center;
+    border: 1px px solid rgb(24, 118, 219);
+    border-radius: 0px;
+    display: inline-flex;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    justify-content: center;
+    padding: 0px 24px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition-duration: 0.3s;
+    transition-property: background-color, border-color, color;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    background-color: rgb(24, 118, 219);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #066dff;
+}
+
+.notes-input {
+    height: 75px;
+}
+
+
+.listingshow-split {
+    display: flex;
+    justify-content: space-evenly;
 }

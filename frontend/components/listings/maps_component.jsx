@@ -37,27 +37,32 @@ const MapsComponent = (props) => {
       priceRef.current.innerText = `$${listing.price.toLocaleString()}`;
     }
   };
-  const checkScrollDistance = () => {
-    let body = document.getElementById("root");
-    let gmaps = document.getElementsByClassName("gmaps")[0];
+  // const checkScrollDistance = () => {
+  //   let gmaps = document.getElementsByClassName("gmaps")[0];
+  //   let gmapsHeight = gmaps.clientHeight;
+  //   let resultHeight =
+  //     document.getElementsByClassName("resultbox")[0].clientHeight;
+  //   let refinedHeight = resultHeight - gmapsHeight / 2;
+  //   console.log("refined height", refinedHeight);
+  //   console.log("windowscrollY", window.scrollY);
+  //   if (gmaps) {
+  //     if (window.scrollY > refinedHeight) {
+  //       gmaps.style.position = "absolute";
+  //       // gmaps.style.top = `${
+  //       //   gmaps.getBoundingClientRect().top + 125 + window.scrollY
+  //       // }`;
+  //     } else {
+  //       gmaps.style.position = "fixed";
+  //       console.log("is fixed");
+  //       // gmaps.style.top = `${refinedHeight}`;
+  //       gmaps.style.removeProperty("top");
+  //     }
+  //   }
+  // };
 
-    let height = body.clientHeight;
-    let refinedHeight = height - 90 - 95 - 500 - 700;
-
-    if (gmaps) {
-      if (window.scrollY > refinedHeight) {
-        gmaps.style.position = "absolute";
-        gmaps.style.top = `${refinedHeight}px`;
-      } else {
-        gmaps.style.position = "fixed";
-        gmaps.style.removeProperty("top");
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", checkScrollDistance);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", checkScrollDistance);
+  // }, []);
 
   const isLoaded =
     typeof google === "object" && typeof google.maps === "object";

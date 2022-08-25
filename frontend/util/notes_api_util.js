@@ -5,9 +5,15 @@ export const addNote = (listingId, note) =>
     data: { note },
   });
 
-export const deleteNote = (listingId) =>
+export const deleteNote = (listingId, noteId) =>
   $.ajax({
     method: "delete",
-    url: `/api/listings/${listingId}/notes/:id(.:format)`,
-    data: {},
+    url: `/api/listings/${listingId}/notes/${noteId}`,
+  });
+
+export const editNote = (listingId, note) =>
+  $.ajax({
+    method: "patch",
+    url: `/api/listings/${listingId}/notes/${note.noteId}`,
+    data: { note },
   });

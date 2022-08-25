@@ -22,9 +22,13 @@ function ThankYouContainer() {
       </p>
       <span>or</span>
       <p>
-        Send me a message through my{" "}
-        <a id="personal-link" target="_blank" href="http://nikhil-kumar.tk/">
-          Personal Website
+        Connect with me on{" "}
+        <a
+          id="personal-link"
+          target="_blank"
+          href="https://www.linkedin.com/in/nikhilk99/"
+        >
+          LinkedIn
         </a>
       </p>
       <img

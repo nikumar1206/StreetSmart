@@ -4,7 +4,7 @@ import { FaRegHeart, FaHeart, FaTwitter } from "react-icons/fa";
 import { openModal } from "../../actions/modal_actions";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { addNote } from "../../actions/notes_actions";
+import NotesComponent from "./notes";
 
 function ListerDescriptionContainer({
   listing,
@@ -36,13 +36,6 @@ function ListerDescriptionContainer({
     setSaved(!isSaved);
   };
 
-  const handleNotesButton = () => {
-    if (!currentUser) {
-      dispatch(openModal("login"));
-      return;
-    }
-    dispatch(addNote(listing.id, { body: "wassup" }));
-  };
   return (
     <div className="lister-descript-container">
       <h1 className="listing-descript-name">{listing.name}</h1>
@@ -80,16 +73,12 @@ function ListerDescriptionContainer({
         This listing has been saved by {listing.numSaves}{" "}
         {listing.numSaves == 1 ? "person" : "people"}.
       </p>
-      {!listing.note ? (
-        <div className="notes-container">
-          <button onClick={handleNotesButton} className="notes-button">
-            + Add notes to this listing
-          </button>
-        </div>
-      ) : (
-        <div className="notes-container">{listing.note}</div>
-      )}
 
+      <NotesComponent
+        listing={listing}
+        currentUser={currentUser}
+        openModal={openModal}
+      />
       <section className="lister-info">
         {listing.rent_bool ? (
           <button

@@ -38,21 +38,25 @@ const ListingShowComponent = (props) => {
     return (
       <div className="listing-show-container">
         <BreadcrumbComponent listing={listing} />
-        <div className="listing-show-container-top">
-          <Image imageUrl={imageUrl} />
-          <ListerDescriptionContainer
-            listing={listing}
-            saveListing={saveListing}
-            unSaveListing={unSaveListing}
-            currentUser={currentUser}
-          />
-        </div>
-        <div className="listing-show-container-bot">
-          <DescriptionComponent
-            description={description}
-            amenities={amenities}
-          />
-          <MapsComponent listing={listing} />
+        <div className="listingshow-split">
+          <div className="listing-show-container-left">
+            <div className="image-container">
+              <img src={imageUrl} />
+            </div>
+            <DescriptionComponent
+              description={description}
+              amenities={amenities}
+            />
+          </div>
+          <div className="listing-show-container-right">
+            <ListerDescriptionContainer
+              listing={listing}
+              saveListing={saveListing}
+              unSaveListing={unSaveListing}
+              currentUser={currentUser}
+            />
+            <MapsComponent listing={listing} />
+          </div>
         </div>
       </div>
     );

@@ -20,10 +20,10 @@ function FooterComponent() {
           </a>
         </li>
       </ul>
-      <p className="footer-disclaimer">
+      {/* <p className="footer-disclaimer">
         StreetSmart is not a brand nor a registered trademark of Zillow, Inc.
         This demo is for educational purposes only
-      </p>
+      </p> */}
       <div className="footer-copyright">
         <span className="footer-copyright-pt1">
           StreetSmart &copy; Nikhil Kumar 2022
