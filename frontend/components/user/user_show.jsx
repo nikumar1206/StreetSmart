@@ -14,7 +14,6 @@ const UserShowComponent = (props) => {
   const history = useHistory();
   const currentUser = useCurrentUser();
   const [state, setState] = useState(currentUser);
-
   useEffect(() => {
     dispatch(fetchUser(props.match.params.userId));
   }, []);
