@@ -11,7 +11,7 @@ const UserNav = ({ currentUser, logout, openModal }) => {
           <div className="logo" onClick={() => history.push("/")}>
             <img
               className="logo-img"
-              src="https://streetsmart-safeassets.s3.amazonaws.com/images/logo.webp"
+              src="https://streetsmart-safeassets.s3.amazonaws.com/images/logo.png"
             />
           </div>
           <ul>
