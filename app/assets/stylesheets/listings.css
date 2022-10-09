@@ -125,6 +125,12 @@ div.listing-item-thumbnail>img {
     color: #1A1F2C;
 }
 
+.li-price>span {
+    color: gray;
+    font-weight: lighter;
+    font-size: 12px;
+}
+
 .li-lowerblock {
     display: flex;
     flex-direction: column;

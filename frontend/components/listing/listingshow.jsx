@@ -10,7 +10,6 @@ import { removeListings, fetchListing } from "../../actions/listings_actions";
 
 import BreadcrumbComponent from "./breadcrumb";
 import DescriptionComponent from "./description";
-import Image from "./image";
 import ListerDescriptionContainer from "./listerdescription";
 import MapsComponent from "./maps";
 import Spinner from "../spinner/spinner_component";
@@ -21,7 +20,8 @@ const ListingShowComponent = (props) => {
   }, []);
 
   const currentUser = useCurrentUser();
-  const listing = useCurrListing(props.match.params.listingId);
+  const { listingId } = props.match.params;
+  const listing = useCurrListing(listingId);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const ListingShowComponent = (props) => {
 
   const getListing = () => {
     dispatch(removeListings());
-    dispatch(fetchListing(props.match.params.listingId));
+    dispatch(fetchListing(listingId));
   };
 
   if (listing) {

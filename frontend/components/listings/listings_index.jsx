@@ -29,24 +29,20 @@ function ListingsIndexComponent(props) {
     dispatch(fetchListings(queryString, amenity)).then(() => isLoaded(true));
   }, [props.location.search, currentUser, amen]);
 
-  if (loaded) {
-    return (
-      <div className="listings">
-        <ListingsForm
-          queryString={queryString}
-          params={params}
-          parentAmenity={setAmenity}
-        />
-        <ResultBox listings={listings} />
-      </div>
-    );
-  } else {
-    return (
-      <div className="loading-spinner-container">
-        <Spinner />
-      </div>
-    );
-  }
+  return loaded ? (
+    <div className="listings">
+      <ListingsForm
+        queryString={queryString}
+        params={params}
+        parentAmenity={setAmenity}
+      />
+      <ResultBox listings={listings} />
+    </div>
+  ) : (
+    <div className="loading-spinner-container">
+      <Spinner />
+    </div>
+  );
 }
 
 export default withRouter(ListingsIndexComponent);

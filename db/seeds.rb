@@ -220,12 +220,13 @@ BATHS = [
 i = 1
 30.times do
     name = Faker::Address.street_address
+    rent_bool = [true, false].sample()
     borough = BOROUGHS.sample()
     bor_zip = nyc_data[borough].sample()
     neighborhood = bor_zip[0]
     zip = bor_zip[1]
     property_type = PROPERTY_TYPE.sample()
-    price = rand(2..100) * 50000
+    price =  rent_bool ? rand(2..5) * rand(750..1150) : rand(2..100) * 50000
     beds = BEDS.sample()
     baths = BATHS.sample()
     address = "#{name}, #{borough}, New York, #{zip}"
@@ -237,7 +238,7 @@ i = 1
         borough: borough,
         zip: zip, 
         property_type: property_type,
-        rent_bool: [true, false].sample(),
+        rent_bool: rent_bool,
         lister_id: 2,
         beds: beds,
         baths: baths,
@@ -254,7 +255,7 @@ i = 1
       new_listing.lat = rand(40.666885..40.740644)
       new_listing.lng = -rand(73.765498..73.966863)
     end
-    image = URI.open("https://streetsmart-safeassets.s3.amazonaws.com/listing_seed/listing#{i}.jpg")
+    image = URI.open("https://streetsmart-safeassets.s3.amazonaws.com/listing_seed/listing#{i}.webp")
     new_listing.photo.attach(io: image, filename: "listing#{i}")
     new_listing.save
     i += 1

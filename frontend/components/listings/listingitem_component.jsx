@@ -10,19 +10,40 @@ import { openModal } from "../../actions/modal_actions";
 import { useHistory } from "react-router-dom";
 import { useCurrentUser } from "../../util/selectors";
 
-function ListingItemComponent({ listing }) {
-  const [saveToggle, setSaveToggle] = useState(listing.saved);
+const ListingItemComponent = ({
+  listing: {
+    saved,
+    price,
+    id,
+    imageUrl,
+    name,
+    neighborhood,
+    beds,
+    baths,
+    rent_bool,
+    property_type,
+    lister,
+  },
+}) => {
+  const [saveToggle, setSaveToggle] = useState(saved);
   const history = useHistory();
   const currentUser = useCurrentUser();
   const dispatch = useDispatch();
+
   const priceConvert = () => {
-    let price = listing.price;
-    return price.toLocaleString();
+    const correctedPrice = `$${price.toLocaleString()}`;
+    return rent_bool ? (
+      <p className="li-price">
+        {correctedPrice} <span> per month</span>
+      </p>
+    ) : (
+      <p className="li-price">{correctedPrice}</p>
+    );
   };
 
   useEffect(() => {
-    setSaveToggle(listing.saved);
-  }, [listing.saved]);
+    setSaveToggle(saved);
+  }, [saved]);
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -31,29 +52,27 @@ function ListingItemComponent({ listing }) {
       return dispatch(openModal("login"));
     }
 
-    saveToggle
-      ? dispatch(unSaveListing(listing.id))
-      : dispatch(saveListing(listing.id));
+    saveToggle ? dispatch(unSaveListing(id)) : dispatch(saveListing(id));
   };
 
   const handleClick = () => {
-    history.push(`/listings/${listing.id}`);
+    history.push(`/listings/${id}`);
   };
 
   return (
     <li className="searchCardList-item" onClick={handleClick}>
       <article className="carditeminlist">
         <div className="listing-item-thumbnail">
-          <img src={listing.imageUrl} />
+          <img src={imageUrl} />
         </div>
         <div className="listing-item-bottom-container">
           <div className="listing-item-bottom">
             <div className="listing-item-top-info">
               <span className="listing-brief-info">
-                {listing.property_type} in {listing.neighborhood}
+                {property_type} in {neighborhood}
               </span>
-              <p className="li-address">{listing.name}</p>
-              <p className="li-price">${priceConvert()}</p>
+              <p className="li-address">{name}</p>
+              {priceConvert()}
             </div>
             <div className="heart-container">
               {saveToggle ? (
@@ -67,19 +86,19 @@ function ListingItemComponent({ listing }) {
           <div className="li-lowerblock">
             <ul className="li-lowerblock-info">
               <li className="first-child-li">
-                {listing.beds + " Beds"}
+                {beds + " Beds"}
                 <BiBed />
               </li>
               <li>
-                {listing.baths + " Baths"}
+                {baths + " Baths"}
                 <BiBath />
               </li>
             </ul>
-            <p>Listing by {listing.lister.name}</p>
+            <p>Listing by {lister.name}</p>
           </div>
         </div>
       </article>
     </li>
   );
-}
+};
 export default ListingItemComponent;

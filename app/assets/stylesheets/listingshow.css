@@ -147,6 +147,12 @@
     white-space: nowrap;
 }
 
+.listing-descript-price>span {
+    font-weight: lighter;
+    color: gray;
+    font-size: 15px;
+}
+
 .details-info {
     border-top: 1px solid #E6E6E6;
     border-bottom: 1px solid #E6E6E6;

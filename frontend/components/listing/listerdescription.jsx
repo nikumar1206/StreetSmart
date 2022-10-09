@@ -6,23 +6,41 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import NotesComponent from "./notes";
 
-function ListerDescriptionContainer({
+const ListerDescriptionContainer = ({
   listing,
   unSaveListing,
   saveListing,
   currentUser,
-}) {
-  const [isSaved, setSaved] = useState(() => listing.saved);
+}) => {
+  const {
+    price,
+    id,
+    name,
+    beds,
+    baths,
+    numSaves,
+    lister_id,
+    saved,
+    rent_bool,
+    lister,
+  } = listing;
+  const [isSaved, setSaved] = useState(() => saved);
   const dispatch = useDispatch();
   const history = useHistory();
 
   const priceConvert = () => {
-    let price = listing.price;
-    return price.toLocaleString();
+    const correctedPrice = `$${price.toLocaleString()}`;
+    return rent_bool ? (
+      <h1 className="listing-descript-price">
+        {correctedPrice} <span> per month</span>
+      </h1>
+    ) : (
+      <h1 className="listing-descript-price">{correctedPrice}</h1>
+    );
   };
 
   const toggleSaveIcon = () => {
-    return listing.saved ? <FaHeart /> : <FaRegHeart />;
+    return saved ? <FaHeart /> : <FaRegHeart />;
   };
 
   const handleSave = (e) => {
@@ -30,24 +48,20 @@ function ListerDescriptionContainer({
     if (!currentUser) {
       return dispatch(openModal("login"));
     }
-    isSaved
-      ? dispatch(unSaveListing(listing.id))
-      : dispatch(saveListing(listing.id));
+    isSaved ? dispatch(unSaveListing(id)) : dispatch(saveListing(id));
     setSaved(!isSaved);
   };
 
   return (
     <div className="lister-descript-container">
-      <h1 className="listing-descript-name">{listing.name}</h1>
-      <h1 className="listing-descript-price">$ {priceConvert()}</h1>
+      <h1 className="listing-descript-name">{name}</h1>
+      {priceConvert()}
 
       <div className="details-info">
         <ul className="details-info-breakdown">
-          <li className="det-cell-1-child">
-            {listing.beds + listing.baths + 1} rooms
-          </li>
-          <li className="det-cell-2-child">{listing.beds} beds</li>
-          <li className="det-cell-3-child">{listing.baths} baths</li>
+          <li className="det-cell-1-child">{beds + baths + 1} rooms</li>
+          <li className="det-cell-2-child">{beds} beds</li>
+          <li className="det-cell-3-child">{baths} baths</li>
         </ul>
       </div>
 
@@ -59,7 +73,7 @@ function ListerDescriptionContainer({
         <button
           onClick={() =>
             window.open(
-              `https://twitter.com/intent/tweet/?text=Hey%20everyone,%0ACheck%20out%20this%20listing%20I%20found%20over%20at%20https://streetsmart1.herokuapp.com/listings/${listing.id}`,
+              `https://twitter.com/intent/tweet/?text=Hey%20everyone,%0ACheck%20out%20this%20listing%20I%20found%20over%20at%20https://streetsmart1.herokuapp.com/listings/${id}`,
               "_blank"
             )
           }
@@ -70,8 +84,8 @@ function ListerDescriptionContainer({
         </button>
       </section>
       <p className="save-text-descript">
-        This listing has been saved by {listing.numSaves}{" "}
-        {listing.numSaves == 1 ? "person" : "people"}.
+        This listing has been saved by {numSaves}{" "}
+        {numSaves == 1 ? "person" : "people"}.
       </p>
 
       <NotesComponent
@@ -80,7 +94,7 @@ function ListerDescriptionContainer({
         openModal={openModal}
       />
       <section className="lister-info">
-        {listing.rent_bool ? (
+        {rent_bool ? (
           <button
             onClick={() => dispatch(openModal("thankyou"))}
             className="contact-lister tour"
@@ -95,9 +109,9 @@ function ListerDescriptionContainer({
             Schedule a Showing
           </button>
         )}
-        {currentUser && listing.lister_id === currentUser.id ? (
+        {currentUser && lister_id === currentUser.id ? (
           <button
-            onClick={() => history.push(`/listings/${listing.id}/edit`)}
+            onClick={() => history.push(`/listings/${id}/edit`)}
             className="edit-listing-button"
           >
             Update Listing
@@ -110,20 +124,18 @@ function ListerDescriptionContainer({
             <img
               className="lister-info-img"
               src={
-                listing.lister_id === 2
+                lister_id === 2
                   ? "https://streetsmart-safeassets.s3.amazonaws.com/justintimberlake.jpg"
                   : "https://www.google.com/favicon.ico"
               }
               alt="User Pic Here"
             />
-            <h1 className="lister-info-title">
-              Realtor: {listing.lister.name}
-            </h1>
+            <h1 className="lister-info-title">Realtor: {lister.name}</h1>
           </div>
         </>
       </section>
     </div>
   );
-}
+};
 
 export default ListerDescriptionContainer;
